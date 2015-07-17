@@ -7,3 +7,4 @@
 * kurakk
 * ichihara20
 * wakabashi
+* morimotyだよ
