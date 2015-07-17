@@ -6,4 +6,4 @@
 * reineko1995
 * kurakk
 * ichihara20
-* 助けて
+* 助けて　morimoty
