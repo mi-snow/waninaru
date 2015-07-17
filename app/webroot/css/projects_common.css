@@ -1,0 +1,21 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/* ========================
+	projects_common style
+======================== */
+
+ul#member_list {
+	width: 960px;
+}
+
+ul#member_list li {
+	width: 960px;
+	padding: 0 0 15px 0;
+	font-size: 15px;
+}
+
+p#back_foot {
+	width: 300px;
+	padding: 15px 0 0 0;
+}

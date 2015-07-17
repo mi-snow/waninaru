@@ -1,0 +1,181 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/* ========================
+	user style
+======================== */
+
+div#main_container div#user_container {
+  width: 760px;
+  padding: 50px 0;
+  border: 1px #94dd83 solid;
+  background-color: #ffffff;
+  margin: 30px auto;
+}
+
+div#main_container div#user_container div#user_top_container {
+  width: 150px;
+  margin: 0 0 0 45px; 
+  padding: 0 0 0 0;
+}
+
+#now {
+  color: #94dd83;
+}
+
+div#form_container {
+  width: 760px;
+  padding: 20px 0 0 0;
+}
+
+div#form_container ul {
+  width: 760px;
+}
+
+div#form_container ul li {
+  width: 760px;
+  background: transparent url(../img/common/project/list_dot_line.gif) repeat-x bottom left;
+}
+
+div#form_container ul li dl {
+  width: 720px;
+  margin: 0 0 0 20px;
+  padding: 20px 0;
+}
+
+div#form_container ul li dl dt {
+  width: 180px;
+  height: 40px;
+  float: left;
+  background: transparent url(../img/common/project/icon_flower_small.png) no-repeat center left;
+}
+
+div#form_container ul li dl dt span {
+  width: 155px;
+  margin: 0 0 0 25px;
+  line-height: 40px;
+  font-weight: bold;
+  font-size: 14px;
+  display: block;
+}
+
+div#form_container ul li dl dd {
+  width: 540px;
+  float: right;
+}
+
+span.form_left {
+  float: left;
+  display: block;
+  line-height: 40px;
+  font-size: 14px;
+}
+
+span.form_right {
+  float: right;
+  display: block;
+}
+
+div#form_container ul li dl dd span.form_area {
+  width: 312px;
+  float: left;
+  display: block;
+}
+
+div#form_container ul li dl dd span.attention_area {
+  width: 200px;
+  padding: 10px 0;
+  float: right;
+  display: block;
+  background: #dfffd7 url() repeat-x bottom left;
+}
+
+div#form_container ul li dl dd span span.attention_area_inner {
+  width: 170px;
+  margin: 0 0 0 15px;
+  display: block;
+}
+
+.thumb_image_area {
+  width: 310px;
+  padding: 15px 0 0 0;
+  overflow: hidden;
+  display: block;
+}
+
+.short_area {
+  width: 290px;
+  height: 38px;
+  line-height: 38px;
+  border: #adadad 1px solid;
+  font-size: 14px;
+  float:left;
+}
+
+
+.middle_area {
+  width: 310px;
+  height: 38px;
+  line-height: 38px;
+  border: #adadad 1px solid;
+  font-size: 14px;
+}
+
+.contents_area {
+  width: 310px;
+  height: 400px;
+}
+
+.image_area {
+  width: 310px;
+}
+
+div#submit_btn_container {
+  width: 150px;
+  text-align: center;
+  margin: 0 0 0 290px;
+  padding: 30px 0 0 0;
+}
+
+#submit_left {
+  width: 170px;
+  float: left;
+  display: block;
+}
+
+#submit_right {
+  width: 170px;
+  float: right;
+  display: block;
+}
+
+p#post_done_container {
+  width: 960px;
+  text-align: center;
+}
+
+table.userlist {
+  width: 860px;
+}
+
+table.userlist th {
+  width: auto;
+  height: 50px;
+  line-height: 50px;
+  font-weight: bold;
+  border-bottom: 1px #5f5f5f solid;
+}
+
+table.userlist td {
+  width: auto;
+  height: 50px;
+  line-height: 50px;
+  border-bottom: 1px #cccccc solid;
+}
+
+p.userlist_text {
+  width: auto;
+  padding: 20px 0 10px 0;
+}
+
+

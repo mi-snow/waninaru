@@ -1,0 +1,48 @@
+<?php
+App::uses('Message', 'Model');
+
+/**
+ * Message Test Case
+ *
+ */
+class MessageTest extends CakeTestCase {
+
+/**
+ * Fixtures
+ *
+ * @var array
+ */
+	public $fixtures = array(
+		'app.message',
+		'app.user',
+		'app.activity',
+		'app.comment',
+		'app.project',
+		'app.joiners_project',
+		'app.joiner',
+		'app.producers_project',
+		'app.producer'
+	);
+
+/**
+ * setUp method
+ *
+ * @return void
+ */
+	public function setUp() {
+		parent::setUp();
+		$this->Message = ClassRegistry::init('Message');
+	}
+
+/**
+ * tearDown method
+ *
+ * @return void
+ */
+	public function tearDown() {
+		unset($this->Message);
+
+		parent::tearDown();
+	}
+
+}

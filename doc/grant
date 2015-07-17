@@ -1,0 +1,1 @@
+grant all on waninaru.* to mysql@localhost identified by '';

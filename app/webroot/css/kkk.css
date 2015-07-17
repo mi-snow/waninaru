@@ -1,0 +1,84 @@
+
+
+#btn1{
+	float:left;
+	width:230px;
+}
+#btn2{
+	float:left;
+	width:230px;
+}
+#btn3{
+	float:left;
+	width:230px;
+}
+#btn4{
+	float:left;
+	width:0px;
+}
+#link1{
+	float:left;
+	width: 140px;
+}
+
+
+#g1{
+	float:right;
+	width: 800px;
+}
+
+#table_area{
+	padding: 20px 0 0 0;
+}
+#submit_area{
+	padding: 50px 0 50px 0;
+	float: left;
+}
+
+
+
+textarea{
+	resize: none;
+}
+
+#btn_area{
+	float: none;
+	padding: 50px 0 0 0;
+}
+
+#title{
+	padding: 0 0 20px 0;
+	font-size: x-large;
+	color: #008080;
+}
+#subtitle{
+	padding: 0 0 5px 0;
+	font-size: medium;
+}
+
+#use_container {
+	width: 960px;
+}
+
+#new_container {
+	width: 960px;
+}
+#kousin_container {
+	width: 960px;
+}
+#kkk_container {
+	width: 960px;
+}
+#delete1_container {
+	width: 960px;
+}
+
+#delete2_container {
+	width: 960px;
+}
+#new_fn_container {
+	width: 960px;
+}
+
+
+

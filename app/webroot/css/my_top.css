@@ -1,0 +1,280 @@
+/* =======================
+     common
+======================== */
+li#left_image{
+	float:left;
+	width:250px;
+	margin:0 0 0 100px;
+}
+
+li#right{
+	float:right;
+	width:250px;
+	margin:0 100px 0 0 ;
+}
+
+#search_result{
+	padding:50px 0 0 0;
+}
+
+
+/* ========================
+     clearfix
+======================== */
+.clearfix:after {  
+  content: ".";   
+  display: block;   
+  height: 0;   
+  clear: both;   
+  visibility: hidden;  
+}/*魔法の言葉*/
+
+
+/* ========================
+    img
+======================== */
+#left{
+	width: 220px;
+	float:left;
+	border:solid 1px #94dd83;
+}
+
+#main_content{
+	width:960px;
+}
+
+#img_wrap{
+	width: 200px;
+	margin:0 10px;
+	padding: 10px 0;
+}
+
+
+/* ========================
+      content
+======================== */
+.wrap{
+	width:760px;
+	margin:0 105px;
+	padding: 50px 0 ;
+}
+
+#text_content{
+	width:380px;
+	float:right;
+}
+
+#text_left{
+	width: 160px;
+	float:left;
+}
+
+#text_right{
+	width: 160px;
+	float:right;
+}
+
+#last_wrap{
+	width: 760px;
+	border: solid #94dd83 1px ;
+	margin: 0 0 0 100px;
+	padding: 25px 0;
+}
+
+#last_wrap_text{
+	width:710px;
+	margin:0 0 0 25px;
+}
+
+p#last{
+	font-size:14px;
+}
+
+
+/* =======================
+     wrap_common
+======================== */
+.wrap_content{
+	padding: 0 0 40px 0;
+}
+
+#wrap_content_{
+	width:700px;
+	margin: 0 0 130px 0;
+}
+
+.common{
+	border-bottom: 1px dotted #94dd83;
+}
+
+
+p.boder_in_text{
+	font-size:14px;
+	padding: 0 0 15px 0;
+}
+
+p.boder_under_text{
+	padding:15px 0 0 0 ;
+	font-size:18px;
+}
+
+p.boder_under{
+	padding:15px 0 0 0 ;
+	font-size:16px;
+
+}
+
+
+/* ========================
+ mail
+======================== */
+#mail{
+	width:800px;
+	padding:30px 0 20px 0 ;
+}
+
+#mail_left{
+	width:280px;
+	float:left;
+	margin:0 0 0 30px;
+}
+
+span.mail{
+	display:block;
+	padding:0 0 20px 0;
+}
+
+p.mail{
+	font-size:16px;
+}
+
+#mail_right{
+	width:230px;
+	float:right;
+	margin:0 200px 0 0 ;
+}
+
+
+p.mail_text{
+	font-size:14px;
+	padding: 0 0 20px 0;
+}
+
+span.mail_span{
+	padding: 0 0 20px 0;
+}
+
+
+/* ========================
+ prof_text
+======================== */
+#comment{
+	width: 600px;
+	margin: 0 180px;
+	border: solid #94dd83 1px ;
+}
+
+p#text {
+	font-size:14px;
+}/*プロフィール変更ボタン*/
+
+span.submit_btn{
+  	margin:  0 400px;
+}/*プロフィール変更ボタン*/
+
+
+/* ========================
+      グリーンテキスト
+======================== */
+#green_text01{
+  width: 960px;
+  font-size: 26px;
+  font-weight: bold;
+  color: #94dd83;
+  line-height: 1.5em;
+  text-align: left;
+}
+
+
+/* ========================
+ CSS for pulldown menu v1.3
+ Copyright(c) ASH (http://ash.jp/)
+======================== */
+
+ul.menu {
+		width: 300px;
+		margin:0 330px;
+		padding:0 0 70px 0 ;
+}
+
+ul.menu li {
+		position: relative;
+		display: inline-block;
+		font-size: 14px;
+		line-height: 25px;
+		white-space: nowrap;
+		float: left;
+		color: #000000;
+		background: #eeeeee;
+		border: none;
+		margin: 0;
+		padding: 0;
+}
+
+
+ul.menu a {
+		position: relative;
+		display: inline-block;
+		text-decoration: none;
+		font-size: 14px;
+		line-height: 25px;
+		color: #000000;
+		background: #ffffff;
+		margin: 0;
+		padding: 0px 10px;
+}
+
+ul.menu ul {
+		position: relative;
+		display: none;
+		list-style: none;
+		height: 25px;
+		color: #000000;
+		background: #ffffff;
+		border-top: #aaaaaa 1px solid;
+		margin: 0;
+		padding: 0;
+}
+
+ul.menu > li{
+		border-right: #aaaaaa 1px solid;
+}
+
+ul.menu > li li {
+		clear: left;
+		border: #aaaaaa 1px solid;
+		border-top: none;
+}
+
+ul.menu > li li a {
+		background: #ffffff;
+		padding: 0px 10px;
+}
+
+ul.menu li:hover > a {
+		color: #000000;
+		background: #d3edfb;
+}
+
+ul.menu li:hover > ul {
+		display: inline-block;
+		position: absolute;
+		top: 100%;
+		left: 5px;
+}
+
+
+
+
+
+

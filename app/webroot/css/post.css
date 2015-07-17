@@ -1,0 +1,167 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/* ========================
+	post style
+======================== */
+
+div#post_container {
+  width: 960px;
+}
+
+div#post_top_container {
+  width: 500px;
+  margin: 0 0 0 230px; 
+  padding: 0 0 40px 0;
+}
+
+h2#post_top_title {
+  width: 500px;
+  padding: 0 0 20px 0;
+  font-size: 30px;
+  color: #63B051;
+  text-align: center;
+}
+
+p#post_top_text {
+  width: 480px;
+  margin: 0 0 0 10px; 
+  padding: 0 0 20px 0;
+}
+
+p#post_top_flow {
+  width: 500px;
+  padding: 20px 0 0 0;
+  text-align: center;
+  font-size: 15px;
+  border-top: #cccccc 1px solid;
+}
+
+#now {
+  color: #94dd83;
+}
+
+div#form_container {
+  width: 960px;
+  padding: 20px 0 0 0;
+}
+
+div#form_container ul {
+  width: 960px;
+}
+
+div#form_container ul li {
+  width: 960px;
+  background: transparent url(../img/common/project/list_dot_line.gif) repeat-x bottom left;
+}
+
+div#form_container ul li dl {
+  width: 920px;
+  margin: 0 0 0 20px;
+  padding: 20px 0;
+}
+
+div#form_container ul li dl dt {
+  width: 180px;
+  height: 40px;
+  float: left;
+  background: transparent url(../img/common/project/icon_flower_small.png) no-repeat center left;
+}
+
+div#form_container ul li dl dt span {
+  width: 155px;
+  margin: 0 0 0 25px;
+  line-height: 40px;
+  font-weight: bold;
+  font-size: 14px;
+  display: block;
+}
+
+div#form_container ul li dl dd {
+  width: 740px;
+  float: right;
+}
+
+.form_area {
+  width: 300px;
+  float: left;
+  display: block;
+}
+
+.attention_area {
+  width: 400px;
+  padding: 15px 0;
+  float: right;
+  display: block;
+  background: #dfffd7 url() repeat-x bottom left;
+}
+
+.attention_area_inner {
+  width: 370px;
+  margin: 0 0 0 15px;
+  display: block;
+}
+
+.thumb_image_area {
+  width: 310px;
+  padding: 15px 0 0 0;
+  overflow: hidden;
+  display: block;
+}
+
+.xsmall_area {
+  width: 50px;
+  height: 40px;
+  line-height: 40px;
+}
+
+.small_area {
+  width: 150px;
+  height: 40px;
+  line-height: 40px;
+}
+
+.middle_area {
+  width: 310px;
+  height: 40px;
+  line-height: 40px;
+}
+
+.radio_button_area {
+	height : 40px;
+	line-height : 40px;
+	float: left;
+}
+
+.contents_area {
+  width: 310px;
+  height: 400px;
+}
+
+.image_area {
+  width: 310px;
+}
+
+div#submit_btn_container {
+  width: 350px;
+  text-align: center;
+  margin: 0 0 0 305px;
+  padding: 30px 0 0 0;
+}
+
+#submit_left {
+  width: 170px;
+  float: left;
+  display: block;
+}
+
+#submit_right {
+  width: 170px;
+  float: right;
+  display: block;
+}
+
+p#post_done_container {
+  width: 960px;
+  text-align: center;
+}

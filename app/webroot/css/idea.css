@@ -1,0 +1,313 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/* ========================
+	top style
+======================== */
+
+h2#idea_top_title {
+  width: 960px;
+  height: 42px;
+  padding: 0 0 20px 0;
+  font-size: 25px;
+  position: relative;
+  background: transparent url(../img/common/icon_flower.png) no-repeat top left;
+}
+
+h2#idea_top_title span {
+  width: 905px;
+  padding: 13px 0 0 0;
+  margin: 0 0 0 55px;
+  display: block;
+}
+
+div#idea_top_container {
+  width: 960px;
+  position: relative;
+}
+
+
+
+
+
+div#idea_top_container ul {
+  width: 990px;
+  margin: 0 -30px 0 0;
+  overflow: hidden;
+  _zoom: 1;
+}
+
+div#idea_top_container ul li {
+  width: 300px;
+  padding: 0 0 30px 0;
+  margin: 0 30px 0 0;
+  float: left;
+}
+
+div#idea_top_container ul li dl {
+  width: 300px;
+  padding: 15px 0 0 0;
+  border: 1px #dedede solid;
+}
+
+div#idea_top_container ul li dl dd {
+  width: 270px;
+  height: 80px;
+  margin: 0 0 0 15px;
+  font-size: 14px;
+  overflow: hidden;
+}
+
+div#idea_top_container ul li dl dt {
+  width: 270px;
+  margin: 0 0 0 15px;
+  padding: 10px 0 15px 0;
+  color: #9b9b9b;
+}
+
+span.idea_block_date {
+  width: 130px;
+  padding: 0 0 10px 0;
+  float: left;
+  display: block;
+}
+
+span.idea_block_name {
+  width: 100px;
+  padding: 0 0 10px 0;
+  float: right;
+  display: block;
+  text-align: right;
+}
+
+div#idea_top_container hr {
+  width: 270px;
+  height: 1px;
+  margin: 0;
+  border: none;
+  border-top: 1px #cccccc dotted;
+}
+
+span.more_area {
+  width: 260px;
+  padding: 10px 0 0 0;
+  text-align: right;
+  display: block;
+}
+
+
+
+
+
+div#idea_page_container {
+  width: 160px;
+  margin: 0 0 0 90px;
+  padding: 100px 0 30px 0;
+}
+
+div#idea_page_container ul {
+  width: 160px;
+}
+
+div#idea_page_container ul li {
+  margin: 0 10px;
+  float: left;
+}
+
+li.middle {
+  padding: 5px 0 0 0;
+}
+
+div#idea_page_container span {
+  color: #5ec546;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+
+
+
+div#idea_top_form {
+  width: 320px;
+  height: 217px;
+  position: absolute;
+  /* top: 1035px; */
+  bottom: -85px;
+  left: 450px;
+  background: transparent url(../img/idea/index_form_back.jpg) no-repeat top left;
+}
+
+div#idea_top_form_inner {
+  width: 280px;
+  padding: 20px 0 0 0;
+  margin: 0 0 0 20px;
+}
+
+div#idea_top_form_inner p {
+  width: 280px;
+  padding: 0 0 5px 0;
+  color: #94dd83;
+  font-weight: bold;
+}
+
+div#idea_top_form form textarea {
+  width: 280px;
+  height: 75px;
+  font-size: 10px;
+}
+
+div#idea_top_form form span {
+  width: 280px;
+  padding: 5px 0 0 0;
+  text-align: right;
+  display: block;
+}
+
+
+
+/* ========================
+  detail style
+======================== */
+
+div#idea_detail_container {
+  width: 960px;
+  padding: 20px 0 0 0;
+}
+
+div#idea_detail_container h3 {
+  width: 960px;
+  padding: 0 0 40px 0;
+  font-weight: bold;
+  font-size: 18px;
+  color: #666666;
+  text-align: center;
+}
+
+div#idea_detail_main {
+  width: 750px;
+  padding: 30px 0;
+  float: left;
+  background: #dfffd7 url() no-repeat top left;
+}
+
+div#idea_detail_main p {
+  width: 690px;
+  margin: 0 0 0 30px;
+}
+
+span#idea_post_date {
+  width: 690px;
+  padding: 15px 0 0 0;
+  text-align: right;
+  display: block;
+}
+
+div#idea_detail_status {
+  width: 170px;
+  float: right;
+}
+
+div#idea_fav {
+  width: 170px;
+}
+
+div#idea_fav p {
+  width: 170px;
+  height: 47px;
+  font-size: 20px;
+  background: transparent url(../img/idea/fav_icon.jpg) no-repeat top left;
+}
+
+div#idea_fav p span {
+  width: 115px;
+  margin: 0 0 0 55px;
+  padding: 15px 0 0 0;
+  display: block;
+}
+
+div#idea_fav span {
+  width: 170px;
+  display: block;
+  padding: 20px 0 0 0;
+}
+
+div.idea_detail_comment {
+  width: 700px;
+  margin: 0 0 0 130px;
+  padding: 0 0 30px 0;
+}
+
+div.idea_detail_comment p {
+  width: 700px;
+  padding: 30px 0;
+  background: #f6ffd7 url() no-repeat top left;
+}
+
+div.idea_detail_comment p span {
+  width: 640px;
+  margin: 0 0 0 30px;
+  display: block;
+}
+
+div#post_comment_container {
+  width: 700px;
+  margin: 0 0 0 130px;
+  padding: 20px 0 0 0;
+}
+
+div#post_comment_container form textarea {
+  width: 660px;
+  height: 200px;
+  margin: 0 0 0 20px;
+}
+
+div#post_comment_container form span {
+  width: 660px;
+  margin: 0 0 0 20px;
+  padding: 10px 0 0 0;
+  text-align: right;
+  display: block;
+}
+
+hr.comment_hr {
+  width: 960px;
+  height: 1px;
+  margin: 50px 0;
+  border: none;
+  border-top: 1px #cccccc dotted;
+}
+
+/* ========================
+  idea_post style
+======================== */
+
+div#post_area {
+  width: 700px;
+  margin: 0 0 0 130px;
+}
+
+div#post_area textarea {
+  width: 700px;
+  height: 200px;
+}
+
+div#post_area span {
+  width: 700px;
+  padding: 20px 0 0 0;
+  text-align: right;
+  display: block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

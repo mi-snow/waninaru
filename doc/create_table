@@ -1,0 +1,16 @@
+create table activities (id int AUTO_INCREMENT, user_id int, unread_flag int default 0, created datetime, modified datetime, delete_flag int default 0, PRIMARY KEY(id)) character set utf8;
+create table comments (id int AUTO_INCREMENT, user_id int, project_id int, comment_text varchar(512), comment_num int, created datetime, modified datetime, delete_flag int default 0, unread_flag int default 1, PRIMARY KEY(id)) character set utf8;
+create table joiners (id int AUTO_INCREMENT, user_id int, created datetime, modified datetime, delete_flag int default 0, unread_flag int default 1, PRIMARY KEY(id)) character set utf8;
+create table joiners_projects (id int AUTO_INCREMENT, project_id int, joiner_id int, created datetime, modified datetime, delete_flag int default 0, unread_flag int default 1, before_three_day_flag int default 1, appointed_day_flag int default 1, PRIMARY KEY(id)) character set utf8;
+create table messages (id int AUTO_INCREMENT, category varchar(10), text varchar(512), user_id int, created datetime, modified datetime, delete_flag int default 0, unread_flag int default 1, PRIMARY KEY(id)) character set utf8;
+create table producers(id int AUTO_INCREMENT, user_id int, created datetime, modified datetime, delete_flag int default 0, PRIMARY KEY(id)) character set utf8;
+create table producers_projects (id int AUTO_INCREMENT, project_id int, producer_id int,created datetime ,modified datetime,delete_flag int default 0, before_three_day_flag int default 1, appointed_day_flag int default 1, PRIMARY KEY(id)) character set utf8;
+create table projects (id int AUTO_INCREMENT, project_name varchar(64), active_date datetime, recrouit_date datetime, active_place varchar(64), detail_text varchar(2048), image_file_name varchar(128), people_maxnum int, category varchar(128), created datetime, modified datetime, delete_flag int default 0, PRIMARY KEY(id)) character set utf8;
+create table users (id int AUTO_INCREMENT, student_number int(10), real_name varchar(64), nick_name varchar(64), mode int, login int default 0, info_flag int default 0, unread_flag int default 0, user_password varchar(64), created datetime, modified datetime, delete_flag int default 0, PRIMARY KEY(id)) character set utf8;
+create table user_temps (id int AUTO_INCREMENT, student_number int(10), reg_key varchar(128), created datetime, modified datetime, delete_flag int default 0, PRIMARY KEY(id)) character set utf8;
+
+insert into users (id, student_number, real_name, nick_name, user_password, mode, login, info_flag, unread_flag, created, modified, delete_flag) values 
+(1, '学番数字6桁', '本名', 'ニックネーム', '9f9163a8f778993888071a0e95d7d58a9f0879cd', 1, 0, 0, 1, '2015-05-16 00:00:00', '2015-05-16 00:00:00', 0);
+
+insert into activities (id, user_id, unread_flag, created, modified, delete_flag) values
+(1, 1, 0, '2015-05-16 00:00:00', '2015-05-16 00:00:00', 0);
