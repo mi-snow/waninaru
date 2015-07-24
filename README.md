@@ -3,7 +3,7 @@
 
 * chomesuke778
 * nanahoshi9607
-* reineko1995
+* reineko
 * kurakk
 * ichihara20
 * wakabashi
