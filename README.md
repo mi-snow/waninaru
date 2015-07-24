@@ -9,6 +9,7 @@
 * wakabashi
 * morimotyだよ
 * mi131snow
+* aotukihiragi
 
 ## github利用の流れ
 ### 編集するとき
