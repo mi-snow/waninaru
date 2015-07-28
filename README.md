@@ -26,8 +26,16 @@
 2. 一番上以外のブランチ(困ったらとりあえずmaster_pushで)の下三角のアイコンをクリック、Move to this branchを選択
 3. 元いたブランチが一番上から下のどっかに移動するので、元のブランチの下三角のアイコンをクリックしてDeleteをクリック
 
-
 すべてアプリ内の操作です。
+
+### 他の人のアップロードを確認してクローンを作成するとき
+1. GitHubフォルダ内のwaninaruフォルダを削除
+2. アプリ上のwaninaruフォルダをremove(GitHubと書いてある方)
+3. ブラウザからClone in Desktopを選択
+4. アプリケーションの起動を選択
+5. アプリケーション上でクローンが作成されたらFinderでWaninaruフォルダごとhtdocsのフォルダを置き換え。
+6. MAMPを起動させwaninaruの現状を確認
+7. データベースに接続されていないようならば、app/Config/database.phpでデータベースの接続を変更
 
 ## 参考リンク
 * [2014年度夏コウサ todoアプリ班](https://github.com/takuminnnn/todo_app/wiki)
