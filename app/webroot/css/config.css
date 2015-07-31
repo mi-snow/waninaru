@@ -1,0 +1,17 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/* ========================
+	config style
+======================== */
+
+ul.config_container {
+  width: 960px;
+  padding: 30px 0 0 0;
+}
+
+ul.config_container li {
+  width: 960px;
+  padding: 0 0 30px 0;
+  font-size: 18px;
+}

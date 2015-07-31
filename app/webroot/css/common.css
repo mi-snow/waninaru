@@ -1,0 +1,621 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/* ========================
+	common style
+======================== */
+
+article,aside,canvas,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section,summary{
+	display:block;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Century Gothic", "メイリオ","Meiryo", "ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro", "Osaka", "MS P Gothic", Verdana,Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  color: #333;
+  line-height: 1.5em;
+  background: transparent url(../img/common/main_back.png) no-repeat top center;
+}
+
+.clearfix:after {
+	content: ".";
+	height: 0;
+	display: block;
+	clear: both;
+	visibility: hidden;
+}
+
+div#main_wrapp {
+	padding: 0;
+	margin: 0;
+	text-align: center;
+}
+
+div#main_inner {
+	width: 960px;
+	margin: 0 auto;
+	text-align: left;
+  position: relative;
+}
+
+div#main_container {
+  width: 960px;
+}
+
+div#main_container h2 {
+  width: 960px;
+  height: 42px;
+  padding: 0 0 20px 0;
+  font-size: 25px;
+  background: transparent url(../img/common/icon_flower.png) no-repeat top left;
+}
+
+div#main_container h2 span {
+  width: 905px;
+  padding: 13px 0 0 0;
+  margin: 0 0 0 55px;
+  display: block;
+}
+
+a {
+    color: #999999;
+    text-decoration: none;
+}
+
+a:link {
+    color: #999999;
+    text-decoration: none;
+}
+
+a:visited {
+    color:#000000;
+    text-decoration: none;
+}
+
+a:hover {
+  color: #555555;
+	text-decoration: underline;
+}
+
+::selection {
+background: #cbffba; /* CSS3 */
+}
+
+::-moz-selection {
+background: #cbffba; /* Firefox */
+}
+
+/* ----------------------------
+Yahoo! CSS Reset (YUI 3)
+http://developer.yahoo.com/yui/3/cssreset/
+CSSresetr.com
+---------------------------- */
+
+div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td {
+  margin:0;
+  padding:0;
+  background: transparent url() no-repeat top left;
+}
+
+table {
+  border-collapse:collapse;
+  border-spacing:0;
+}
+
+fieldset, img {
+  border:0;
+}
+
+address, caption, cite, code, dfn, em, strong, th, var {
+  font-style:normal;
+  font-weight:normal;
+}
+
+li {
+  list-style:none;
+}
+
+caption, th {
+  text-align:left;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size:100%;
+  font-weight:normal;
+}
+
+q:before, q:after {
+  content:'';
+}
+
+abbr, acronym {
+  border:0;
+  font-variant:normal;
+}
+
+sup {
+  vertical-align:text-top;
+}
+
+sub {
+  vertical-align:text-bottom;
+}
+
+input, textarea, select {
+  font-family:inherit;
+  font-size:inherit;
+  font-weight:inherit;
+}
+
+input, textarea, select {
+  *font-size:100%;
+}
+
+legend {
+  color:#000;
+}
+
+/* ========================
+	header style
+======================== */
+
+div#header_container {
+  width: 960px;
+  padding: 50px 0 200px 0;
+}
+
+div#header_container div#header_left {
+  width: 300px;
+  float: left;
+}
+
+div#header_container div#header_left h1 {
+  width: 300px;
+  float: left;
+}
+
+div#header_container div#header_right {
+  width: 560px;
+  padding: 10px 0 0 0;
+  float: right;
+}
+
+div#header_container div#header_right ul#right_menu {
+  width: auto;
+  overflow: hidden;
+  margin: 0 -25px 0 0;
+  _zoom: 1;
+  overflow: visible;
+  float: right;
+}
+
+div#header_container div#header_right ul#right_menu li {
+  /*width: 80px;*/
+  margin: 0 20px 0 0;
+  float: left;
+}
+
+div#header_container div#header_right ul#right_menu li img {
+  vertical-align: middle;
+}
+
+div#header_container div#header_right ul#right_menu li a:link, div#header_container div#header_right ul#right_menu li a:visited {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+div#header_container div#header_right ul#right_menu li:hover a{
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/*div#header_container div#header_right ul#right_menu li.user {
+  width: 130px!important;
+}*/
+
+/* ------------------------------
+  project_container layout
+------------------------------ */
+
+
+ul#project_container {
+  width: 960px;
+}
+
+ul#project_container li {
+  width: 960px;
+  padding: 30px 0;
+  border-bottom: 1px #afafaf dotted;
+}
+
+ul#project_container li dl {
+  width: 900px;
+  margin: 0 0 0 30px;
+}
+
+ul#project_container li dl dt {
+  width: 208px;
+  height: 208px;
+  float: left;
+  border: 1px #acacac solid;
+}
+
+ul#project_container li dl dt span {
+  width: 200px;
+  height: 200px;
+  padding: 4px 0;
+  margin: 0 4px;
+  position: relative;
+  overflow: hidden;
+  display: block;
+}
+
+ul#project_container li dl dt span img {
+  height: 200px;
+  margin: 0 auto;
+  display: block;
+}
+
+ul#project_container li dl dd {
+  width: 650px;
+  float: right;
+}
+
+ul#project_container li dl dd p.p_title {
+  width: 650px;
+  padding: 10px 0;
+  border-left: 20px #86C979 solid;
+}
+
+ul#project_container li dl dd p.p_title span {
+  width: 635px;
+  margin: 0 0 0 15px;
+  font-size: 22px;
+  line-height: 1.5em;
+  display: block;
+  font-weight: bold;
+}
+
+ul#project_container li dl dd p.p_date {
+  width: 650px;
+  padding: 15px 0 35px 0;
+  font-size: 16px;
+  color: #6a6a6a;
+}
+
+ul#project_container li dl dd span.detail_btn {
+  width: 170px;
+  font-size: 15px;
+  display: block;
+  text-align: center;
+  float: right;
+}
+
+ul#project_container li dl dd span.detail_btn a:link, ul#project_container li dl dd span.detail_btn a:visited {
+  width: 170px;
+  padding: 15px 0;
+  border-radius: 5px;
+  color: #ffffff;
+  text-decoration: none;
+  display: block;
+  background: #86C979 url() no-repeat top left;
+}
+
+ul#project_container li dl dd span.detail_btn a:hover {
+  width: 170px;
+  padding: 15px 0;
+  border-radius: 5px;
+  color: #ffffff;
+  text-decoration: none;
+  display: block;
+  background: #a8eb9b url() no-repeat top left;
+}
+
+
+
+/* ========================
+  login style
+======================== */
+
+div#login_container {
+  width: 500px;
+  margin: 0 0 0 230px;
+  padding: 50px 0;
+  border: 1px #94dd83 solid;
+  background-color: #ffffff;
+}
+
+div#login_container_wrapp {
+  width: 960px;
+  padding: 45px 0 0 0;
+}
+
+div#login_container_wrapp h2 {
+  width: 960px;
+  padding: 20px 0 50px 0;
+  font-size: 30px;
+  text-align: center;
+}
+
+div#login_inner{
+  width: 400px;
+  margin: 0 0 0 50px;
+}
+
+.sub_title {
+  width: auto;
+  font-weight: bold;
+}
+
+.padding_layout {
+  padding: 20px 0 5px 0;
+}
+
+ul.login_form {
+  width: 400px;
+  padding: 20px 0 0 0;
+}
+
+ul.login_form li {
+  width: 400px;
+  padding: 0 0 10px 0;
+}
+
+input.user {
+  width: 280px;
+  height: 35px;
+  font-size: 14px;
+  border: #adadad 1px solid;
+}
+
+input.password {
+  width: 300px;
+  height: 35px;
+  font-size: 14px;
+  border: #adadad 1px solid;
+}
+
+span.login_left {
+  width: 300px;
+  float: left;
+  display: block;
+}
+
+span.login_right {
+  width: 90px;
+  float: right;
+  display: block;
+}
+
+span.text {
+  width: 90px;
+  height: 35px;
+  line-height: 35px;
+}
+
+span.login_user_left {
+  width: 15px;
+  height: 35px;
+  line-height: 35px;
+  float: left;
+  display: block;
+}
+
+span.login_user_right {
+  width: 280px;
+  height: 35px;
+  float: right;
+  display: block;
+}
+
+div#login_inner p.detail_text {
+  width: auto;
+  padding: 25px 0;
+}
+
+div#login_inner div#new_account {
+  text-align:center;
+}
+
+input.login {
+  width: 90px;
+  height: 37px;
+  line-height: 37px;
+  color: #ffffff;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  background: #86C979 url() no-repeat top left;
+}
+
+
+
+
+
+
+
+/* ========================
+  footer style
+======================== */
+
+
+div#footer_top_wrapp {
+  padding: 80px 0 0 0;
+  margin: 0 0 -10px 0;
+  text-align: center;
+  position: relative;
+  z-index: 10;
+  background: transparent url(../img/common/footer_back.png) repeat-x bottom center;
+}
+
+div#footer_top_inner {
+  width: 960px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+div#footer_top_inner p {
+  width: 350px;
+  margin: 0 0 0 520px;
+}
+
+div#footer_container_wrapp {
+  padding: 0 0 35px 0;
+  margin: 0;
+  text-align: center;
+  background: transparent url(../img/common/footer_main_back.gif) repeat top left;
+}
+
+div#footer_container {
+  width: 960px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+div#footer_container p {
+  width: 960px;
+  padding: 60px 0 20px 0;
+}
+
+div#footer_container ul {
+  width: 960px;
+  padding: 10px 0 0 0;
+  font-size: 14px;
+}
+
+div#footer_container ul a:link, div#footer_container ul a:visited {
+  color: #ffffff;
+}
+
+div#footer_container ul a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+div#footer_container ul li {
+  float: left;
+  color: #ffffff;
+}
+
+li.f_line {
+  width: 25px;
+  text-align: center;
+}
+
+div#copy_wrrap {
+  padding: 10px 0;
+  margin: 0;
+  text-align: center;
+  background: #86C979 url() no-repeat top left;
+}
+
+div#copy_wrrap address {
+  width: 960px;
+  margin: 0 auto;
+  color: #ffffff;
+  font-size: 10px;
+}
+
+div#footer_container span.cont_wrapp {
+  width: 960px;
+  display: block;
+  color: #ffffff;
+}
+
+
+
+
+/* ========================
+  common style
+======================== */
+
+.pt_5 {
+  padding: 5px 0 0 0;
+}
+
+.pt_10 {
+  padding: 10px 0 0 0;
+}
+
+.pt_15 {
+  padding: 15px 0 0 0;
+}
+
+.pt_20 {
+  padding: 20px 0 0 0;
+}
+
+.pt_25 {
+  padding: 25px 0 0 0;
+}
+
+.pt_30 {
+  padding: 30px 0 0 0;
+}
+
+.pd_5 {
+  padding: 0 0 5px 0;
+}
+
+.pd_10 {
+  padding: 0 0 10px 0;
+}
+
+.pd_20 {
+  padding: 0 0 20px 0
+}
+
+.pd_30 {
+  padding: 0 0 30px 0
+}
+
+
+
+/** Paging **/
+.paging {
+	background:#fff;
+	color: #ccc;
+	margin-top: 1em;
+	clear:both;
+}
+.paging .current,
+.paging .disabled,
+.paging a {
+	text-decoration: none;
+	padding: 5px 8px;
+	display: inline-block
+}
+.paging > span {
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-left: 0;
+}
+.paging > span:hover {
+	background: #f7fff2;
+}
+.paging .prev {
+	border-left: 1px solid #ccc;
+	-moz-border-radius: 4px 0 0 4px;
+	-webkit-border-radius: 4px 0 0 4px;
+	border-radius: 4px 0 0 4px;
+}
+.paging .next {
+	-moz-border-radius: 0 4px 4px 0;
+	-webkit-border-radius: 0 4px 4px 0;
+	border-radius: 0 4px 4px 0;
+}
+.paging .disabled {
+	color: #ddd;
+}
+.paging .disabled:hover {
+	background: transparent;
+}
+.paging .current {
+	background: #f7fff2;
+	color: #60c64b;
+	font-weight: bold;
+}

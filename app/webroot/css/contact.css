@@ -1,0 +1,38 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/* ========================
+	mypage style
+======================== */
+
+div#contact_container {
+  width: 960px;
+}
+
+div#contact_container h3 {
+  width: 960px;
+  padding: 20px 0 0 0;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+div#contact_container p {
+  width: 960px;
+  padding: 10px 0 20px 0;
+}
+
+div#contact_container p.mail {
+  width: 450px;
+  margin: 0 0 30px 0;
+  padding: 20px 0;
+  line-height: 2em;
+  border: #d7d7d7 1px solid;
+  text-align: left;
+  font-size: 14px;
+}
+
+div#contact_container p.mail span {
+  width: 410px;
+  margin: 0 0 0 20px;
+  display: block;
+}

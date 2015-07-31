@@ -1,0 +1,148 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/* ========================
+	search style
+======================== */
+
+div#search_container {
+  width: 960px;
+  padding: 0 0 90px 0;
+}
+
+div#search_container div#search_area {
+  width: 460px;
+  padding: 30px 0 0 0;
+}
+
+input.search {
+  width: 330px;
+  height: 40px;
+  font-size: 14px;
+  float: left;
+  border: #adadad 1px solid;
+}
+
+input.submit {
+  width: 120px;
+  height: 42px;
+  font-size: 14px;
+  border: none;
+  float: right;
+  color: #ffffff;
+  cursor: pointer;
+  background: #86C979 url() no-repeat top left;
+}
+
+div#class_search_container {
+  width: 960px;
+}
+
+div#class_search_container ul {
+  width: 980px;
+  margin: 0 -20px 0 0;
+  padding: 0 0 50px 0;
+  overflow: hidden;
+}
+
+div#class_search_container ul li {
+  width: 225px;
+  margin: 0 15px 0 0;
+  padding: 0 0 20px 0;
+  float: left;
+}
+
+div#class_search_container ul li.list01 a:link, div#class_search_container ul li.list01 a:visited {
+  width: 225px;
+  padding: 25px 0;
+  border-radius: 5px;
+  color: #ffffff;
+  font-size: 18px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  background: #86C979 url() no-repeat top left;
+}
+
+div#class_search_container ul li.list01 a:hover {
+  width: 225px;
+  padding: 25px 0;
+  border-radius: 5px;
+  color: #ffffff;
+  font-size: 18px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  background: #94dd83 url() no-repeat top left;
+}
+
+div#class_search_container ul li.list02 a:link, div#class_search_container ul li.list02 a:visited {
+  width: 225px;
+  padding: 25px 0;
+  border-radius: 5px;
+  color: #ffffff;
+  font-size: 18px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  background: #94dd83 url() no-repeat top left;
+}
+
+div#class_search_container ul li.list02 a:hover {
+  width: 225px;
+  padding: 25px 0;
+  border-radius: 5px;
+  color: #ffffff;
+  font-size: 18px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  background: #afec9f url() no-repeat top left;
+}
+
+div#class_search_container ul li.list03 a:link, div#class_search_container ul li.list03 a:visited {
+  width: 225px;
+  padding: 25px 0;
+  border-radius: 5px;
+  color: #ffffff;
+  font-size: 18px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  background: #afec9f url() no-repeat top left;
+}
+
+div#class_search_container ul li.list03 a:hover {
+  width: 225px;
+  padding: 25px 0;
+  border-radius: 5px;
+  color: #ffffff;
+  font-size: 18px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  background: #c3f9c8 url() no-repeat top left;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

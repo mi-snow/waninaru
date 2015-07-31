@@ -1,0 +1,118 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/* ========================
+	faq style
+======================== */
+
+ul#faq_menu {
+	width: 940px;
+	margin: 0 0 0 20px;
+	padding: 30px 0 40px 0;
+	font-size: 14px;
+}
+
+ul#faq_menu li {
+	width: 940px;
+	height: 20px;
+	line-height: 20px;
+	margin: 0 0 20px 0;
+	border-left: 20px #94dd83 solid;
+}
+
+ul#faq_menu li span {
+	width: 930px;
+	margin: 0 0 0 10px;
+	display: block;
+}
+
+ul#faq_menu li span a {
+	width: 930px;
+	color: #94dd83;
+}
+
+
+
+
+div.faq_container {
+	width: 960px;
+	padding: 30px 0;
+	margin: 10px 0 40px 0;
+	border: 1px #cccccc solid;
+}
+
+div.faq_container h3 {
+	width: 900px;
+	padding: 0 0 10px 0;
+	margin: 0 0 0 30px;
+	font-size: 20px;
+	font-weight: bold;
+	color: #696969;
+}
+
+div.faq_container dl {
+	width: 900px;
+	padding: 20px 0;
+	margin: 0 0 0 30px;
+	line-height: 1.6em;
+	border-bottom: 1px #cccccc dotted;
+}
+
+div.faq_container dl dt {
+	width: 870px;
+	margin: 0 0 0 15px;
+	padding: 0 0 10px 0;
+	font-size: 16px;
+	font-weight: bold;
+	color: #696969;
+}
+
+div.faq_container dl dd {
+	width: 870px;
+	margin: 0 0 0 15px;
+}
+
+div.faq_container dl dt span, div.faq_container dl dd span {
+	width: 20px;
+	float: left;
+	color: #94dd83;
+	font-weight: bold;
+	font-size: 18px;
+	display: block;
+}
+
+div.faq_container dl dt p, div.faq_container dl dd p {
+	width: 840px;
+	float: right;
+	font-size: 14px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

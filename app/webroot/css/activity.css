@@ -1,0 +1,137 @@
+
+/*  ============================================================== */
+
+
+
+
+/* ========================
+      全て囲み
+======================== */
+.main_wrap{
+
+	width:860px;
+	margin:0 50px;
+
+}
+
+.wrap{
+
+	width:650px;
+	margin:0 100px;
+	padding:50px 0;
+	border-bottom:solid 1px #94dd83;
+	
+}
+
+.left{
+
+	float:left;
+	width:120px;
+	border:solid 1px #94dd83;
+	background:#efefef;
+	margin:0 0 0 80px;
+
+}
+
+.img_wrap{
+
+	width:100px;
+	margin:0 10px;
+	padding: 10px 0;
+
+}
+
+
+.right{
+
+	float:right;
+	width:340px;
+	margin:0 80px 0 0 ;
+
+}
+
+.title_right{
+
+	width:430px;
+	padding:30px 0 0 0 ;
+
+}
+
+.title_right p{
+
+	font-size:16px;
+
+}
+
+.text_right{
+
+	width:430px;
+	padding:30px 0 0 0 ;
+
+}
+
+.text_right p{
+
+	font-size:12px;
+
+}
+
+
+/*  ============================================================== */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ========================
+      グリーンテキスト
+======================== */
+#green_text01{
+  width: 960px;
+  font-size: 26px;
+  font-weight: bold;
+  color: #94dd83;
+  line-height: 1.5em;
+  text-align: left;
+  padding:0 0 100px 0;
+}
+
+
+
+/* ========================
+     clearfix
+======================== */
+.clearfix:after {  
+  content: ".";   
+  display: block;   
+  height: 0;   
+  clear: both;   
+  visibility: hidden;  
+}/*魔法の言葉*/
+
+
+

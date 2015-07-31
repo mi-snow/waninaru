@@ -1,0 +1,103 @@
+/* ========================
+ 囲む
+======================== */
+.main_content{
+	width:960px;
+}/*全てを囲む*/
+
+.wrap{
+	width:760px;
+	margin:0 100px;
+	padding:0 0 50px 0;
+}/*一つのカテゴリーを囲む*/
+
+.col1{
+	border: 1px solid #94dd83;
+}
+
+/* ========================
+ 緑のテキスト
+======================== */
+#green_text01{
+  width: 230px;
+  padding: 30px 0 20px 0;
+  font-size: 26px;
+  font-weight: bold;
+  color: #94dd83;
+  line-height: 1.5em;
+  text-align: left;  
+}/*　プロフィール変更_文字色　*/
+
+/* ========================
+ カテゴリ分け
+======================== */
+
+h2 {
+	padding:20px 0;
+	margin:0 0 0 20px;
+	font-size:18px;
+}/*カテゴリー分けのテキストの文字の大きさ*/
+/* ========================
+ 質問に関する
+======================== */
+.question{
+	margin: 0 30px;
+	width:700px;
+	padding:20px 0 20px 0;
+}/*質問の幅*/
+
+.question {
+ 	overflow: hidden; 
+}
+
+.question dt{
+	width:20px;
+	float: left;
+    color: #94dd83;
+    font-weight: bold;
+    font-size: 22px;
+}/*左質問*/
+
+.question dd {
+	width:660px;
+	float: right;
+    font-weight: bold;
+    font-size: 14px; 
+}/*右質問*/
+
+
+/* ========================
+ 答えに関する
+======================== */
+.answer {
+	width:700px;
+	margin: 0 30px; 
+	padding:0 0 40px 0;
+}
+
+.answer dt {
+	width:20px;
+	float: left;
+    color: #94dd83;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.answer dd {
+	width:660px;
+	float:right;
+    font-size:14px;
+}
+
+.answer {
+	overflow: hidden; 
+}
+/* ========================
+ 区切りの線
+======================== */
+.col1 hr {
+	width: 660px;
+	border: 1px solid #94dd83;
+}/*区切りの線*/
+
+	
