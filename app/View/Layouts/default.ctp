@@ -46,6 +46,7 @@ $cakeDescription = __d('Waninaru', 'Waninaru - 学生同士がスキルを共有
 
 <meta name="description" content="スキルを共有して、自分がやりたい事・アイディアを実現する場を提供する、専修大学ネットワーク情報学部生同士向けのサービスです。" />
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximam-scale=1.0">
 
 <link rel="shortcut icon" href="./favicon.ico" />
 
