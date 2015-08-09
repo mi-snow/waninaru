@@ -33,6 +33,7 @@ $cakeDescription = __d('Waninaru', 'Waninaru - 学生同士がスキルを共有
 		echo $this->Html->meta('icon');
 
 		echo $this->Html->css('cake.generic');
+    echo $this->Html->css('jquery.sidr.light');
 		echo $this->Html->css(array('common'), null, array('inline'=>false)); echo $this->assign('title', 'Waninaru - 学生同士がスキルを共有して、アイディアを実現できるサービス ');
 
 		echo $this->fetch('meta');
@@ -53,6 +54,7 @@ $cakeDescription = __d('Waninaru', 'Waninaru - 学生同士がスキルを共有
 <title>Waninaru - 学生同士がスキルを共有して、アイディアを実現できるサービス</title>
 <?php echo $this->Html->script('jquery'); ?>
 <?php echo $this->Html->script('smoothScroll'); ?>
+<?php echo $this->Html->script('jquery.sidr.min'); ?>
 
 <script type="text/javascript">
 $(function(){
@@ -71,8 +73,22 @@ $(function(){
         }
    });
 });
-
 </script>
+
+<script>
+$(document).ready(function() {
+  $('#open_menu').sidr({
+    name: 'sp_menu',
+    side: 'right'
+  });
+  $('div#content, div#footer, #close_menu, #sp_menubar').click(function() {
+    $.sidr('close', 'sp_menu');
+  });
+});
+</script>
+
+
+
 
 </head>
 <body>
