@@ -352,7 +352,7 @@ div#header_container div#header_right ul#right_menu li:hover a{
   div#sp_header {
     display: none;
   }
-
+}
 
 /* ------------------------------
   project_container layout
@@ -702,18 +702,18 @@ div#footer_top_inner p {
 }
 
 @media screen and (max-width: 600px) {
-   /* 600px以下の場合 */
-   div#footer_top_inner {
-  width: 100%;
-  margin: 0 auto;
-  text-align: left;
-}
+     /* 600px以下の場合 */
+     div#footer_top_inner {
+    width: 100%;
+    margin: 0 auto;
+    text-align: left;
+  }
 
-div#footer_top_inner p {
-  width: 350px;
-  margin: 0 auto;
-  /*　わにはみでるんで真ん中にした　*/
-}
+  div#footer_top_inner p {
+    width: 350px;
+    margin: 0 auto;
+    /*　わにはみでるんで真ん中にした　*/
+  }
 
 } /* -- media screen -- */
 
