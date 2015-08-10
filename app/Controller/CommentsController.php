@@ -53,8 +53,8 @@ class CommentsController extends AppController {
  */
 	public function add() {
 		$userSession = $this->Auth->user();
-		print_r($this->request->data);
-		print_r($userSession);
+//		print_r($this->request->data);
+//		print_r($userSession);
 		$this->autoRender = false;
 		if ($userSession == null) {
 			return $this->redirect(array('controller'=>'projects','action' => 'view'));
