@@ -1,0 +1,59 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/* ========================
+	rule style
+======================== */
+
+div#rule_container {
+  width: 860px;
+  margin: 0 0 0 50px;
+  line-height: 1.5em;
+}
+
+div#rule_container p.rule_title {
+  width: 860px;
+  padding: 0 0 20px 0;
+  font-size: 14px;
+  color: #6db25d;
+  font-weight: bold;
+}
+
+div.rule_contents {
+  width: 860px;
+  padding: 0 0 30px 0;
+}
+
+div.rule_contents h3 {
+  width: 860px;
+  padding: 0 0 10px 0;
+  color: #84cc73;
+}
+
+div.rule_contents p {
+  width: 860px;
+  padding: 0 0 10px 0;
+}
+
+div.rule_contents ul {
+  width: 860px;
+  padding: 10px 0;
+}
+
+div.rule_contents ul li {
+  width: 860px;
+}
+
+div.rule_contents ul li dl {
+  width: 860px;
+}
+
+div.rule_contents ul li dl dt {
+  width: 25px;
+  float: left;
+}
+
+div.rule_contents ul li dl dd {
+  width: 825px;
+  float: right;
+}

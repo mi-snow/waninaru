@@ -1,0 +1,102 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/* ========================
+	about style
+======================== */
+
+html {
+  overflow: auto;
+}
+
+body {
+  overflow-x: hidden;
+  min-width: 960px;
+  position: relative;
+}
+
+div.about_container {
+  width: 960px;
+  text-align: center;
+  padding: 20px 0 40px 0;
+}
+
+div.about_container p {
+  width: 960px;
+}
+
+div.about_container p img {
+  width: 450px;
+}
+
+div.about_container p.key_catch {
+  font-size: 18px;
+  padding: 25px 0 0 0;
+  line-height: 1.8em;
+}
+
+div#about_btn {
+  width: 460px;
+  margin: 0 0 0 260px;
+  padding: 40px 0 0 0;
+}
+
+div#about_btn span {
+  width: 218px;
+  margin: 0 10px 0 0;
+  float: left;
+  display: block;
+}
+
+div#about_btn span span {
+  width: 218px;
+  height: 60px;
+  line-height: 60px;
+  display: block;
+  color: #adadad;
+  border: 1px #adadad solid;
+  text-decoration: none;
+}
+
+div#about_btn span span a:hover {
+  width: 218px;
+  height: 60px;
+  line-height: 60px;
+  display: block;
+  color: #ffffff;
+  border: 1px #86C979 solid;
+  text-decoration: none;
+  background-color: #86C979;
+}
+
+p.developed {
+  width: 960px;
+  padding: 10px 0;
+}
+
+p.developed a:link, p.developed a:visited {
+  width: 448px;
+  margin: 0 0 0 260px;
+  padding: 20px 0;
+  border: 1px #86C979 solid;
+  color: #86C979;
+  display: block;
+  text-decoration: none;
+}
+
+p.developed a:hover {
+  width: 448px;
+  margin: 0 0 0 260px;
+  padding: 20px 0;
+  border: 1px #cbffba solid;
+  color: #ffffff;
+  display: block;
+  text-decoration: none;
+  background-color: #cbffba;
+}
+
+p.developed_02 {
+  width: auto;
+  font-size: 16px;
+  font-weight: bold;
+}

@@ -2,10 +2,10 @@
 sent = false;
 function send_check(){  
 	if(sent){  
-		alert("二重投稿はしないでください");
-		return false;
+		alert("二重投稿はしないでください")  
+		return false  
 	}else{  
-		sent = true;
-		return true; 
+		sent = true  
+		return true  
 	}
 }  
