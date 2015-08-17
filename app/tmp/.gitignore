@@ -1,2 +1,6 @@
 cache/
+models/
+persistent/
+views/
+.DS_Store
 !.gitignore
