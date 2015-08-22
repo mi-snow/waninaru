@@ -1,9 +1,12 @@
 cache/
 <<<<<<< HEAD
+<<<<<<< HEAD
 models/
 persistent/
 views/
 .DS_Store
 !.gitignore
+=======
+>>>>>>> プルリク実験
 =======
 >>>>>>> プルリク実験
