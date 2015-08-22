@@ -1,5 +1,4 @@
-models/*.*
-persistent/*.*
-views/*.*
-!.gitignore
+models/
+persistent/
+views/
 !empty
