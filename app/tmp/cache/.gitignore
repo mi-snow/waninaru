@@ -1,0 +1,5 @@
+models/*.*
+persistent/*.*
+views/*.*
+!.gitignore
+!empty
