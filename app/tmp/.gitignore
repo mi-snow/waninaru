@@ -1,9 +1,1 @@
-<<<<<<< HEAD
-
-=======
-cache/
-models/
-persistent/
-views/
-!.gitignore
->>>>>>> プルリク実験
+/logs
