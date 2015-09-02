@@ -1,8 +1,6 @@
 cache/
-<<<<<<< HEAD
 models/
 persistent/
 views/
 !.gitignore
-=======
->>>>>>> masterdata_push
+*.DS_Store
