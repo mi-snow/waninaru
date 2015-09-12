@@ -20,6 +20,7 @@ CREATE TABLE `direct_messages` (
   `id` int(11) NOT NULL,
   `category` varchar(10) CHARACTER SET utf8 DEFAULT NULL,
   `text` varchar(512) CHARACTER SET utf8 DEFAULT NULL,
+  'project_id' int(11) DEFAULT NULL,
   `producer_id` int(11) DEFAULT NULL,
   `joiner_id` int(11) DEFAULT NULL,
   `send_mode` int(5) DEFAULT NULL,

@@ -17,10 +17,10 @@ echo $this->assign('title', 'Waninaru - '.$project['Project']['project_name']);
           <dt><span>宛先</span></dt>
           <dd>
 			
-			<?php if ($num == 1): ?>
-			  <?php echo h($project_name.'の企画者さん');?>
+			<?php if ($directmessage['DirectMessage']['send_mode'] == 1): ?>
+			  <?php echo h($directmessage['Project']['project_name'].'の企画者さん');?>
 			  <?php else: ?> 
-			  <?php echo 'ne'.h($JoinerAll);?>
+			  <?php echo 'ne'.h($joinerAll);?>
 			  <?php endif; ?>
 			 
           </dd>

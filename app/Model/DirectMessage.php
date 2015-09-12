@@ -52,6 +52,12 @@ class DirectMessage extends AppModel {
 			'fields' => '',
 			'order' => ''
 		),
+		'Project' => array(
+			'className' => 'Project',
+			'foreignKey' => 'project_id',
+			'conditions' => '',
+			'fields' => '',
+		)
 
 	);
 	

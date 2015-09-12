@@ -47,17 +47,41 @@ class DirectMessagesController extends AppController {
  * @param string $id
  * @return void
  */
-	public function view($id = null,$JoinerAll,$id2,$project_name=null ) {
+	public function view($id = null) {
 		//$JoinerAll=1;
-		  $this->set('JoinerAll', $JoinerAll);
-		  $this->set('num', $id2);
-		   $this->set('project_name', $project_name);
+//		print_r($JoinerAll);
+//		$this->set('JoinerAll', $JoinerAll);
 		  
 		if (!$this->DirectMessage->exists($id)) {
 			throw new NotFoundException(__('Invalid message'));
 		}
-		$options = array('conditions' => array('DirectMessage.' . $this->DirectMessage->primaryKey => $id), 'recursive' => 0);
-		$this->set('directmessage', $this->DirectMessage->find('first', $options));
+		$options = array('conditions' => array('DirectMessage.' . $this->DirectMessage->primaryKey => $id), 'recursive' => 1);
+		$data = $this->DirectMessage->find('first', $options);
+//		print_r($data);
+		$this->set('directmessage', $data);
+
+		if($data['DirectMessage']['send_mode'] == 2){
+			$joiner_id = $this->DirectMessage->find('all', array('fields' => array('joiner_id'), 'conditions' => array('DirectMessage.created' => $data['DirectMessage']['created'], 'DirectMessage.project_id' => $data['DirectMessage']['project_id'], 'DirectMessage.producer_id' => $data['DirectMessage']['producer_id'])));
+//			print_r($joiner_id);
+			$joinerAll = null;
+			foreach($joiner_id as $joiner){
+//				print_r($joiner);
+				$user_id = $this->Joiner->find('first', array('fields' => array('user_id'), 'conditions' => array('Joiner.id' => $joiner['DirectMessage']['joiner_id']), 'recursive' => -1));
+//				print_r($user_id);
+				$student_number = $this->User->find('first', array('fields' => array('student_number'), 'conditions'=>array('User.id'=>$user_id['Joiner']['user_id']), 'recursive' => -1));
+//				print_r($student_number);
+				if($joinerAll == null){
+					$joinerAll = $student_number['User']['student_number'];
+				}else{
+					$joinerAll = $joinerAll.",".$student_number['User']['student_number'];
+				}
+//				print_r($joinerAll);
+
+			}
+//			print_r($joinerAll);
+			$this->set('joinerAll', $joinerAll);
+		}
+
 //		$message = $this->Message->find('first', array('recursive' => 0));
 //		print_r($message);
     
@@ -101,10 +125,10 @@ class DirectMessagesController extends AppController {
         $producer_name = $this->Project->find('first',array('conditions' => array('Project.id' => $id)));
 		$producer_id = $this->ProducersProject->find('first',array('conditions' => array('ProducersProject.id' => $id)));
 	    $producer_id=$producer_id  [ProducersProject]  [producer_id];
-	    $producer_id= $this->Producer->find('first',array('conditions' => array('Producer.id' => $producer_id)));
-	    $producer_id=$producer_id  [Producer]  [user_id];
-	    $producer_id= $this->User->find('first',array('conditions' => array('User.id' => $producer_id)));
-	    $producer_id=$producer_id[User][student_number];
+//	    $producer_id= $this->Producer->find('first',array('conditions' => array('Producer.id' => $producer_id)));
+//	    $producer_id=$producer_id  [Producer]  [user_id];
+//	    $producer_id= $this->User->find('first',array('conditions' => array('User.id' => $producer_id)));
+//	    $producer_id=$producer_id[User][student_number];
 	  //  $producer_id=$producer_id2[User][nick_name];
 	
 	    $my_num=$this->Auth->user();
@@ -134,6 +158,7 @@ class DirectMessagesController extends AppController {
 		if ($this->request->is('post')) {
 			$data = $this->request->data['DirectMessage'];
 			$data['category'] = $category[$data['category']];
+			$data['project_id'] = $id;
 		
 			$data['text'] = nl2br($data['text']);
 		
@@ -143,15 +168,13 @@ class DirectMessagesController extends AppController {
 			$this->DirectMessage->create();
 		//	$joiner_id =$_POST["select"][0];
 			  $data['send_mode'] = $id2;
-		
-			  $data['joiner_id'] = $my_num;
+			  $joiner_id = $this->Joiner->find('first', array("fields" => 'Joiner.id', "conditions" => array("Joiner.user_id" => $userSession['id'])));
+			  $data['joiner_id'] = $joiner_id['Joiner']['id'];
 		//print_r($data);
-			if ($this->DirectMessage->save($data)) {
-	
-				
+			if ($this->DirectMessage->save($data)) {	
 				
 			//	echo $JoinerAll;//リダイレクトの前に出力させると真っ白の画面に遷移
-				return $this->redirect(array('controller'=>'DirectMessages','action' =>'view',$this->DirectMessage->id,$producer_id,$id2, $project_name ));
+				return $this->redirect(array('controller'=>'DirectMessages','action' =>'view',$this->DirectMessage->id));
 				//echo @$_POST["select"][0]."　";
 			} else {
 				$this->Session->setFlash(__('メッセージを送信できませんでした。もう一度お試しください。'));
@@ -199,37 +222,50 @@ class DirectMessagesController extends AppController {
         
 		if ($this->request->is('post')) {
 			$data = $this->request->data['DirectMessage'];
+			$data['project_id'] = $project['Project']['id'];
 			$data['category'] = $category[$data['category']];
 		
 			$data['text'] = nl2br($data['text']);
 	
 			  $producer=$this->Auth->user();
-	          $producer_id=$producer[student_number];
-			$data['producer_id'] = $producer_id;
+	          $producer_id=$this->Producer->find('first', array('fields'=>'id', 'conditions'=>array('Producer.user_id'=>$producer[id])));
+			$data['producer_id'] = $producer_id['Producer']['id'];
 			
 			unset($data['student_number']);
 			$this->DirectMessage->create();
 			$joiner_id =$_POST["select"][0];
 			  $JoinerAll =$joiner_id;
-		
-			  $data['joiner_id'] = $joiner_id;
+//			  print_r($joiner_id);
+			  $joiner = $this->User->find('first', array('fields'=>'id', 'conditions'=>array('User.student_number'=>$joiner_id)));
+			  $joiner = $this->Joiner->find('first', array('fields'=>'id', 'conditions'=>array('Joiner.user_id'=>$joiner[User][id])));
+//			  print_r($joiner);
+
+			  $data['joiner_id'] = $joiner['Joiner']['id'];
 			    $data['send_mode'] = $id2;
+//				 print_r($data);
 		//	 }
 			if ($this->DirectMessage->save($data)) {
+			$message_id = $this->DirectMessage->find('first', array("fields" => 'DirectMessage.id', "order" => array("id" => "desc")));
+//			print_r($message_id);
+			
 		//		 print_r($data);
+//			print_r(count($_POST["select"]));
 		     for ($i = 1; $i < count($_POST["select"]); $i++){
     	 
 			$this->DirectMessage->create();
 			 $joiner_id =$_POST["select"][$i];
-			
-			 $data['joiner_id'] = $joiner_id;
+//			 print_r($joiner_id);
+			 $joiner = $this->User->find('first', array('fields'=>'id', 'conditions'=>array('User.student_number'=>$joiner_id)));
+			 $joiner = $this->Joiner->find('first', array('fields'=>'id', 'conditions'=>array('Joiner.user_id'=>$joiner[User][id])));
+			 
+			 $data['joiner_id'] = $joiner['Joiner']['id'];
 			 $this->DirectMessage->save($data);
-			  $JoinerAll .= ",".$joiner_id;
+//			  $JoinerAll .= ",".$joiner_id;
                 }
-				  $this->set('JoinerAll', $JoinerAll);
+//				  $this->set('JoinerAll', $JoinerAll);
 				
 			//	echo $JoinerAll;//リダイレクトの前に出力させると真っ白の画面に遷移
-				return $this->redirect(array('controller'=>'DirectMessages','action' =>'view',$this->DirectMessage->id,$JoinerAll,$id2,null));
+				return $this->redirect(array('controller'=>'DirectMessages','action' =>'view',$message_id['DirectMessage']['id']));
 				//echo @$_POST["select"][0]."　";
 			} else {
 				$this->Session->setFlash(__('メッセージを送信できませんでした。もう一度お試しください。'));
