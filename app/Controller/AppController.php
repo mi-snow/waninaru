@@ -32,7 +32,7 @@ App::uses('Controller', 'Controller');
  * @link		http://book.cakephp.org/2.0/en/controllers.html#the-app-controller
  */
 class AppController extends Controller {
-	public $uses = array('Comment','Joiner','JoinersProject','Producer','ProducersProject','Project','User','Activity', 'Message');
+	public $uses = array('Comment','Joiner','JoinersProject','Producer','ProducersProject','Project','User','Activity', 'Message', 'DirectMessage');
 	
 	public $components = array(
 		'Session',
@@ -73,7 +73,16 @@ class AppController extends Controller {
 		
 		$producer = $this->Producer->find('first',array('fields'=>array('Producer.id'), 'conditions'=>array('Producer.user_id'=>$date['Activity']['user_id']), 'recursive' => -1));
 		$producers_project = $this->ProducersProject->find('list', array('fields'=>array('ProducersProject.id', 'ProducersProject.project_id'), 'conditions'=>array('ProducersProject.producer_id'=>$producer['Producer']['id']), 'recursive' => -1));
-	
+
+		$direct = $this->DirectMessage->find('all', array('conditions'=>array('DirectMessage.producer_id'=>$producer['Producer']['id'], 'DirectMessage.send_mode'=>'1'), 'recursive' => '-1'));
+//		print_r($direct);
+		
+		foreach($direct as $activity){
+			if($activity['DirectMessage']['unread_flag'] == 1){
+				$unreadCount++;
+			}
+		}
+		
 		$comment = $this->Comment->find('all', array('fields'=>array('Comment.unread_flag'), 'conditions'=>array('Comment.project_id'=>$producers_project), 'recursive' => -1));
 	
 		foreach($comment as $activity){
@@ -117,6 +126,16 @@ class AppController extends Controller {
 		
 		$joiner = $this->Joiner->find('first',array('fields'=>array('Joiner.id'), 'conditions'=>array('Joiner.user_id'=>$date['Activity']['user_id']), 'recursive' => -1));
 		$joiners_project = $this->JoinersProject->find('all', array('conditions'=>array('JoinersProject.joiner_id'=>$joiner['Joiner']['id']), 'recursive' => 0));
+		
+		$direct = $this->DirectMessage->find('all', array('conditions'=>array('DirectMessage.joiner_id'=>$joiner['Joiner']['id'], 'DirectMessage.send_mode'=>'2'), 'recursive' => '-1'));
+//		print_r($direct);
+		
+		foreach($direct as $activity){
+			if($activity['DirectMessage']['unread_flag'] == 1){
+				$unreadCount++;
+			}
+		}
+		
 		$orderDate = strtotime($activity['Project']['active_date']);
 	
 		foreach($joiners_project as $activity){
