@@ -14,3 +14,18 @@ insert into users (id, student_number, real_name, nick_name, user_password, mode
 
 insert into activities (id, user_id, unread_flag, created, modified, delete_flag) values
 (1, 1, 0, '2015-05-16 00:00:00', '2015-05-16 00:00:00', 0);
+
+ダイレクトメッセージテーブル作成
+CREATE TABLE `direct_messages` (
+  `id` int(11) NOT NULL,
+  `category` varchar(10) CHARACTER SET utf8 DEFAULT NULL,
+  `text` varchar(512) CHARACTER SET utf8 DEFAULT NULL,
+  'project_id' int(11) DEFAULT NULL,
+  `producer_id` int(11) DEFAULT NULL,
+  `joiner_id` int(11) DEFAULT NULL,
+  `send_mode` int(5) DEFAULT NULL,
+  `created` datetime DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  `delete_flag` int(11) NOT NULL DEFAULT '0',
+  `unread_flag` int(11) NOT NULL DEFAULT '1'
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;

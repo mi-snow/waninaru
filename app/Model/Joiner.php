@@ -24,4 +24,20 @@ class Joiner extends AppModel {
 			'order' => ''
 		)
 	);
+	
+	public $hasMany = array(
+		'DirectMessage' => array(
+			'className' => 'DirectMessage',
+			'foreignKey' => 'joiner_id',
+			'dependent' => false,
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'exclusive' => '',
+			'finderQuery' => '',
+			'counterQuery' => ''
+		),
+	);
 }

@@ -1,7 +1,7 @@
 <?php
 class ActivitiesController extends AppController{
 	public $helpers = array('Html' , 'Form');
-	public $uses = array('Comment','Joiner','JoinersProject','Producer','ProducersProject','Project','User','Activity', 'Message');
+	public $uses = array('Comment','Joiner','JoinersProject','Producer','ProducersProject','Project','User','Activity', 'Message', 'DirectMessage');
 		
 	public function beforeFilter(){
 		parent::beforeFilter();
@@ -72,6 +72,36 @@ class ActivitiesController extends AppController{
 //		print_r($producer);
 		$producers_project = $this->ProducersProject->find('list', array('fields'=>array('ProducersProject.id', 'ProducersProject.project_id'), 'conditions'=>array('ProducersProject.producer_id'=>$producer['Producer']['id']), 'recursive' => -1));
 //		print_r($producers_project);
+
+		//自分の企画にダイレクトメッセージが届いた
+		$direct = $this->DirectMessage->find('all', array('conditions'=>array('DirectMessage.producer_id'=>$producer['Producer']['id'], 'DirectMessage.send_mode'=>'1'), 'recursive' => '1'));
+//		print_r($direct);
+		
+		foreach($direct as $activity){
+			$from = $activity['Joiner']['user_id'];
+			$from = $this->User->find('first', array('fields'=>array('real_name'), 'conditions' => array('User.id' => $from), 'recursive' => '-1'));
+//			print_r($from['User']['real_name']);
+			$from = $from['User']['real_name'];
+			$detail = $from.'さんからメッセージがあります。
+			
+〈'.$activity['DirectMessage']['category'].'〉
+'.$activity['DirectMessage']['text'];
+			$ditail = nl2br($detail);
+			
+			$temps = array(
+					'url'=>'/projects/view/',
+					'id'=>$activity['Project']['id'],
+					'unread_flag'=>$activity['DirectMessage']['unread_flag'],
+					'message'=>$ditail,
+					'image'=>$activity['Project']['image_file_name'],
+					'image_url'=>'/app/webroot/files/',
+					'created'=>$activity['DirectMessage']['created']
+			);
+			array_push($actives, $temps);
+				
+			$this->DirectMessage->id = $activity['DirectMessage']['id'];
+			$this->DirectMessage->saveField('unread_flag', '0');
+		}
 		
 		//自分の企画にコメントされた
 		$comment = $this->Comment->find('all', array('conditions'=>array('Comment.project_id'=>$producers_project), 'recursive' => 1));
@@ -172,7 +202,33 @@ class ActivitiesController extends AppController{
 //		print_r($joiner);
 		$joiners_project = $this->JoinersProject->find('all', array('conditions'=>array('JoinersProject.joiner_id'=>$joiner['Joiner']['id']), 'recursive' => 0));
 //		print_r($joiners_project);
-
+//		$
+		//参加した企画の企画者からダイレクトメッセージが届いた
+		$direct = $this->DirectMessage->find('all', array('conditions'=>array('DirectMessage.joiner_id'=>$joiner['Joiner']['id'], 'DirectMessage.send_mode'=>'2'), 'recursive' => '1'));
+//		print_r($direct);
+		
+		foreach($direct as $activity){
+			$detail = $activity['Project']['project_name'].'の企画者さんからメッセージがあります。
+		
+〈'.$activity['DirectMessage']['category'].'〉
+'.$activity['DirectMessage']['text'];
+			$ditail = nl2br($detail);
+				
+			$temps = array(
+					'url'=>'/projects/view/',
+					'id'=>$activity['Project']['id'],
+					'unread_flag'=>$activity['DirectMessage']['unread_flag'],
+					'message'=>$ditail,
+					'image'=>$activity['Project']['image_file_name'],
+					'image_url'=>'/app/webroot/files/',
+					'created'=>$activity['DirectMessage']['created']
+			);
+			array_push($actives, $temps);
+		
+			$this->DirectMessage->id = $activity['DirectMessage']['id'];
+			$this->DirectMessage->saveField('unread_flag', '0');
+		}
+		
 		//自分が参加した企画が開始した
 		foreach($joiners_project as $activity){
 			$orderDate = strtotime($activity['Project']['active_date']);
