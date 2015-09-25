@@ -172,7 +172,23 @@ class DirectMessagesController extends AppController {
 			  $data['joiner_id'] = $joiner_id['Joiner']['id'];
 		//print_r($data);
 			if ($this->DirectMessage->save($data)) {	
-				
+				//メール送信　宛先:企画者
+				$student_number=$data['producer_id'];
+				$message_text="企画の参加者からメッセージが届いています。";
+				//	print_r( "to:".'ne'.$student_number.'@senshu-u.jp'."  "."to:".$student_number."  ".$message_text);
+				if((260600<= $this->request->data['DirectMessage']['producer_id']) && ($this->request->data['DirectMessage']['producer_id'] <= 260999)){ //テスト用
+					//print_r("true");}else{print_r("false");}
+					$cakeemail=new CakeEmail('default');
+					$cakeemail->to('waninaru.2015@gmail.com');
+					$cakeemail->subject('【テスト用】メッセージ受信');
+					$cakeemail->send($message_text);
+				}else{
+					$student_number=$this->request->data['DirectMessage']['producer_id'];
+					$cakeemail=new CakeEmail('default');
+					$cakeemail->to('ne'.$student_number.'@senshu-u.jp');
+					$cakeemail->subject('メッセージ受信');
+					$cakeemail->send($message_text);
+				}
 			//	echo $JoinerAll;//リダイレクトの前に出力させると真っ白の画面に遷移
 				return $this->redirect(array('controller'=>'DirectMessages','action' =>'view',$this->DirectMessage->id));
 				//echo @$_POST["select"][0]."　";
@@ -250,6 +266,24 @@ class DirectMessagesController extends AppController {
 			
 		//		 print_r($data);
 //			print_r(count($_POST["select"]));
+
+			//メール送信　宛先:参加者
+			$student_number=$data['joiner_id'];
+			$message_text="参加中の企画の企画者からメッセージが届いています。";
+			//print_r( "to:".'ne'.$student_number.'@senshu-u.jp'."  ".$message_text);
+			if((260600<= $this->request->data['DirectMessage']['joiner_id']) && ($this->request->data['DirectMessage']['joiner_id'] <= 260999)){ //テスト用
+				$cakeemail=new CakeEmail('default');
+				$cakeemail->to('waninaru.2015@gmail.com');
+				$cakeemail->subject('【テスト用】メッセージ受信');
+				$cakeemail->send($message_text);
+			}else{
+				$student_number=$this->request->data['DirectMessage']['joiner_id'];
+				$cakeemail=new CakeEmail('default');
+				$cakeemail->to('ne'.$student_number.'@senshu-u.jp');
+				$cakeemail->subject('メッセージ受信');
+				$cakeemail->send($message_text);
+			}
+
 		     for ($i = 1; $i < count($_POST["select"]); $i++){
     	 
 			$this->DirectMessage->create();
@@ -260,6 +294,23 @@ class DirectMessagesController extends AppController {
 			 
 			 $data['joiner_id'] = $joiner['Joiner']['id'];
 			 $this->DirectMessage->save($data);
+			 //メール送信　宛先:参加者
+			 $student_number=$data['joiner_id'];
+			 $message_text="参加中の企画の企画者からメッセージが届いています。";
+			 //print_r( "to:".'ne'.$student_number.'@senshu-u.jp'."  ".$message_text);
+			 if((260600<= $this->request->data['DirectMessage']['joiner_id']) && ($this->request->data['DirectMessage']['joiner_id'] <= 260999)){ //テスト用
+			 	$cakeemail=new CakeEmail('default');
+			 	$cakeemail->to('waninaru.2015@gmail.com');
+			 	$cakeemail->subject('【テスト用】メッセージ受信');
+			 	$cakeemail->send($message_text);
+			 }else{
+			 	$student_number=$this->request->data['DirectMessage']['joiner_id'];
+			 	$cakeemail=new CakeEmail('default');
+			 	$cakeemail->to('ne'.$student_number.'@senshu-u.jp');
+			 	$cakeemail->subject('メッセージ受信');
+			 	$cakeemail->send($message_text);
+			 }
+			 
 //			  $JoinerAll .= ",".$joiner_id;
                 }
 //				  $this->set('JoinerAll', $JoinerAll);
