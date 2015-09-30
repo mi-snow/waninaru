@@ -12,7 +12,7 @@ echo $this->Html->script('send-check.js');
     </p>
   </div><!-- end post_top_container -->
   <div id="form_container">
-  	<?php echo $this->Form->create('Project',array('enctype' => 'multipart/form-data', 'onsubmit'=>"send_check()", 'inputDefaults' => array('label' => false,'div' => false))); ?>
+  	<?php echo $this->Form->create('Project',array('novalidate' => true,'enctype' => 'multipart/form-data', 'onsubmit'=>"send_check()", 'inputDefaults' => array('label' => false,'div' => false))); ?>
       <ul>
         <li><dl class="clearfix">
           <dt><span>企画タイトル</span></dt>

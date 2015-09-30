@@ -167,7 +167,7 @@ echo $this->assign('title', 'Waninaru - '.$project['Project']['project_name']);
 	<?php endforeach; ?>
 <?php endif;?>
 <div id="comment_contribute_container">
-	<?php echo $this->Form->create('Comment', array('url' => array('controller' => 'comments', 'action' => 'add'), 'onsubmit'=>"return send_check()", 'inputDefaults' => array('label' => false,'div' => false))); ?>
+	<?php echo $this->Form->create('Comment', array('novalidate' => true,'url' => array('controller' => 'comments', 'action' => 'add'), 'onsubmit'=>"return send_check()", 'inputDefaults' => array('label' => false,'div' => false))); ?>
 	<?php echo $this->Form->textarea('Comment.comment_text',array('class'=>'comment_width','wrap'=>'hard')); ?>
 	<?php echo $this->Form->hidden('Comment.project_id', array('value' => $project['Project']['id'])); ?>
 	<?php echo $this->Form->hidden('Comment.user_id', array('value' =>$userSession[id])); ?>

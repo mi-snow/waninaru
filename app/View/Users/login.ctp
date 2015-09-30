@@ -4,7 +4,7 @@
     	<div id="login_container">
         <div id="login_inner">
        			<ul class="login_form">
-       			<?php echo $this->Form->create('User');?>
+       			<?php echo $this->Form->create('User',array('novalidate' => true));?>
        				<li class="sub_title">学籍番号（メールアドレス）</li>
        				<li class="clearfix">
        					<span class="login_left clearfix">

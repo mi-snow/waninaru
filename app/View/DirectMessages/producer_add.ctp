@@ -13,7 +13,7 @@ echo $this->Html->script('send-check.js');
 
   </div><!-- end post_top_container -->
   <div id="form_container">
-    <?php echo $this->Form->create('DirectMessage', array('enctype' => 'multipart/form-data', 'onsubmit'=>"return send_check()", 'inputDefaults' => array('label' => false, 'div' => false))); ?>
+    <?php echo $this->Form->create('DirectMessage', array('novalidate' => true,'enctype' => 'multipart/form-data', 'onsubmit'=>"return send_check()", 'inputDefaults' => array('label' => false, 'div' => false))); ?>
       <ul>
         <li><dl class="clearfix">
          
