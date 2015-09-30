@@ -154,7 +154,13 @@ class ProjectsController extends AppController {
 			return $this->redirect(array('controller'=>'projects','action' => 'index'));
 		}
 		$joinoptions = array('conditions'=>array('JoinersProject.project_id'=>$id));
-		
+		$active_date = $this->Project->find('first',array('fields'=>array('Project.active_date'), 'conditions'=>array('id'=>$id), 'recursive' => -1));
+		$active_date = $active_date['Project']['active_date'];
+		$datetime = new DateTime($active_date);
+	 	$weekday = array("日", "月", "火", "水", "木", "金", "土");//漢字による曜日出力のための配列　
+		$week = (int)$datetime->format('w');
+		$weekjp = $weekday[$week];
+				
 		if($userSession['mode']==1){
 			$project = $this->Project->find('first', array('conditions'=>array('id'=>$id)));
 			$project['Project']['detail_text'] = strip_tags($project['Project']['detail_text']);
@@ -179,6 +185,7 @@ class ProjectsController extends AppController {
 		$this->set('joinernum',count($this->JoinersProject->find('all', $joinoptions)));
 		$this->set('commentnum',count($com));
 		$this->set('com', $com);
+		$this->set('week',$weekjp);
 }
 
 /**

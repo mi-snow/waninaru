@@ -98,7 +98,7 @@ echo $this->assign('title', 'Waninaru - '.$project['Project']['project_name']);
 
 		<div id="ivent_date_area">
 			<p><?php list($year, $month, $day, $hour, $minute, $second) = preg_split('/[-: ]/', $project['Project']['active_date']);
-                  	echo h($year.'年 '.$month.'月 '.$day.'日   '.$hour.':'.$minute); ?>～</p>
+                  	echo h($year.'年 '.$month.'月 '.$day.'日  '.'('.$week.')'.$hour.':'.$minute); ?>～</p>
 		</div><!-- end ivent_date_area -->
 
 		<div id="ivent_place_area">
