@@ -207,8 +207,232 @@ div#edit_container p a, div#edit_container p input, input.edit_submit_btn {
 }
 
 
+@media screen and (max-width: 600px) {
+     /* 600px以下の場合 */
+div.myprof_container {
+  width: 100%;
+}
 
+div.myprof_container ul {
+  width: 100%;
+}
 
+div.myprof_container ul li {
+  width: 100%;
+  padding: 20px 0;
+  border-bottom: 1px #bbbbbb dotted;
+}
+
+div.myprof_container ul li dl {
+  width: 90%;
+  margin: 0 0 0 20px;
+  font-size: 14px;
+}
+
+div.myprof_container ul li dl dt {
+  width: 100px;
+  float: left;
+  font-weight: bold;
+  border-left: 10px #94dd83 solid;
+}
+
+div.myprof_container ul li dl dt span {
+  width: 100px;
+  margin: 0 0 0 15px;
+  display: block;
+}
+
+div.myprof_container ul li dl dd {
+  width: 200px;
+  float: right;
+}
+
+div.myprof_container ul li dl dd div.prof_p_wrapp {
+  width: 200px;
+  margin: 0 30px 0 0;
+  padding: 30px 0 0 0;
+  float: left;
+}
+
+p.prof_p_left {
+  width: 120px;
+  height: 120px;
+  overflow: hidden;
+  text-align: center;
+  float: left;
+}
+
+p.prof_p_left span {
+  width: 120px;
+  height: 120px;
+  display: block;
+}
+
+p.prof_p_left span img {
+  height: 120px;
+  margin: 0 auto;
+  display: block;
+}
+
+p.prof_p_right {
+  width: 190px;
+  float: right;
+  font-size: 10px;
+}
+
+span.prof_p_title {
+  width: 190px;
+  font-weight: bold;
+  display: block;
+}
+
+span.prof_p_date {
+  width: 190px;
+  padding: 7px 0 10px 0;
+  display: block;
+}
+
+span.prof_p_detail a:link, span.prof_p_detail a:visited {
+  width: 190px;
+  padding: 10px 0;
+  border-radius: 5px;
+  font-size: 12px;
+  color: #ffffff;
+  text-decoration: none;
+  text-align: center;
+  display: block;
+  background: #86C979 url() no-repeat top left;
+}
+
+span.prof_p_detail a:hover {
+  width: 190px;
+  padding: 10px 0;
+  border-radius: 5px;
+  font-size: 12px;
+  color: #ffffff;
+  text-decoration: none;
+  text-align: center;
+  display: block;
+  background: #94dd83 url() no-repeat top left;
+}
+
+div.project_edit_menu {
+  width: 339px;
+  padding: 15px 0 0 0;
+  margin: 0 -9px 0 0;
+  overflow: hidden;
+  _zoom: 1;
+}
+
+div.project_edit_menu p, a.delete {
+  width: 104px;
+  margin: 0 9px 0 0;
+  float: left;
+}
+
+div.project_edit_menu p a:link, div.project_edit_menu p a:visited {
+  width: 104px;
+  padding: 10px 0;
+  border-radius: 5px;
+  font-size: 12px;
+  color: #ffffff;
+  text-align: center;
+  display: block;
+  text-decoration: none;
+  background: #acd664 url() no-repeat top left;
+}
+
+div.project_edit_menu p a:hover {
+  width: 104px;
+  padding: 10px 0;
+  border-radius: 5px;
+  font-size: 12px;
+  color: #ffffff;
+  text-align: center;
+  display: block;
+  text-decoration: none;
+  background: #c1e28e url() no-repeat top left;
+}
+
+a.delete:link, a.delete:visited {
+  width: 104px;
+  padding: 10px 0;
+  border-radius: 5px;
+  font-size: 12px;
+  color: #ffffff;
+  text-align: center;
+  display: block;
+  text-decoration: none;
+  background: #a1a1a1 url() no-repeat top left!important;
+}
+
+a.delete:hover {
+  width: 104px;
+  padding: 10px 0;
+  border-radius: 5px;
+  font-size: 12px;
+  color: #ffffff;
+  text-align: center;
+  display: block;
+  text-decoration: none;
+  background: #bbbbbb url() no-repeat top left!important;
+}
+
+.m_margin_20 {
+  margin: -20px 0 0 0;
+}
+
+div#edit_container {
+  width: 500px;
+  margin: 0 0 0 250px;
+  padding: 70px 0 40px 0;
+  overflow: hidden;
+}
+
+div#edit_container p {
+  width: 230px;
+  margin: 0 20px 0 0;
+  float: left;
+}
+
+div#edit_container p a, div#edit_container p input, input.edit_submit_btn {
+  width: 230px;
+  height: 60px;
+  line-height: 60px;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  color: #ffffff;
+  text-decoration: none;
+  text-align: center;
+  display: block;
+  cursor: pointer;
+  background: #94dd83 url() no-repeat top left;
+}
+
+#under_prof {
+  width: 90%;
+  margin: 0 auto;
+}
+
+#under_prof div.prof_p_wrapp {
+  margin-top: 40px;
+  padding-top: 15px;
+  border-top: dotted 1px #bbb;
+}
+
+#up_prof {
+  display: none;
+}
+
+   }
+
+@media screen and (min-width: 601px) {
+     /* 601px以上の場合 */
+     #under_prof {
+      display: none;
+     }
+}
 
 div.edit_container {
   width: 500px;
@@ -273,7 +497,15 @@ div#profedit_area p a, div#profedit_area p input {
   padding: 0 0 60px 0;
 }
 
-
+@media screen and (max-width: 600px) {
+     /* 600px以下の場合 */
+div#profedit_area {
+  width: 500px;
+  margin: 0 auto;
+  padding: 70px 0 40px 0;
+  overflow: hidden;
+}
+   }
 
 
 
