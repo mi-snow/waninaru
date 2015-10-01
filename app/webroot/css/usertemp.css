@@ -134,3 +134,20 @@ div#submit_btn_container {
   float: right;
   display: block;
 }
+
+/*mediascreen↓*/
+@media(max-width: 600px){
+	div#form_container_wrapp{
+	padding: 0;
+	}
+	
+    div#form_container{
+    margin: 0;
+	border: none;
+	}
+	
+	div#form_inner{
+	margin: 0;
+	}
+}
+/*mediascreen↑*/
