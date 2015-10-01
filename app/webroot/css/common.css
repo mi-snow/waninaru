@@ -80,6 +80,10 @@ div#main_container h2 span {
   text-align: left;
   position: relative;
 }
+   div#main_inner .main_container .about_container p img{
+   width: 100%;
+   margin: 0 0 20px 0;
+   }
 
 div#main_container {
   width: 100%;
@@ -101,6 +105,10 @@ div#main_container h2 span {
   display: inline-block;
 }
 
+div#search_container form{
+	width: 450px;
+	display: block;
+}
 
 } /* -- media scrren -- */
 
