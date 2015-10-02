@@ -5,7 +5,7 @@
 
       <h2><span>名前の変更</span></h2>
 
-      <?php echo $this->Form->create('User',array('url'=>array('controller'=>'users','action'=>'nameedit'))); ?>
+      <?php echo $this->Form->create('User',array('novalidate' => true,'url'=>array('controller'=>'users','action'=>'nameedit'))); ?>
       <div class="myprof_container">
         <ul>
           <li><dl class="clearfix">

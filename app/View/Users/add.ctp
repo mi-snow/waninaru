@@ -3,7 +3,7 @@
 <div id="main_container">
   <div id="user_container">
 
-    <?php echo $this->Form->create('User',array('inutDefaults' => array('label' => false,'div' => false))); ?>
+    <?php echo $this->Form->create('User',array('novalidate' => true,'inutDefaults' => array('label' => false,'div' => false))); ?>
 
       <fieldset class="user_form">
       <h2><span>ユーザの登録</span></h2>
