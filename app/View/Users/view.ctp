@@ -78,7 +78,7 @@
               			<div class="project_edit_menu clearfix">
                 			<p><?php echo $this->Html->link('参加メンバー' , array('controller'=>'projects' , 'action'=>'joinlist' , $project['Project']['id']),array('title'=>'参加メンバー') ) ?></p>
                				<p><?php echo $this->Html->link('企画を編集する' , array('controller'=>'projects' , 'action'=>'edit' , $project['Project']['id']),array('title'=>'企画を編集する') ) ?></p>
-                      <p><?php echo $this->Html->link('企画者にメール' , array('controller'=>'projects' , 'action'=>'edit' , $project['Project']['id']),array('title'=>'企画を編集する') ) ?></p>
+                      <p><?php echo $this->Html->link('参加者に連絡する' , array('controller'=>'DirectMessages' , 'action'=>'add' , $project['Project']['id'],'2'),array('title'=>'参加者に連絡する') ) ?></p>
                 			<p><?php echo $this->Form->postLink('企画を削除する' , array('controller'=>'projects' , 'action'=>'delete' , $project['Project']['id']),array('title'=>'企画を削除する','confirm'=>'本当に企画を削除しますか？','class'=>'delete')); ?></p>
               			</div><!-- end project_edit_menu -->
             		</div><!-- end prof_p_wrapp -->
@@ -98,7 +98,7 @@
                     <div class="project_edit_menu clearfix">
                       <p><?php echo $this->Html->link('参加メンバー' , array('controller'=>'projects' , 'action'=>'joinlist' , $project['Project']['id']),array('title'=>'参加メンバー') ) ?></p>
                       <p><?php echo $this->Html->link('企画を編集する' , array('controller'=>'projects' , 'action'=>'edit' , $project['Project']['id']),array('title'=>'企画を編集する') ) ?></p>
-                      <p><?php echo $this->Html->link('企画者にメール' , array('controller'=>'projects' , 'action'=>'edit' , $project['Project']['id']),array('title'=>'企画を編集する') ) ?></p>
+                      <p><?php echo $this->Html->link('参加者に連絡する' , array('controller'=>'DirectMessages' , 'action'=>'add' , $project['Project']['id'],'2'),array('title'=>'参加者に連絡する') ) ?></p>
                       <p><?php echo $this->Form->postLink('企画を削除する' , array('controller'=>'projects' , 'action'=>'delete' , $project['Project']['id']),array('title'=>'企画を削除する','confirm'=>'本当に企画を削除しますか？','class'=>'delete')); ?></p>
                     </div><!-- end project_edit_menu -->
                 </div><!-- end prof_p_wrapp -->

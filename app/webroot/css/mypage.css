@@ -121,13 +121,13 @@ div.project_edit_menu {
 }
 
 div.project_edit_menu p, a.delete {
-  width: 104px;
-  margin: 0 9px 0 0;
+  width: 160px;
+  margin: 0 9px 5px 0;
   float: left;
 }
 
 div.project_edit_menu p a:link, div.project_edit_menu p a:visited {
-  width: 104px;
+  width: 160px;
   padding: 10px 0;
   border-radius: 5px;
   font-size: 12px;
@@ -139,7 +139,7 @@ div.project_edit_menu p a:link, div.project_edit_menu p a:visited {
 }
 
 div.project_edit_menu p a:hover {
-  width: 104px;
+  width: 160px;
   padding: 10px 0;
   border-radius: 5px;
   font-size: 12px;
@@ -151,8 +151,9 @@ div.project_edit_menu p a:hover {
 }
 
 a.delete:link, a.delete:visited {
-  width: 104px;
+  width: 160px;
   padding: 10px 0;
+  margin-top: -5px;
   border-radius: 5px;
   font-size: 12px;
   color: #ffffff;
@@ -163,7 +164,7 @@ a.delete:link, a.delete:visited {
 }
 
 a.delete:hover {
-  width: 104px;
+  width: 160px;
   padding: 10px 0;
   border-radius: 5px;
   font-size: 12px;
@@ -173,6 +174,11 @@ a.delete:hover {
   text-decoration: none;
   background: #bbbbbb url() no-repeat top left!important;
 }
+
+.m_margin_20 {
+  margin: -20px 0 0 0;
+}
+
 
 .m_margin_20 {
   margin: -20px 0 0 0;
@@ -230,20 +236,20 @@ div.myprof_container ul li dl {
 }
 
 div.myprof_container ul li dl dt {
-  width: 100px;
+  width: 115px;
   float: left;
   font-weight: bold;
   border-left: 10px #94dd83 solid;
 }
 
 div.myprof_container ul li dl dt span {
-  width: 100px;
+  width: 120px;
   margin: 0 0 0 15px;
   display: block;
 }
 
 div.myprof_container ul li dl dd {
-  width: 200px;
+  width: 175px;
   float: right;
 }
 
@@ -325,13 +331,13 @@ div.project_edit_menu {
 }
 
 div.project_edit_menu p, a.delete {
-  width: 104px;
-  margin: 0 9px 0 0;
+  width: 160px;
+  margin: 0 9px 5px 0;
   float: left;
 }
 
 div.project_edit_menu p a:link, div.project_edit_menu p a:visited {
-  width: 104px;
+  width: 160px;
   padding: 10px 0;
   border-radius: 5px;
   font-size: 12px;
@@ -343,7 +349,7 @@ div.project_edit_menu p a:link, div.project_edit_menu p a:visited {
 }
 
 div.project_edit_menu p a:hover {
-  width: 104px;
+  width: 160px;
   padding: 10px 0;
   border-radius: 5px;
   font-size: 12px;
@@ -355,8 +361,9 @@ div.project_edit_menu p a:hover {
 }
 
 a.delete:link, a.delete:visited {
-  width: 104px;
+  width: 160px;
   padding: 10px 0;
+  margin-top: -5px;
   border-radius: 5px;
   font-size: 12px;
   color: #ffffff;
@@ -367,7 +374,7 @@ a.delete:link, a.delete:visited {
 }
 
 a.delete:hover {
-  width: 104px;
+  width: 160px;
   padding: 10px 0;
   border-radius: 5px;
   font-size: 12px;
@@ -500,10 +507,34 @@ div#profedit_area p a, div#profedit_area p input {
 @media screen and (max-width: 600px) {
      /* 600px以下の場合 */
 div#profedit_area {
-  width: 500px;
+  width: 100%;
   margin: 0 auto;
-  padding: 70px 0 40px 0;
+  padding-top: 40px;
   overflow: hidden;
+}
+
+div#profedit_area p {
+  width: 250px;
+  margin: 0 auto;
+}
+
+div#profedit_area p a, div#profedit_area p input {
+  width: 250px;
+  height: 60px;
+  line-height: 60px;
+  border: none;
+  border-radius: 5px;
+  font-size: 15px;
+  color: #ffffff;
+  text-decoration: none;
+  text-align: center;
+  display: block;
+  cursor: pointer;
+  background: #94dd83 url() no-repeat top left;
+}
+
+.pd_60 {
+  padding: 0 0 30px 0;
 }
    }
 
