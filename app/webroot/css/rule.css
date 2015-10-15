@@ -57,3 +57,59 @@ div.rule_contents ul li dl dd {
   width: 825px;
   float: right;
 }
+
+@media screen and (max-width: 600px) {
+     /* 600px以下の場合 */
+     div#rule_container {
+  width: 100%;
+  margin: 0;
+  line-height: 1.5em;
+}
+
+div#rule_container p.rule_title {
+  width: 100%;
+  padding: 0 0 20px 0;
+  font-size: 14px;
+  color: #6db25d;
+  font-weight: bold;
+}
+
+div.rule_contents {
+  width: 100%;
+  padding: 0 0 30px 0;
+}
+
+div.rule_contents h3 {
+  width: 100%;
+  padding: 0 0 10px 0;
+  color: #84cc73;
+}
+
+div.rule_contents p {
+  width: 100%;
+  padding: 0 0 10px 0;
+}
+
+div.rule_contents ul {
+  width: 100%;
+  padding: 10px 0;
+}
+
+div.rule_contents ul li {
+  width: 100%;
+}
+
+div.rule_contents ul li dl {
+  width: 100%;
+}
+
+div.rule_contents ul li dl dt {
+  width: 25px;
+  float: left;
+}
+ 
+div.rule_contents ul li dl dd {
+  width: 90%;
+  float: right;
+}    
+     }

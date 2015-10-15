@@ -40,7 +40,12 @@
                   				echo h($year.'年'.$month.'月'.$day.'日 開催!!'); ?></span>
                   		<span class="prof_p_detail"><?php echo $this->Html->link('詳しく見る' , array('controller'=>'projects' , 'action'=>'view' , $project['Project']['id']),array('title'=>'詳しく見る') ) ?></span>
                		 </p>
-              	</div><!-- end prof_p_wrapp -->
+              	<div class="project_edit_menu clearfix">
+                		
+               				<p><?php echo $this->Html->link('企画者に連絡する' , array('controller'=>'DirectMessages' , 'action'=>'add' , $project['Project']['id'],'1'),array('title'=>'企画者に連絡する') ) ?></p>
+                		
+                			
+              			</div><!-- end prof_p_wrapp -->
 			<?php endforeach; ?>
               
           </dd>
@@ -56,7 +61,12 @@
                           echo h($year.'年'.$month.'月'.$day.'日 開催!!'); ?></span>
                       <span class="prof_p_detail"><?php echo $this->Html->link('詳しく見る' , array('controller'=>'projects' , 'action'=>'view' , $project['Project']['id']),array('title'=>'詳しく見る') ) ?></span>
                    </p>
-                </div><!-- end prof_p_wrapp -->
+                <div class="project_edit_menu clearfix">
+                		
+               				<p><?php echo $this->Html->link('企画者に連絡する' , array('controller'=>'DirectMessages' , 'action'=>'add' , $project['Project']['id'],'1'),array('title'=>'企画者に連絡する') ) ?></p>
+                		
+                			
+              			</div><!-- end prof_p_wrapp -->
       <?php endforeach; ?>
               
           </div>

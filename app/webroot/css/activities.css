@@ -66,6 +66,38 @@ ul#activities_container li dl dd span a img {
 
 /*mediascreen通知*/
 @media(max-width: 600px){
+	ul#activities_container {
+	width: 	100%;
+	border-top: 1px #adadad solid;
+}
+
+ul#activities_container li {
+	width: 100%;
+}
+
+ul#activities_container li dl {
+	width: 100%;
+	border-bottom: 1px #adadad solid;
+}
+
+ul#activities_container li dl dt {
+	width: 100%;
+	padding: 10px 0;
+	border-bottom: 1px #adadad solid;
+}
+
+ul#activities_container li dl dt span {
+	width: 90%;
+	margin: 0 0 0 20px;
+	font-size: 15px;
+}
+
+ul#activities_container li dl dd {
+	width: 90%;
+	padding: 20px 0;
+	margin: 0 0 0 40px;
+}
+	
 	
 	ul#activities_container li dl dd span  {
 	width: 170px;

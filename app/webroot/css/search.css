@@ -126,7 +126,43 @@ div#class_search_container ul li.list03 a:hover {
 
 
 
+@media screen and (max-width: 600px) {
+     /* 600px以下の場合 */
+     
+     div#search_container {
+  width: 100%;
+  padding: 0 0 90px 0;
+}
+	
+div#search_container div#search_area {
+  width: 360px;
+  padding: 30px 0 0 0;
+}
 
+div#search_container form {
+	width: 100%;
+	}
+
+input.search {
+  width: 290px;
+  height: 40px;
+  font-size: 14px;
+  float: left;
+  border: #adadad 1px solid;
+}
+
+input.submit {
+  width: 60px;
+  height: 42px;
+  font-size: 14px;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  background: #86C979 url() no-repeat top left;
+}
+     
+     
+     }
 
 
 

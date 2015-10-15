@@ -213,6 +213,113 @@ div#edit_container p a, div#edit_container p input, input.edit_submit_btn {
 }
 
 
+
+
+@media screen and (min-width: 601px) {
+     /* 601px以上の場合 */
+     #under_prof {
+      display: none;
+     }
+}
+
+div.edit_container {
+  width: 500px;
+  margin: 0 auto;
+  padding: 30px 0 50px 0;
+  overflow: hidden;
+}
+
+div.edit_container p {
+  width: 230px;
+  margin: 0 20px 0 0;
+  float: left;
+}
+
+div.edit_container p a, div.edit_container p input, input.edit_submit_btn {
+  width: 230px;
+  height: 60px;
+  line-height: 60px;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  color: #ffffff;
+  text-decoration: none;
+  text-align: center;
+  display: block;
+  cursor: pointer;
+  background: #94dd83 url() no-repeat top left;
+}
+
+
+
+
+
+div#profedit_area {
+  width: 500px;
+  margin: 0 0 0 250px;
+  padding: 70px 0 40px 0;
+  overflow: hidden;
+}
+
+div#profedit_area p {
+  width: 300px;
+  margin: 0 0 0 100px;
+}
+
+div#profedit_area p a, div#profedit_area p input {
+  width: 300px;
+  height: 60px;
+  line-height: 60px;
+  border: none;
+  border-radius: 5px;
+  font-size: 15px;
+  color: #ffffff;
+  text-decoration: none;
+  text-align: center;
+  display: block;
+  cursor: pointer;
+  background: #94dd83 url() no-repeat top left;
+}
+
+.pd_60 {
+  padding: 0 0 60px 0;
+}
+
+@media screen and (max-width: 600px) {
+     /* 600px以下の場合 */
+div#profedit_area {
+  width: 100%;
+  margin: 0 auto;
+  padding-top: 40px;
+  overflow: hidden;
+}
+
+div#profedit_area p {
+  width: 250px;
+  margin: 0 auto;
+}
+
+div#profedit_area p a, div#profedit_area p input {
+  width: 250px;
+  height: 60px;
+  line-height: 60px;
+  border: none;
+  border-radius: 5px;
+  font-size: 15px;
+  color: #ffffff;
+  text-decoration: none;
+  text-align: center;
+  display: block;
+  cursor: pointer;
+  background: #94dd83 url() no-repeat top left;
+}
+
+.pd_60 {
+  padding: 0 0 30px 0;
+}
+	
+   }
+
 @media screen and (max-width: 600px) {
      /* 600px以下の場合 */
 div.myprof_container {
@@ -389,17 +496,17 @@ a.delete:hover {
   margin: -20px 0 0 0;
 }
 
-div#edit_container {
-  width: 500px;
-  margin: 0 0 0 250px;
-  padding: 70px 0 40px 0;
+div.edit_container {
+  width: 230px;
+  margin: 0 auto;
+  padding: 30px 0 50px 0;
   overflow: hidden;
 }
 
-div#edit_container p {
+div.edit_container p {
   width: 230px;
-  margin: 0 20px 0 0;
-  float: left;
+  margin: 0 20px 5px 0;
+  clear:both;
 }
 
 div#edit_container p a, div#edit_container p input, input.edit_submit_btn {
@@ -433,112 +540,6 @@ div#edit_container p a, div#edit_container p input, input.edit_submit_btn {
 }
 
    }
-
-@media screen and (min-width: 601px) {
-     /* 601px以上の場合 */
-     #under_prof {
-      display: none;
-     }
-}
-
-div.edit_container {
-  width: 500px;
-  margin: 0 0 0 250px;
-  padding: 30px 0 50px 0;
-  overflow: hidden;
-}
-
-div.edit_container p {
-  width: 230px;
-  margin: 0 20px 0 0;
-  float: left;
-}
-
-div.edit_container p a, div.edit_container p input, input.edit_submit_btn {
-  width: 230px;
-  height: 60px;
-  line-height: 60px;
-  border: none;
-  border-radius: 5px;
-  font-size: 14px;
-  color: #ffffff;
-  text-decoration: none;
-  text-align: center;
-  display: block;
-  cursor: pointer;
-  background: #94dd83 url() no-repeat top left;
-}
-
-
-
-
-
-div#profedit_area {
-  width: 500px;
-  margin: 0 0 0 250px;
-  padding: 70px 0 40px 0;
-  overflow: hidden;
-}
-
-div#profedit_area p {
-  width: 300px;
-  margin: 0 0 0 100px;
-}
-
-div#profedit_area p a, div#profedit_area p input {
-  width: 300px;
-  height: 60px;
-  line-height: 60px;
-  border: none;
-  border-radius: 5px;
-  font-size: 15px;
-  color: #ffffff;
-  text-decoration: none;
-  text-align: center;
-  display: block;
-  cursor: pointer;
-  background: #94dd83 url() no-repeat top left;
-}
-
-.pd_60 {
-  padding: 0 0 60px 0;
-}
-
-@media screen and (max-width: 600px) {
-     /* 600px以下の場合 */
-div#profedit_area {
-  width: 100%;
-  margin: 0 auto;
-  padding-top: 40px;
-  overflow: hidden;
-}
-
-div#profedit_area p {
-  width: 250px;
-  margin: 0 auto;
-}
-
-div#profedit_area p a, div#profedit_area p input {
-  width: 250px;
-  height: 60px;
-  line-height: 60px;
-  border: none;
-  border-radius: 5px;
-  font-size: 15px;
-  color: #ffffff;
-  text-decoration: none;
-  text-align: center;
-  display: block;
-  cursor: pointer;
-  background: #94dd83 url() no-repeat top left;
-}
-
-.pd_60 {
-  padding: 0 0 30px 0;
-}
-   }
-
-
 
 /* ========================
   prof edit style
@@ -574,7 +575,35 @@ p.done_edit {
   font-size: 14px;
 }
 
+@media screen and (max-width: 600px) {
+     /* 600px以下の場合 */
+div.myprof_container ul li dl dd span {
+  width: auto;
+  display: block;
+}
 
+div.myprof_container ul li dl dd p.edit_text {
+  width: auto;
+  padding: 15px 0 0 0;
+  font-size: 12px;
+}
 
+div.myprof_container input.middle {
+  width: 180px;
+  height: 25px;
+  border: 1px #bbbbbb solid;
+}
 
+div.myprof_container input.long {
+  width: 350px;
+  height: 25px;
+  border: 1px #bbbbbb solid;
+}
 
+p.done_edit {
+  width: 960px;
+  padding: 0 0 20px 0;
+  color: #ee0000;
+  font-size: 14px;
+}
+}
