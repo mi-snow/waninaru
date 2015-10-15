@@ -116,7 +116,118 @@ div.inner_contents dl dd span {
 }
 
 
+/* ==========
+
+ sp style
+
+========== */
+
+@media screen and (max-width: 600px) {
+
+  div {
+    box-sizing: border-box;
+  }
+
+  div.howto_container {
+    width: 100%;
+    padding: 30px 0;
+  }
+
+  #tab {
+    width: 100%;
+  }
+
+  #tab li {
+    width: 50%;
+    padding: 15px 0;
+    float: left;
+    border-radius: 10px 10px 0 0;
+    text-align: center;
+    font-size: 16px;
+    color: #ffffff;
+    cursor: pointer;
+    background: #cacaca url() no-repeat top left;
+  }
+
+  #tab li.select {
+    background: #AFEC9F url() no-repeat top left;
+  }
 
 
+  .disnon {
+    display: none;
+  }
+  .content_wrap {
+    width: 100%;
+    clear: none;
+  }
 
+  div.inner_contents {
+    width: 100%;
+    padding: 15px 10px;
+  }
 
+  div.inner_contents dl {
+    width: 100%;
+    margin: 0;
+  }
+
+  div.inner_contents p.top_text {
+    width: 100%;
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  div.inner_contents dl.back01 {
+      -moz-background-size: 70px auto;
+      background-size: 70px auto;
+  }
+
+  div.inner_contents dl.back02 {
+      -moz-background-size: 70px auto;
+      background-size: 70px auto;
+  }
+
+  div.inner_contents dl.back03 {
+      -moz-background-size: 70px auto;
+      background-size: 70px auto;
+  }
+
+  div.inner_contents dl.back04 {
+      -moz-background-size: 70px auto;
+      background-size: 70px auto;
+  }
+
+  div.inner_contents dl dt {
+    width: 100%;
+    float: none;
+    border: none;
+  }
+
+  div.inner_contents dl dt img {
+    width: 100%;
+    margin: 0;
+    padding: 4px 0;
+    display: block;
+  }
+
+  div.inner_contents dl dd {
+    width: 100%;
+    float: none;
+  }
+
+  div.inner_contents dl dd p {
+    width: 100%;
+    padding: 10px 0 20px 0;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  div.inner_contents dl dd span {
+    width: 100%;
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+}
