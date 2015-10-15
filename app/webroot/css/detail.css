@@ -124,18 +124,18 @@ div#image_area img {
      /* 600px以下の場合 */
 
      div#left_container {
-      width: 160px;
+      width: 100px;
       float: left;
     }
 
      div#image_area {
-      width: 160px;
-      height: 160px;
+      width: 100px;
+      height: 100px;
       overflow: hidden;
     }
 
     div#image_area img {
-      height: 160px;
+      height: 100px;
       margin: 0 auto;
       display: block;
     }
@@ -247,22 +247,22 @@ p#sub_fold {
 @media screen and (max-width: 600px) {
      /* 600px以下の場合 */
      div#planning_container {
-  width: 150px;
+  width: 100px;
   padding: 10px 0 0 0;
   text-align: right;
 }
 
 p#main_planning {
-  width: 150px;
+  width: 100px;
 }
 
 p#sub_planning {
-  width: 150px;
+  width: 100px;
   font-size: 10px;
 }
 
 p#sub_fold {
-  width: 150px;
+  width: 100px;
   font-size: 10px;
 }
 } /* -- media screen -- */
@@ -314,12 +314,12 @@ div#about_area {
 @media screen and (max-width: 600px) {
      /* 600px以下の場合 */
      div#right_container {
-  width: 300px;
+  width: 230px;
   float: right;
 }
 
 div#ivent_name_area {
-  width: 300px;
+  width: 230px;
   font-size: 30px;
 }
 
@@ -328,13 +328,13 @@ div#ivent_name_area p {
 }
 
 div#ivent_date_area {
-  width: 300px;
+  width: 230px;
   font-size: 20px;
   padding: 25px 0 0 0;
 }
 
 div#ivent_place_area {
-  width: 300px;
+  width: 230px;
   font-size: 20px;
   padding: 25px 0 0 0;
 }
@@ -449,20 +449,26 @@ div#comment_top_title span {
 }
 
 div.comment_view_area {
-  width: 80%;
+  width: 100%;
   border: 1px #aaaaaa solid;
   border-radius: 10px;
   margin: 0 0 30px 0;
 }
 
 div.comment_wrrap {
-  width: 80%;
-  padding: 30px 0;
-  margin: 0 0 0 30px;
+  width: 100%;
+  padding: 30px 0 30px 0;
+  margin: 0;
+}
+
+div.comment_wrrap p {
+	width:100%;
+	box-sizing: border-box;
+	padding:0 30px;
 }
 
 div.comment_wrrap dl {
-  width: 80%;
+  width: 90%;
   padding: 20px 0 0 0;
 }
 
@@ -489,10 +495,10 @@ span#submit_btn {
 }
 
 textarea.comment_width {
-  width: 80%;
+  width: 83%;
   height: 100px;
   padding: 30px;
-  margin-left: 10px;
+  margin: 0 auto;
   border-radius: 10px;
   border: 1px #94DD83 solid;
 }
