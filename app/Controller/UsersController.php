@@ -433,4 +433,22 @@ Waninaruは企画を立てたり、企画に参加することを支援するた
 	
 	public function config(){}
 	
+	public function passwordinit(){
+		if($this->request->is('post')){
+			$user_id=$this->User->set($this->data);
+			$user=$this->User->find('first',array('conditions'=>array('User.student_number'=>$this->request->data['User']['student_number'])));
+			//print_r($user);
+			$ipassword="123456";
+			if ($user!=null) {
+				$user['User']['user_password']=AuthComponent::password($ipassword);
+				$this->User->save($user,array('validate'=>true,'fieldList'=>array('user_password')));
+				$this->Session->setFlash(__('<div align="center">パスワードが正常に初期化されました。</div>'));
+				return $this->redirect(array('controller'=>'projects', 'action'=>'index'));
+			}else{//対象のユーザが見つからない。
+				$this->Session->setFlash('<div align="center"><b><font size="3" color="#ff0000">その学籍番号のユーザが見つかりませんでした。</font></b></div>');
+			}
+		}
+		
+	}
+	
 }
