@@ -433,6 +433,7 @@ Waninaruは企画を立てたり、企画に参加することを支援するた
 	
 	public function config(){}
 	
+	
 	public function passwordinit(){
 		if($this->request->is('post')){
 			$user_id=$this->User->set($this->data);
@@ -450,5 +451,6 @@ Waninaruは企画を立てたり、企画に参加することを支援するた
 		}
 		
 	}
+	
 	
 }

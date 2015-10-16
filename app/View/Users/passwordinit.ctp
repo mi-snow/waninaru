@@ -3,6 +3,7 @@
 <div id="main_container">
   <div id="passwordinit_container">
 
+
     <?php echo $this->Form->create('User',array('novalidate' => true,'inutDefaults' => array('label' => false,'div' => false))); ?>
 
       <fieldset class="user_form">
@@ -18,6 +19,7 @@
      <?php echo $this->Form->submit('初期化',array('label' => false,'div' => false,'class'=>'user_submit_btn')); ?>
 
     <?php $this->Form->end(); ?>
+
 
 
   </div><!-- end passwordinit_container -->
