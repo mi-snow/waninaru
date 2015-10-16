@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Application model for Cake.
  *
@@ -32,6 +33,7 @@ App::uses('Model', 'Model');
  * @package       app.Model
  */
 class AppModel extends Model {
+	
 	/**
 	 * 日付を比較するバリデーションルール.
 	 * デフォルトでは、現在の日付と対象の日付を比較演算子の通りに比較する.
@@ -42,46 +44,51 @@ class AppModel extends Model {
 	 * @param string $operator 比較演算子
 	 * @param string $timestamp 現在の日付との差分
 	 */
-	function comparisonDate($check1, $operator, $timestamp = null) {
-		$check1 = is_array($check1) ? array_shift($check1) : $check1;
-		$check1 = date("Y/m/d", strtotime($check1));
-		$check2 = !empty($timestamp) ? date("Y/m/d") : $date("Y/m/d", strtotime($timestamp));
+	
+
+	
+	
+	function comparisonDate($active_time, $operator, $timestamp = null) {//開催日が現在日を超えているか
+		$active_time = is_array($active_time) ? array_shift($active_time) : $active_time;
+		$active_time = date("Y/m/d H:i:s", strtotime($active_time));
+		$now_time = !empty($timestamp) ? date("Y/m/d H:i:s") : $date("Y/m/d H:i:s", strtotime($timestamp));
 		$operator = str_replace(array(' ', "\t", "\n", "\r", "\0", "\x0B"), '', strtolower($operator));
-				
+	    global $mark;
+	    $mark = $active_time;
 		switch ($operator) {
 			case 'isgreater':
 			case '>':
-				if ($check1 > $check2) {
+				if ($active_time > $now_time) {
 					return true;
 				}
 				break;
 			case 'isless':
 			case '<':
-				if ($check1 < $check2) {
+				if ($active_time < $now_time) {
 					return true;
 				}
 				break;
 			case 'greaterorequal':
 			case '>=':
-				if ($check1 >= $check2) {
+				if ($active_time >= $now_time) {
 					return true;
 				}
 				break;
 			case 'lessorequal':
 			case '<=':
-				if ($check1 <= $check2) {
+				if ($active_time <= $now_time) {
 					return true;
 				}
 				break;
 			case 'equalto':
 			case '==':
-				if ($check1 == $check2) {
+				if ($active_time == $now_time) {
 					return true;
 				}
 				break;
 			case 'notequal':
 			case '!=':
-				if ($check1 != $check2) {
+				if ($active_time != $now_time) {
 					return true;
 				}
 				break;
@@ -89,9 +96,60 @@ class AppModel extends Model {
 				$_this =& Validation::getInstance();
 				$_this->errors[] = __('You must define the $operator parameter for AppModel::comparisonDate()', true);
 				break;
-		}
-		
+		}	
 		return false;
 	}
-
+	
+function comparisonDate2($recruit_time, $operator, $timestamp = null) {//開催日を締切日を超えちゃいけない
+		$recruit_time = is_array($recruit_time) ? array_shift($recruit_time) : $recruit_time;
+		$recruit_time = date("Y/m/d H:i:s", strtotime($recruit_time));
+		global $mark;
+		$active_time =  $mark;//markは開催日の日付
+		//print_r($recruit_time.$active_time);
+		$operator = str_replace(array(' ', "\t", "\n", "\r", "\0", "\x0B"), '', strtolower($operator));
+		switch ($operator) {
+			case 'isgreater':
+			case '>':
+				if ($active_time > $recruit_time) {
+					return true;
+				}
+				break;
+			case 'isless':
+			case '<':
+				if ($active_time < $recruit_time) {
+					return true;
+				}
+				break;
+			case 'greaterorequal':
+			case '>=':
+				if ($active_time >= $recruit_time) {
+					return true;
+				}
+				break;
+			case 'lessorequal':
+			case '<=':
+				if ($active_time <= $recruit_time) {
+					return true;
+				}
+				break;
+			case 'equalto':
+			case '==':
+				if ($active_time == $recruit_time) {
+					return true;
+				}
+				break;
+			case 'notequal':
+			case '!=':
+				if ($active_time != $recruit_time) {
+					return true;
+				}
+				break;
+			default:
+				$_this =& Validation::getInstance();
+				$_this->errors[] = __('You must define the $operator parameter for AppModel::comparisonDate()', true);
+				break;
+		}		
+		return false;
+	}
 }
+

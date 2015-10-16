@@ -43,7 +43,7 @@ class Project extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 			'date' => array(
-					'rule' => array('comparisonDate', 'isgreater'),
+					'rule' => array('comparisonDate', 'greaterorequal'),
 					'message' => '明日以降の日付を入力してください',
 					//'allowEmpty' => false,
 					//'required' => false,
@@ -60,8 +60,12 @@ class Project extends AppModel {
 				//'last' => false, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
+		
+	
 			'date' => array(
-					'rule' => array('comparisonDate', 'isgreater'),
+					'rule' => array('comparisonDate2', 'greaterorequal'),
+			
+			                 
 					'message' => '明日以降の日付を入力してください',
 					//'allowEmpty' => false,
 					//'required' => false,
