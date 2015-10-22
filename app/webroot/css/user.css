@@ -154,4 +154,163 @@ p#post_done_container {
   text-align: center;
 }
 
+@media screen and (max-width: 600px){
+   /* 600px以下の場合 */
 
+div#main_container div#user_container {
+  width: 100%;
+  padding: 0;
+  background-color: #ffffff;
+  border: none;
+  margin: 0px auto;
+}
+
+div#main_container div#user_container div#user_top_container {
+  width: 100%;
+  margin: 0 0 0 0; 
+  padding: 0 0 0 0;
+}
+
+#now {
+  color: #94dd83;
+}
+
+div#form_container {
+  width: 100%;
+  padding: 20px 0 0 0;
+}
+
+div#form_container ul {
+  width: 100%;
+}
+
+div#form_container ul li {
+  width: 100%;
+  background: transparent url(../img/common/project/list_dot_line.gif) repeat-x bottom left;
+}
+
+div#form_container ul li dl {
+  width: 100%;
+  margin: 0 0 0 0px;
+  padding: 20px 0;
+}
+
+div#form_container ul li dl dt {
+  width: 100%;
+  height: 40px;
+  clear:fix;
+  background: transparent url(../img/common/project/icon_flower_small.png) no-repeat center left;
+}
+
+div#form_container ul li dl dt span {
+  width: 100%;
+  margin: 0 0 0 0;
+  line-height: 40px;
+  font-weight: bold;
+  font-size: 14px;
+  display: block;
+}
+
+div#form_container ul li dl dd {
+  width: 100%;
+  float: right;
+}
+
+span.form_left {
+  width: 10%;
+  float: left;
+  display: block;
+  line-height: 40px;
+  font-size: 14px;
+}
+
+span.form_right {
+  width: 90%;
+  float:right;
+  margin-bottom: 10px;
+  display: block;
+}
+
+div#form_container ul li dl dd span.form_area {
+  width: 100%;
+  box-sizing: border-box;
+  clear: both;
+  display: block;
+}
+
+div#form_container ul li dl dd span.attention_area {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px 5px;
+  clear:both;
+  display: block;
+  background: #dfffd7 url() repeat-x bottom left;
+}
+
+div#form_container ul li dl dd span span.attention_area_inner {
+  width: 100%;
+  margin: 0 0 0 0;
+  display: block;
+}
+
+.thumb_image_area {
+  width: 310px;
+  padding: 15px 0 0 0;
+  overflow: hidden;
+  display: block;
+}
+
+.short_area {
+  width: 100%;
+  box-sizing: border-box;
+  height: 38px;
+  line-height: 38px;
+  border: #adadad 1px solid;
+  font-size: 14px;
+  float:left;
+}
+
+
+.middle_area {
+  width: 100%;
+  box-sizing: border-box;
+  height: 38px;
+  line-height: 38px;
+  margin-bottom: 10px;
+  border: #adadad 1px solid;
+  font-size: 14px;
+}
+
+.contents_area {
+  width: 310px;
+  height: 400px;
+}
+
+.image_area {
+  width: 310px;
+}
+
+div#submit_btn_container {
+  width: 150px;
+  text-align: center;
+  margin: 0 auto;
+  padding: 30px 0 0 0;
+}
+
+#submit_left {
+  width: 170px;
+  /*float: left;*/
+  display: block;
+}
+
+#submit_right {
+  width: 170px;
+  /*float: right;*/
+  display: block;
+}
+
+p#post_done_container {
+  width: 100%;
+  text-align: center;
+}
+}
