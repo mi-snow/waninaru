@@ -110,7 +110,7 @@ html {
 
 body {
   overflow-x: hidden;
-  min-width: 400px;
+  min-width: 100%;
   position: relative;
 }
 
