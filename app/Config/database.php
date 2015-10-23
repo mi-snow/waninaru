@@ -12,7 +12,7 @@ class DATABASE_CONFIG {
 	public $default = array(
 		'datasource' => 'Database/Mysql', //MySQLに接続することを示す
 		'persistent' => false, //接続の永続化をするかどうか
-		'host' => 'localhost', //IPアドレスは127.0.0.1
+		'host' => '127.0.0.1', //IPアドレスは127.0.0.1
 		'login' => 'root', //ログインするID
 		'password' => 'root', //ログインするpassword
 		'database' => 'waninaru', //データベース名
