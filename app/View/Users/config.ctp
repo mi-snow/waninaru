@@ -13,7 +13,7 @@
         	<li><?php echo $this->Html->link('ユーザの一覧' , array('controller'=>'users' , 'action'=>'index'),array('title'=>'ユーザの一覧') ); ?></li>
         	<li><?php echo $this->Html->link('一人のユーザを登録' , array('controller'=>'users' , 'action'=>'add'),array('title'=>'一人のユーザを登録') ); ?></li>
         	<li><?php echo $this->Html->link('複数のユーザを登録' , array('controller'=>'users' , 'action'=>'superadd'),array('title'=>'複数のユーザを登録') ); ?></li>
-          	<li><?php echo $this->Html->link('パスワードの初期化 ' , array('controller'=>'users' , 'action'=>'passwordinit'),array('title'=>'パスワードの初期化') ); ?></li>
+        	<li><?php echo $this->Html->link('パスワードの初期化 ' , array('controller'=>'users' , 'action'=>'passwordiniti'),array('title'=>'パスワードの初期化') ); ?></li>
             <!-- li><?php echo $this->Html->link('ログアウト' , array('controller'=>'users' , 'action'=>'logout'),array('title'=>'ログアウト') ) ?></li -->
       </ul>
 
