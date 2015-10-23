@@ -431,9 +431,11 @@ Waninaruは企画を立てたり、企画に参加することを支援するた
 		}
 	}
 	
+	
+	
 	public function config(){}
 	
-	public function passwordinit(){
+	public function passwordiniti(){
 		if($this->request->is('post')){
 			$user_id=$this->User->set($this->data);
 			$user=$this->User->find('first',array('conditions'=>array('User.student_number'=>$this->request->data['User']['student_number'])));
@@ -448,7 +450,8 @@ Waninaruは企画を立てたり、企画に参加することを支援するた
 				$this->Session->setFlash('<div align="center"><b><font size="3" color="#ff0000">その学籍番号のユーザが見つかりませんでした。</font></b></div>');
 			}
 		}
-		
 	}
+	
+	
 	
 }
