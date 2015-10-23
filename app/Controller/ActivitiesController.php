@@ -1,6 +1,6 @@
 <?php
 class ActivitiesController extends AppController{
-	public $helpers = array('Html' , 'Form');
+	public $helpers = array('Html', 'Form');
 	public $uses = array('Comment','Joiner','JoinersProject','Producer','ProducersProject','Project','User','Activity', 'Message', 'DirectMessage');
 		
 	public function beforeFilter(){
@@ -37,6 +37,7 @@ class ActivitiesController extends AppController{
 			$temps = array(
 					'unread_flag'=>$activity['Message']['unread_flag'],
 					'message'=>$detail,
+					'button'=> 'false',
 					'image_url'=>'/app/webroot/files/noimage1.png',
 					'created'=>$activity['Message']['created']
 			);
@@ -59,6 +60,7 @@ class ActivitiesController extends AppController{
 			$temps = array(
 					'unread_flag'=>$activity['Message']['unread_flag'],
 					'message'=>$detail,
+					'button'=> 'false',
 					'image_url'=>'/app/webroot/files/noimage1.png',
 					'created'=>$activity['Message']['created']
 			);
@@ -86,6 +88,7 @@ class ActivitiesController extends AppController{
 			
 〈'.$activity['DirectMessage']['category'].'〉
 '.$activity['DirectMessage']['text'];
+			
 			$ditail = nl2br($detail);
 			
 			$temps = array(
@@ -93,6 +96,7 @@ class ActivitiesController extends AppController{
 					'id'=>$activity['Project']['id'],
 					'unread_flag'=>$activity['DirectMessage']['unread_flag'],
 					'message'=>$ditail,
+					'button'=> 'false',
 					'image'=>$activity['Project']['image_file_name'],
 					'image_url'=>'/app/webroot/files/',
 					'created'=>$activity['DirectMessage']['created']
@@ -102,6 +106,41 @@ class ActivitiesController extends AppController{
 			$this->DirectMessage->id = $activity['DirectMessage']['id'];
 			$this->DirectMessage->saveField('unread_flag', '0');
 		}
+		
+		//自分の企画に企画者申請が届いた
+		$direct = $this->DirectMessage->find('all', array('conditions'=>array('DirectMessage.producer_id'=>$producer['Producer']['id'], 'DirectMessage.send_mode'=>'3'), 'recursive' => '1'));
+//		print_r($direct);
+		
+		foreach($direct as $activity){
+			$from = $activity['Joiner']['user_id'];
+			$from = $this->User->find('first', array('fields'=>array('real_name'), 'conditions' => array('User.id' => $from), 'recursive' => '-1'));
+//			print_r($from['User']['real_name']);
+			$from = $from['User']['real_name'];
+			$detail = $from.'さんからメッセージがあります。
+			
+〈'.$activity['DirectMessage']['category'].'〉
+'.$activity['DirectMessage']['text'].'
+';
+			
+			$ditail = nl2br($detail);
+			
+			$temps = array(
+					'url'=>'/projects/view/',
+					'id'=>$activity['Project']['id'],
+					'unread_flag'=>$activity['DirectMessage']['unread_flag'],
+					'button'=> 'true',
+					'message'=>$ditail,
+					'image'=>$activity['Project']['image_file_name'],
+					'image_url'=>'/app/webroot/files/',
+					'created'=>$activity['DirectMessage']['created']
+			);
+			array_push($actives, $temps);
+//			print_r($actives);
+		
+			$this->DirectMessage->id = $activity['DirectMessage']['id'];
+			$this->DirectMessage->saveField('unread_flag', '0');
+		}
+		
 		
 		//自分の企画にコメントされた
 		$comment = $this->Comment->find('all', array('conditions'=>array('Comment.project_id'=>$producers_project), 'recursive' => 1));
@@ -113,6 +152,7 @@ class ActivitiesController extends AppController{
 				'id'=>$activity['Project']['id'],
 				'unread_flag'=>$activity['Comment']['unread_flag'],
 				'message'=>'あなたが企画した '.$activity['Project']['project_name'].' にコメントがありました。',
+				'button'=> 'false',
 				'image'=>$activity['Project']['image_file_name'],
 				'image_url'=>'/app/webroot/files/',
 				'created'=>$activity['Comment']['created']
@@ -134,6 +174,7 @@ class ActivitiesController extends AppController{
 				'id'=>$activity['Project']['id'],
 				'unread_flag'=>$activity['JoinersProject']['unread_flag'],
 				'message'=>'あなたが企画した '.$activity['Project']['project_name'].' に参加者が現れました。',
+				'button'=> 'false',
 				'image'=>$activity['Project']['image_file_name'],
 				'image_url'=>'/app/webroot/files/',
 				'created'=>$activity['JoinersProject']['created']
@@ -158,6 +199,7 @@ class ActivitiesController extends AppController{
 					'id'=>$activity['Project']['id'],
 					'unread_flag'=>$activity['ProducersProject']['appointed_day_flag'],
 					'message'=>'あなたが企画した '.$activity['Project']['project_name'].' が本日開催されます。',
+					'button'=> 'false',
 					'image'=>$activity['Project']['image_file_name'],
 					'image_url'=>'/app/webroot/files/',
 					'created'=>date("Y-m-d H:i:s", strtotime($orderDate))
@@ -185,6 +227,7 @@ class ActivitiesController extends AppController{
 					'id'=>$activity['Project']['id'],
 					'unread_flag'=>$activity['ProducersProject']['before_three_day_flag'],
 					'message'=>'あなたが企画した '.$activity['Project']['project_name'].' が3日後開催されます。',
+					'button'=> 'false',
 					'image'=>$activity['Project']['image_file_name'],
 					'image_url'=>'/app/webroot/files/',
 					'created'=>date("Y-m-d H:i:s", strtotime($orderDate))
@@ -219,6 +262,7 @@ class ActivitiesController extends AppController{
 					'id'=>$activity['Project']['id'],
 					'unread_flag'=>$activity['DirectMessage']['unread_flag'],
 					'message'=>$ditail,
+					'button'=> 'false',
 					'image'=>$activity['Project']['image_file_name'],
 					'image_url'=>'/app/webroot/files/',
 					'created'=>$activity['DirectMessage']['created']
@@ -241,6 +285,7 @@ class ActivitiesController extends AppController{
 					'id'=>$activity['Project']['id'],
 					'unread_flag'=>$activity['JoinersProject']['appointed_day_flag'],
 					'message'=>'あなたが参加した '.$activity['Project']['project_name'].' が本日開催されます。',
+					'button'=> 'false',
 					'image'=>$activity['Project']['image_file_name'],
 					'image_url'=>'/app/webroot/files/',
 					'created'=>date("Y-m-d H:i:s", strtotime($orderDate))
@@ -265,6 +310,7 @@ class ActivitiesController extends AppController{
 					'id'=>$activity['Project']['id'],
 					'unread_flag'=>$activity['JoinersProject']['before_three_day_flag'],
 					'message'=>'あなたが参加した '.$activity['Project']['project_name'].' が3日後開催されます。',
+					'button'=> 'false',
 					'image'=>$activity['Project']['image_file_name'],
 					'image_url'=>'/app/webroot/files/',
 					'created'=>date("Y-m-d H:i:s", strtotime($orderDate))
