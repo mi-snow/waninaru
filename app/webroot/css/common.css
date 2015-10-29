@@ -824,6 +824,10 @@ div#footer_container span.cont_wrapp {
     color: #ffffff;
   }
 
+  div#footer_top_inner img {
+    display: none;
+  }
+
 } /*-- media screen --*/
 
 
