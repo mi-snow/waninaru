@@ -83,6 +83,15 @@ class AppController extends Controller {
 			}
 		}
 		
+		$direct = $this->DirectMessage->find('all', array('conditions'=>array('DirectMessage.producer_id'=>$producer['Producer']['id'], 'DirectMessage.send_mode'=>'3'), 'recursive' => '1'));
+		
+		foreach($direct as $activity){
+			if($activity['DirectMessage']['unread_flag'] == 1){
+				$unreadCount++;
+			}
+		}
+				
+		
 		$comment = $this->Comment->find('all', array('fields'=>array('Comment.unread_flag'), 'conditions'=>array('Comment.project_id'=>$producers_project), 'recursive' => -1));
 	
 		foreach($comment as $activity){

@@ -15,14 +15,15 @@
           </span></dt>
           <dd class="clearfix">
             <p><?php 
+//            		print_r($active);
             		$message = nl2br(strip_tags($active['message']));
 					echo $message; 
 					if($active['button'] == 'true'){
 						$msg = __('申請を許可しますか？', true);
-						echo $this->Html->Link('許可する', array('controller'=>'producers', 'action'=>'sub_add', $activity['Project']['id'], $activity['Joiner']['id'], true), array("onClick" => "result = confirm('$msg')"));
+						echo $this->Html->Link('許可する', array('controller'=>'producers', 'action'=>'sub_add', $active['id'], $active['send_id'], true), array("onClick" => "result = confirm('$msg')"));
 						echo '　';
 						$msg = __('申請を許可しませんか？', true);
-						echo $this->Html->Link('許可しない', array('controller'=>'producers', 'action'=>'sub_add', $activity['Project']['id'], $activity['Joiner']['id'], true), array("onClick" => "result = confirm('$msg')"));						
+						echo $this->Html->Link('許可しない', array('controller'=>'producers', 'action'=>'sub_add', $active['id'], $active['send_id'], false), array("onClick" => "result = confirm('$msg')"));						
 					}
 					?></p>
             <span>

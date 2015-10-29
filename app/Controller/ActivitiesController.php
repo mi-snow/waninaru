@@ -127,6 +127,7 @@ class ActivitiesController extends AppController{
 			$temps = array(
 					'url'=>'/projects/view/',
 					'id'=>$activity['Project']['id'],
+					'send_id'=>$activity['Joiner']['id'],
 					'unread_flag'=>$activity['DirectMessage']['unread_flag'],
 					'button'=> 'true',
 					'message'=>$ditail,
@@ -134,9 +135,9 @@ class ActivitiesController extends AppController{
 					'image_url'=>'/app/webroot/files/',
 					'created'=>$activity['DirectMessage']['created']
 			);
+//			print_r($temps);
 			array_push($actives, $temps);
-//			print_r($actives);
-		
+
 			$this->DirectMessage->id = $activity['DirectMessage']['id'];
 			$this->DirectMessage->saveField('unread_flag', '0');
 		}
@@ -267,6 +268,7 @@ class ActivitiesController extends AppController{
 					'image_url'=>'/app/webroot/files/',
 					'created'=>$activity['DirectMessage']['created']
 			);
+			
 			array_push($actives, $temps);
 		
 			$this->DirectMessage->id = $activity['DirectMessage']['id'];
