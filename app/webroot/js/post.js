@@ -7,3 +7,4 @@ function allChange(){
 		elem[index].checked = flag;
 	}
 }
+

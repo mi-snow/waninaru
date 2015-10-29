@@ -11,7 +11,7 @@ div#post_container {
 
 div#post_top_container {
   width: 500px;
-  margin: 0 0 0 230px; 
+  margin: 0 0 0 230px;
   padding: 0 0 40px 0;
 }
 
@@ -25,7 +25,7 @@ h2#post_top_title {
 
 p#post_top_text {
   width: 480px;
-  margin: 0 0 0 10px; 
+  margin: 0 0 0 10px;
   padding: 0 0 20px 0;
 }
 
@@ -164,4 +164,32 @@ div#submit_btn_container {
 p#post_done_container {
   width: 960px;
   text-align: center;
+}
+
+
+
+/* DirectMessage CSS */
+
+div#flashMessage {
+  color: #f00;
+  margin-bottom: 40px;
+}
+
+div.error-message {
+  color: #f00;
+  background: rgba(255,0,0,0.1);
+  padding: 0;
+}
+
+div.radio_button_area {
+  margin-left: 10px;
+}
+
+div.radio_button_area:nth-child(4) {
+  margin-right: 8px;
+}
+
+div#form_container ul#member_list {
+  width: 300px;
+  float: left;
 }
