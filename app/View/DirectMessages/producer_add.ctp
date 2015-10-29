@@ -1,12 +1,13 @@
-<?php 
+<?php
 echo $this->Html->css(array('post'), null, array('inline'=>false));
-echo $this->Html->script('send-check.js'); 
+echo $this->Html->script(('send-check.js'), array( 'inline' => false));
+echo $this->Html->script(('post.js'), array( 'inline' => false));
 ?>
 
 <!-- メインコンテンツはここから編集してください！！！！  -->
 <div id="post_container">
   <div id="post_top_container">
-  
+
     <h2 id="post_top_title">ダイレクトメッセージ</h2>
     <p id="post_top_text">
     </p>
@@ -16,85 +17,57 @@ echo $this->Html->script('send-check.js');
     <?php echo $this->Form->create('DirectMessage', array('novalidate' => true,'enctype' => 'multipart/form-data', 'onsubmit'=>"return send_check()", 'inputDefaults' => array('label' => false, 'div' => false))); ?>
       <ul>
         <li><dl class="clearfix">
-         
+
           <dt><span>宛先</span></dt>
           <dd>
-    
-    
-  
-       
- 
-<html>
-<head>
-<title>チェックボックスのチェック すべて選択／すべて解除</title>
-<script language="Javascript">
 
-flag =false;
-var index;
-function allChange(){
-　flag = !flag; // trueとfalseの切り替え ! 否定演算子
-　var elem = document.getElementsByName("select[]");
-　　　　for(index = 0; index < elem.length; index++){
-　　　　　elem[index].checked = flag;
-　　　　　}
-　}
 
-</script>
-</head>
-
-</html>
-
-    
-    
-      
-     
   <?php	$cnt = 0;?>
      <?php foreach ($joiner_project as $joinersProject ): ?>
       <?php	$cnt = $cnt + 1;?>
-     <?php endforeach; ?>  
+     <?php endforeach; ?>
  <?php if ($cnt >1): ?>
- <body>
+
 <input type="button" name="all" value="すべて選択／すべて解除" onClick="allChange();"/><br/>
-</body>
+
 <?php endif; ?>
 
 		<?php if (!empty($project['JoinersProject'])): ?>
 			<ul id="member_list">
-		
+
         <?php if ($cnt ==1): ?>
             <input type="hidden" name="select[]" value=<?php echo $joinersProject['Joiner']['User']['student_number']  ?> ><?php echo ("NE". $joinersProject['Joiner']['User']['student_number'] . "　　" .$joinersProject['Joiner']['User']['real_name']. "　"); ?>さん<li></li>
-		<?php else: ?>	
+		<?php else: ?>
 			<?php foreach ($joiner_project as $joinersProject ): ?>
 			<input type="checkbox" name="select[]" value=<?php echo $joinersProject['Joiner']['User']['student_number']  ?> ><?php echo ("NE". $joinersProject['Joiner']['User']['student_number'] . "　　" .$joinersProject['Joiner']['User']['real_name']. "　"); ?>さん<li></li>
 			<?php endforeach; ?>
-	   <?php endif; ?>		
+	   <?php endif; ?>
 			</ul>
-			
-		<?php else: ?> 
+
+		<?php else: ?>
 			<ul id="member_list">
 				<li>現在参加中のメンバーはいません。</li>
 			</ul>
 		<?php endif; ?>
-	
-     
-<div>
+
+
 
             <span class="attention_area">
               <span class="attention_area_inner">
                 送信先指定(1人の場合指定不可）
-                
+
               </span>
             </span>
           </dd>
         </dl></li>
         <li><dl class="clearfix">
-     
+
           <dt><span>カテゴリー</span></dt>
-          <dd>
+          <dd class="clearfix">
             <span class="form_area">
 
-            <?php echo $this->Form->input('category', array('type'=>'radio', 'class'=>'radio_button_area', 'options'=>array('補足　', '日時変更　', '中止　', 'その他　'), 'wrap'=>'soft', 'legend'=>false, 'before'=>'<div class=radio_button_area>', 'after'=>'</div>', 'separator'=>'</div><div class=radio_button_area>')); ?></span>
-           
+            <?php echo $this->Form->input('category', array('type'=>'radio', 'class'=>'radio_button_area', 'options'=>array('補足', '日時変更', '中止', 'その他'), 'wrap'=>'soft', 'legend'=>false, 'before'=>'<div class=radio_button_area><label>', 'after'=>'</label></div>', 'separator'=>'<label></div><div class=radio_button_area><label>')); ?></span>
+
             <span class="attention_area">
               <span class="attention_area_inner">
                 いずれかを選択
@@ -106,13 +79,13 @@ function allChange(){
           <dt><span>本文</span></dt>
           <dd>
             <span class="form_area">
-    
+
     <?php echo $this->Form->textarea('text', array('wrap'=>'soft','class'=>'contents_area','default'=>'<書き方の例>
 ご参加ありがとうございます。
 企画者より連絡することがあります。
 
 ')); ?>
- 
+
             </span>
             <span class="attention_area">
               <span class="attention_area_inner">
@@ -122,9 +95,9 @@ function allChange(){
           </dd>
         </dl></li>
       </ul>
-     
+
       <div id="submit_btn_container">
-      
+
         <?php echo $this->Form->submit('../img/common/form02_submit.jpg',array('type'=>'submit','height'=>'90','name'=>'mode','value'=>'save'))?>
       </div><!-- end submit_btn_container -->
   </div><!-- end form_container -->

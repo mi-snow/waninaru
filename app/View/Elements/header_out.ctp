@@ -17,3 +17,25 @@
     				</ul>
   				</div><!-- end header_right -->
 			</div><!-- end header_container -->
+
+
+      <div id="sp_header">
+        <div id="sp_menubar" class="clearfix">
+          <div id="sp_space">&nbsp;</div>
+          <div id="sp_logo"><?php echo $this->Html->image('common/sp_header_logo.png',array('url'=>array('controller'=>'projects','action'=>'index'),'alt'=>'Waninaru','title'=>'Waninaru'));?></div>
+          <div id="sp_hum"><a href="#" id="open_menu"><?php echo $this->Html->image('common/sp_menu_hum.png');?></a></div>
+        </div>
+        <div id="sp_menu">
+          <ul>
+            <li>
+              <?php echo $this->Html->link('  投稿' , array('controller'=>'projects' , 'action'=>'add'),array('title'=>'投稿', 'class'=>'add') ) ?></li>
+            <li>
+             <?php echo $this->Html->link('  検索' , array('controller'=>'projects' , 'action'=>'search'),array('title'=>'検索', 'class'=>'search') ) ?></li>
+            <li class="log">
+              <?php echo $this->Html->link('  ログイン' , array('controller'=>'users' , 'action'=>'login'),array('title'=>'ログインする', 'class'=>'login') ) ?></li>
+            <li>
+              <a href="#sp_menu" id="close_menu">メニューを閉じる</a>
+            </li>
+          </ul>
+        </div>
+      </div>

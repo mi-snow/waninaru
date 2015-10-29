@@ -1,0 +1,26 @@
+@charset 'utf-8';
+
+dl#directmessage_check {
+  margin-top: 20px;
+}
+
+dl#directmessage_check dt {
+  font-size: 20px;
+	margin: 20px 0 10px;
+	color: #63b051;
+}
+
+div#directmessage_container {
+	width: 600px;
+	font-size: 16px;
+	margin: 0 auto;
+}
+
+h2#directmessage_top_title {
+	width: 500px;
+	margin: 0 auto;
+	padding: 0 0 20px 0;
+	font-size: 30px;
+	color: #63B051;
+	text-align: center;
+}
