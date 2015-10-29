@@ -100,3 +100,133 @@ p.developed_02 {
   font-size: 16px;
   font-weight: bold;
 }
+
+/*mediascreen*/
+@media screen and (max-width: 600px){
+   /* 600px以下の場合 */
+html {
+  overflow: auto;
+}
+
+body {
+  overflow-x: hidden;
+  min-width: 100%;
+  position: relative;
+}
+
+div.about_container {
+  width: 100%;
+  text-align: center;
+  padding: 20px 0 40px 0;
+}
+
+div.about_container p {
+  width: 100%;
+}
+
+div.about_container p img {
+  width: 450px;
+}
+
+div.about_container p.key_catch {
+  font-size: 18px;
+  padding: 25px 0 0 0;
+  line-height: 1.8em;
+}
+
+div#about_btn {
+  width: 100%;
+  margin: 0 0 0 0px;
+  padding: 40px 0 0 0;
+}
+
+div#about_btn span {
+  width: 100%;
+  margin: 10px 0 0 0;
+  float: none;
+  display: block;
+}
+
+div#about_btn span span {
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  display: block;
+  color: #adadad;
+  border: none;
+  text-decoration: none;
+}
+div#about_btn span span a {
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  display: block;
+  color: #86C979;
+  border: 1px #86C979 solid;
+  text-decoration: none;
+  background-color: #fff;
+}
+
+div#about_btn span span a:hover {
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  display: block;
+  color: #ffffff;
+  border: 1px #86C979 solid;
+  text-decoration: none;
+  background-color: #86C979;
+}
+
+p.developed {
+  width: 100%;
+  padding: 10px 0;
+}
+
+p.developed a:link, p.developed a:visited {
+  width: 100%;
+  margin: 0 0 0 0px;
+  padding: 20px 0;
+  border: 1px #86C979 solid;
+  color: #86C979;
+  display: block;
+  text-decoration: none;
+}
+
+p.developed a:hover {
+  width: 100%;
+  margin: 0 0 0 0px;
+  padding: 20px 0;
+  border: 1px #cbffba solid;
+  color: #ffffff;
+  display: block;
+  text-decoration: none;
+  background-color: #cbffba;
+}
+
+p.developed_02 {
+  width: auto;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+   html,body {
+    width:100%;
+    background: none;
+   }
+
+   div#main_inner .main_container .about_container p img{
+   width: 100%;
+   margin: 0 0 20px 0;
+   }
+
+div#search_container form{
+	width: 450px;
+	display: block;
+}
+
+} /* -- media scrren -- */
+
+
+	
+}

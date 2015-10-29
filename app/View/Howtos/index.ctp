@@ -4,10 +4,10 @@
     <div id="main_container">
 
       <h2><span>Waninaruの使い方</span></h2>
-      
+
       <div class="howto_container">
 
-        <ul id="tab">
+        <ul id="tab" class="clearfix">
           <li class="select">企画を立てる</li>
           <li>企画に参加する</li>
         </ul>
@@ -111,7 +111,7 @@
           </div><!-- end inner_contents -->
         </div>
       </div><!-- end howto_container -->
-      
+
     </div><!-- end main_container -->
 
 
