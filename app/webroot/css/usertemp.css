@@ -16,7 +16,7 @@ div#main_container h2.form_style span{
 }
 
 div#form_container {
-  width: 500px;
+  width: 450px;
   margin: 0 0 0 230px;
   padding: 50px 0;
   border: 1px #94dd83 solid;
@@ -24,12 +24,12 @@ div#form_container {
 }
 
 div#form_container_wrapp {
-  width: 960px;
+  width: 100%;
   padding: 45px 0 0 0;
 }
 
 div#form_inner{
-  width: 400px;
+  width: 365px;
   margin: 0 0 0 50px;
 }
 
@@ -39,12 +39,12 @@ ul.form {
 }
 
 ul.form li {
-  width: 400px;
+  width: 250px;
   padding: 0 0 10px 0;
 }
 
 span.form_left {
-  width: 300px;
+  width: 155px;
   float: left;
   display: block;
 }
@@ -70,7 +70,7 @@ span.form_user_left {
 }
 
 span.form_user_right {
-  width: 280px;
+  /*width: 200px;*/
   height: 35px;
   float: right;
   display: block;
@@ -136,18 +136,39 @@ div#submit_btn_container {
 }
 
 /*mediascreen↓*/
-@media(max-width: 600px){
+@media(max-width: 600px){	
+	div#main_container h2.form_style {
+     width: 120px;
+     padding: 0px 0px 20px;
+   //  font-size: 30px;
+   //  color: #63B051;
+   }
+	
+ 	ul.form {
+     width: 100%;
+     padding: 20px 0 0 0;
+    }
 	div#form_container_wrapp{
 	padding: 0;
 	}
 	
+	p.detail_text_form {
+    width: 365px;
+    padding: 20px 0 20px 0;
+   }
+	
     div#form_container{
+    width: 365px;
     margin: 0;
 	border: none;
 	}
 	
 	div#form_inner{
 	margin: 0;
+	}
+	
+	div.input.number.required{
+	width: 130px;
 	}
 }
 /*mediascreen↑*/

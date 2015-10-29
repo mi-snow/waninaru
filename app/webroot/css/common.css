@@ -609,7 +609,7 @@ ul.login_form li {
 }
 
 input.user {
-  width: 280px;
+  width: 200px;
   height: 35px;
   font-size: 14px;
   border: #adadad 1px solid;
@@ -971,7 +971,7 @@ div#footer_container span.cont_wrapp {
   }
 
   input.user {
-    width: 100%;
+    width: 130px;
     height: 35px;
     padding: 0 10px;
     font-size: 14px;
