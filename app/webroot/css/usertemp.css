@@ -138,7 +138,7 @@ div#submit_btn_container {
 /*mediascreen↓*/
 @media(max-width: 600px){	
 	div#main_container h2.form_style {
-     width: 120px;
+     width: 300px;
      padding: 0px 0px 20px;
    //  font-size: 30px;
    //  color: #63B051;
