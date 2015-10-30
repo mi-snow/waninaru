@@ -79,8 +79,9 @@ span.t_d_number {
 }
 
 div#sns_area {
-  width: 100px;
+  width: auto;
   padding: 15px 0 0 0;
+  clear:both;
   float: right;
 }
 } /* -- media screen -- */
@@ -124,18 +125,20 @@ div#image_area img {
      /* 600px以下の場合 */
 
      div#left_container {
-      width: 100px;
-      float: left;
+      width: 100%;
+      clear:both;
     }
 
      div#image_area {
-      width: 100px;
-      height: 100px;
+      width: 100%;
+      height: auto;
       overflow: hidden;
     }
+    
 
     div#image_area img {
-      height: 100px;
+      width: 100%;
+      height: auto;
       margin: 0 auto;
       display: block;
     }
@@ -247,24 +250,49 @@ p#sub_fold {
 @media screen and (max-width: 600px) {
      /* 600px以下の場合 */
      div#planning_container {
-  width: 100px;
+  width: 100%;
   padding: 10px 0 0 0;
   text-align: right;
 }
 
 p#main_planning {
-  width: 100px;
+  width: 100%;
 }
 
 p#sub_planning {
-  width: 100px;
+  width: 100%;
   font-size: 10px;
 }
 
 p#sub_fold {
-  width: 100px;
+  width: 100%;
   font-size: 10px;
 }
+	
+p#j_date {
+  width: 100%;
+  padding: 10px 0 0 0;
+  color: #63b051;
+  font-size: 13px;
+  font-weight: bold;
+  text-align: center;
+}
+	
+div#join_under_container {
+  width: 100%;
+  padding: 15px 0 0 0;
+  margin: 0 auto;
+  position: relative;
+}
+	
+div#join_under_container img {
+  width: 100%;
+}
+	
+p#j_seat {
+	top:30%;
+	left:5%;
+	}
 } /* -- media screen -- */
 
 /* right_datail */
@@ -314,12 +342,12 @@ div#about_area {
 @media screen and (max-width: 600px) {
      /* 600px以下の場合 */
      div#right_container {
-  width: 230px;
-  float: right;
+  width: 100%;
+  clear: both;
 }
 
 div#ivent_name_area {
-  width: 230px;
+  width: 100%;
   font-size: 30px;
 }
 
@@ -328,19 +356,19 @@ div#ivent_name_area p {
 }
 
 div#ivent_date_area {
-  width: 230px;
+  width: 100%;
   font-size: 20px;
   padding: 25px 0 0 0;
 }
 
 div#ivent_place_area {
-  width: 230px;
+  width: 100%;
   font-size: 20px;
   padding: 25px 0 0 0;
 }
 
 div#about_under_area {
-  width: 95%;
+  width: 100%;
   margin: 0 auto;
   padding: 40px 0 0 0;
   line-height: 1.5em;
@@ -488,16 +516,17 @@ div#comment_contribute_container {
 }
 
 span#submit_btn {
-  width: 95%;
+  width: 100%;
   text-align: right;
   padding: 10px 0 0 0;
   display: block;
 }
 
 textarea.comment_width {
-  width: 83%;
+  width: 100%;
   height: 100px;
   padding: 30px;
+  box-sizing: border-box;
   margin: 0 auto;
   border-radius: 10px;
   border: 1px #94DD83 solid;

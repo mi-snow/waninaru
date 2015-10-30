@@ -1031,7 +1031,11 @@ div#footer_container span.cont_wrapp {
   div#login_inner div#new_account {
     text-align:center;
   }
-
+  
+  div#login_inner div#new_account img {
+  	width:95%;
+  }
+  
   input.login {
     width: 90px;
     height: 37px;

@@ -220,7 +220,7 @@ div#edit_container p a, div#edit_container p input, input.edit_submit_btn {
      #under_prof {
       display: none;
      }
-}
+}/*601end*/
 
 div.edit_container {
   width: 500px;
@@ -332,36 +332,39 @@ div.myprof_container ul {
 
 div.myprof_container ul li {
   width: 100%;
-  padding: 20px 0;
+  padding: 15px 0;
   border-bottom: 1px #bbbbbb dotted;
 }
 
 div.myprof_container ul li dl {
-  width: 90%;
-  margin: 0 0 0 20px;
+  width: 100%;
+  margin: 0 auto;
   font-size: 14px;
 }
 
 div.myprof_container ul li dl dt {
-  width: 115px;
+  width: 100%;
   float: left;
   font-weight: bold;
   border-left: 10px #94dd83 solid;
 }
 
 div.myprof_container ul li dl dt span {
-  width: 120px;
+  width: 100%;
   margin: 0 0 0 15px;
   display: block;
 }
 
 div.myprof_container ul li dl dd {
-  width: 175px;
-  float: right;
+  width: 100%;
+  float: left;
+  clear:both;
+  padding-left:30px;
+  padding-top:15px;
 }
 
 div.myprof_container ul li dl dd div.prof_p_wrapp {
-  width: 200px;
+  width: 100%;
   margin: 0 30px 0 0;
   padding: 30px 0 0 0;
   float: left;
@@ -388,25 +391,25 @@ p.prof_p_left span img {
 }
 
 p.prof_p_right {
-  width: 190px;
+  width: 150px;
   float: right;
   font-size: 10px;
 }
 
 span.prof_p_title {
-  width: 190px;
+  width: 150px;
   font-weight: bold;
   display: block;
 }
 
 span.prof_p_date {
-  width: 190px;
+  width: 160px;
   padding: 7px 0 10px 0;
   display: block;
 }
 
 span.prof_p_detail a:link, span.prof_p_detail a:visited {
-  width: 190px;
+  width: 100%;
   padding: 10px 0;
   border-radius: 5px;
   font-size: 12px;
@@ -418,7 +421,7 @@ span.prof_p_detail a:link, span.prof_p_detail a:visited {
 }
 
 span.prof_p_detail a:hover {
-  width: 190px;
+  width: 100%;
   padding: 10px 0;
   border-radius: 5px;
   font-size: 12px;
@@ -430,21 +433,21 @@ span.prof_p_detail a:hover {
 }
 
 div.project_edit_menu {
-  width: 339px;
+  width: 100%;
   padding: 15px 0 0 0;
-  margin: 0 -9px 0 0;
+  margin: 0 0 0 0;
   overflow: hidden;
   _zoom: 1;
 }
 
-div.project_edit_menu p, a.delete {
-  width: 160px;
-  margin: 0 9px 5px 0;
-  float: left;
+div.project_edit_menu p, a.delete{
+  width: 100%;
+  margin:0 0 2px 0;
+  clear:both;
 }
 
 div.project_edit_menu p a:link, div.project_edit_menu p a:visited {
-  width: 160px;
+  width: 100%;
   padding: 10px 0;
   border-radius: 5px;
   font-size: 12px;
@@ -456,7 +459,7 @@ div.project_edit_menu p a:link, div.project_edit_menu p a:visited {
 }
 
 div.project_edit_menu p a:hover {
-  width: 160px;
+  width: 100%;
   padding: 10px 0;
   border-radius: 5px;
   font-size: 12px;
@@ -468,9 +471,9 @@ div.project_edit_menu p a:hover {
 }
 
 a.delete:link, a.delete:visited {
-  width: 160px;
+  width: 100%;
   padding: 10px 0;
-  margin-top: -5px;
+  margin-top: -3px;
   border-radius: 5px;
   font-size: 12px;
   color: #ffffff;
@@ -481,7 +484,7 @@ a.delete:link, a.delete:visited {
 }
 
 a.delete:hover {
-  width: 160px;
+  width: 100%;
   padding: 10px 0;
   border-radius: 5px;
   font-size: 12px;
@@ -493,7 +496,7 @@ a.delete:hover {
 }
 
 .m_margin_20 {
-  margin: -20px 0 0 0;
+  margin: 0;
 }
 
 div.edit_container {
@@ -525,11 +528,12 @@ div#edit_container p a, div#edit_container p input, input.edit_submit_btn {
 }
 
 #under_prof {
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
 }
 
 #under_prof div.prof_p_wrapp {
+  width:100%;
   margin-top: 40px;
   padding-top: 15px;
   border-top: dotted 1px #bbb;
