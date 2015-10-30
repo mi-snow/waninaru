@@ -1,5 +1,11 @@
 @charset 'utf-8';
 
+/* ===============
+
+directmessage style
+
+=============== */
+
 dl#directmessage_check {
   margin-top: 20px;
 }
@@ -23,4 +29,28 @@ h2#directmessage_top_title {
 	font-size: 30px;
 	color: #63B051;
 	text-align: center;
+}
+
+
+/* ===============
+
+directmessage smartphone style
+
+=============== */
+
+@media screen and (max-width: 600px) {
+
+	dl#directmessage_check dt {
+		margin: 20px 0 5px;
+	}
+
+	div#directmessage_container {
+		width: 100%;
+		font-size: 14px;
+	}
+
+	h2#directmessage_top_title {
+		width: 100%;
+	}
+
 }
