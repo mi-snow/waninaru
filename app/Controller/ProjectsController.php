@@ -160,7 +160,15 @@ class ProjectsController extends AppController {
 	 	$weekday = array("日", "月", "火", "水", "木", "金", "土");//漢字による曜日出力のための配列　
 		$week = (int)$datetime->format('w');
 		$weekjp = $weekday[$week];
+		
+		$producer_id = $this->Producer->find('first', array('conditions' => array('Producer.user_id' => $userSession['id']), 'recursive' => -1));
+		$producer_id = $producer_id['Producer']['id'];
+//		print_r($producer_id);
+		$count = $this->ProducersProject->find('count', array('conditions' => array('ProducersProject.project_id' => $id, 'ProducersProject.producer_id' => $producer_id, 'ProducersProject.delete_flag' => -1), 'recursice' => -1));
+//		print_r($count);
 				
+		$this->set('count', $count);
+
 		if($userSession['mode']==1){
 			$project = $this->Project->find('first', array('conditions'=>array('id'=>$id)));
 			$project['Project']['detail_text'] = strip_tags($project['Project']['detail_text']);
