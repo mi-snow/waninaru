@@ -157,6 +157,15 @@ div#join_under_container {
   position: relative;
 }
 
+div#join_under_container img {
+  margin-bottom:3px;
+}
+
+div#join_container img {
+  margin-bottom:3px;
+}
+
+
 @media screen and (max-width: 600px) {
      /* 600px以下の場合 */
      div#join_container {
@@ -290,7 +299,7 @@ div#join_under_container img {
 }
 	
 p#j_seat {
-	top:30%;
+	top:25%;
 	left:5%;
 	}
 } /* -- media screen -- */

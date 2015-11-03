@@ -78,7 +78,7 @@ echo $this->assign('title', 'Waninaru - '.$project['Project']['project_name']);
 			<?php
 				if($count == 0){
 					$msg = __('参加申請を送りますか', true);
-					echo $this->Html->image('',array('url'=>array('controller'=>'producers','action'=>'application',$project['Project']['id'], $project['ProducersProject']['0']['producer_id']),'alt'=>'企画者になる','width'=>'350','onClick'=>"return confirm('$msg')"));
+					echo $this->Html->image('common/project/producer_btn.png',array('url'=>array('controller'=>'producers','action'=>'application',$project['Project']['id'], $project['ProducersProject']['0']['producer_id']),'alt'=>'企画者になる','width'=>'350','onClick'=>"return confirm('$msg')"));
 				}
 			}else{
 				echo h("この企画の参加登録は締め切りました");
@@ -139,7 +139,7 @@ echo $this->assign('title', 'Waninaru - '.$project['Project']['project_name']);
 
 <!-- join_under_container -->
 <div id="join_under_container">
-			<?php
+						<?php
 			$check = 0; //ボタン表示・非表示チェック
 			$today = date("Y-m-d H:i:00"); //現在時刻
 
@@ -161,15 +161,22 @@ echo $this->assign('title', 'Waninaru - '.$project['Project']['project_name']);
 							$msg = __('参加しますか？', true);
 							echo $this->Html->image('common/project/join_btn.jpg',array('url'=>array('controller'=>'joiners_projects','action'=>'add',$project['Project']['id']),'alt'=>'参加する','width'=>'350','onClick'=>"return confirm('$msg')"));
 					}
+				}?>
+				<p id="j_seat">
+					<?php
+						$rest = $project['Project']['people_maxnum']-$joinernum;
+						echo h($rest);
+					?>
+				</p>
+			<?php
+				if($count == 0){
+					$msg = __('参加申請を送りますか', true);
+					echo $this->Html->image('common/project/producer_btn.png',array('url'=>array('controller'=>'producers','action'=>'application',$project['Project']['id'], $project['ProducersProject']['0']['producer_id']),'alt'=>'企画者になる','width'=>'350','onClick'=>"return confirm('$msg')"));
 				}
 			}else{
 				echo h("この企画の参加登録は締め切りました");
 			}
 			?>
-
-			<p id="j_seat"><?php $rest = $project['Project']['people_maxnum']-$joinernum;
-			echo h($rest);
-			?><p>
 			<p id="j_date"><?php echo h($project['Project']['recrouit_date']); ?>まで<br />全<?php echo h($project['Project']['people_maxnum']); ?>席<p>
 		</div><!-- end join_under_container -->
 
