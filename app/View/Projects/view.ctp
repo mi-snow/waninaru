@@ -75,7 +75,7 @@ echo $this->assign('title', 'Waninaru - '.$project['Project']['project_name']);
 						echo h($rest);
 					?>
 				</p>
-			<?php
+			<?php //企画者申請用
 				if($count == 0){
 					$msg = __('参加申請を送りますか', true);
 					echo $this->Html->image('common/project/producer_btn.png',array('url'=>array('controller'=>'producers','action'=>'application',$project['Project']['id'], $project['ProducersProject']['0']['producer_id']),'alt'=>'企画者になる','width'=>'350','onClick'=>"return confirm('$msg')"));
