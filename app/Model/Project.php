@@ -18,7 +18,7 @@ class Project extends AppModel {
 		'project_name' => array(
 			'maxlength' => array(
 				'rule' => array('maxlength',64),
-				//'message' => '文字数がオーバーしています。64文字以内で入力してください。',
+				'message' => '文字数がオーバーしています。64文字以内で入力してください。',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -26,7 +26,7 @@ class Project extends AppModel {
 			),
 			'notempty' => array(
 				'rule' => array('notempty'),
-				//'message' => '必須項目です。64文字以内で入力してください。',
+				'message' => '必須項目です。64文字以内で入力してください。',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -42,7 +42,7 @@ class Project extends AppModel {
 		'active_date' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),
-				//'message' => 'Your custom message here',
+				'message' => '開催日を選択してください',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -60,7 +60,7 @@ class Project extends AppModel {
 		'recrouit_date' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),
-				//'message' => 'Your custom message here',
+				'message' => '締め切り日を選択してください',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -82,7 +82,7 @@ class Project extends AppModel {
 		'active_place' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),
-				//'message' => 'Your custom message here',
+				'message' => '場所を入力してください',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -92,8 +92,8 @@ class Project extends AppModel {
 		'detail_text' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),
-				//'message' => 'Your custom message here',
-				//'allowEmpty' => false,
+				'message' => '企画内容を選択してください',
+				'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
