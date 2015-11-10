@@ -18,7 +18,7 @@ class Project extends AppModel {
 		'project_name' => array(
 			'maxlength' => array(
 				'rule' => array('maxlength',64),
-				//'message' => 'æ–‡å­—æ•°ãŒã‚ªãƒ¼ãƒãƒ¼ã—ã¦ã„ã¾ã™ã€‚64æ–‡å­—ä»¥å†…ã§å…¥åŠ›ã—ã¦ãã ã•ã„ã€‚',
+				'message' => '•¶Žš”‚ªƒI[ƒo[‚µ‚Ä‚¢‚Ü‚·B64•¶ŽšˆÈ“à‚Å“ü—Í‚µ‚Ä‚­‚¾‚³‚¢B',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -26,25 +26,31 @@ class Project extends AppModel {
 			),
 			'notempty' => array(
 				'rule' => array('notempty'),
-				//'message' => 'å¿…é ˆé …ç›®ã§ã™ã€‚64æ–‡å­—ä»¥å†…ã§å…¥åŠ›ã—ã¦ãã ã•ã„ã€‚',
+				'message' => '•K{€–Ú‚Å‚·B64•¶ŽšˆÈ“à‚Å“ü—Í‚µ‚Ä‚­‚¾‚³‚¢B',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
+		/*	'isUnique'=>array(
+			'rule'=>array('isUnique'),
+			//'message'=>'‚»‚ÌŠé‰æ‚Í‚·‚Å‚É“o˜^‚³‚ê‚Ä‚¢‚Ü‚·B',
+		   // 'on'=>'create'
+	     	),*/
 		),
+		
 		'active_date' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),
-				//'message' => 'Your custom message here',
+				'message' => 'ŠJÃ“ú‚ð‘I‘ð‚µ‚Ä‚­‚¾‚³‚¢',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 			'date' => array(
-					'rule' => array('comparisonDate', 'isgreater'),
-					'message' => 'æ˜Žæ—¥ä»¥é™ã®æ—¥ä»˜ã‚’å…¥åŠ›ã—ã¦ãã ã•ã„',
+					'rule' => array('comparisonDate', 'greaterorequal'),
+					'message' => '¡ˆÈ~‚Ì“ú•t‚ð“ü—Í‚µ‚Ä‚­‚¾‚³‚¢',
 					//'allowEmpty' => false,
 					//'required' => false,
 					//'last' => false, // Stop validation after this rule
@@ -54,15 +60,19 @@ class Project extends AppModel {
 		'recrouit_date' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),
-				//'message' => 'Your custom message here',
+				'message' => '’÷‚ßØ‚è“ú‚ð‘I‘ð‚µ‚Ä‚­‚¾‚³‚¢',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
+		
+	
 			'date' => array(
 					'rule' => array('comparisonDate2', 'greaterorequal'),
-					'message' => 'æ˜Žæ—¥ä»¥é™ã®æ—¥ä»˜ã‚’å…¥åŠ›ã—ã¦ãã ã•ã„',
+			
+			                 
+					'message' => '¡ˆÈ~‚©‚ÂŠJÃ“úˆÈ‘O‚Ì“ú•t‚ð“ü—Í‚µ‚Ä‚­‚¾‚³‚¢',
 					//'allowEmpty' => false,
 					//'required' => false,
 					//'last' => false, // Stop validation after this rule
@@ -72,7 +82,7 @@ class Project extends AppModel {
 		'active_place' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),
-				//'message' => 'Your custom message here',
+				'message' => 'êŠ‚ð“ü—Í‚µ‚Ä‚­‚¾‚³‚¢',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -82,8 +92,8 @@ class Project extends AppModel {
 		'detail_text' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),
-				//'message' => 'Your custom message here',
-				//'allowEmpty' => false,
+				'message' => 'Šé‰æ“à—e‚ð‘I‘ð‚µ‚Ä‚­‚¾‚³‚¢',
+				'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
@@ -92,7 +102,7 @@ class Project extends AppModel {
 		'people_maxnum' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),
-				'message' => 'å‹Ÿé›†äººæ•°ã‚’å…¥åŠ›ã—ã¦ãã ã•ã„',
+				'message' => '•åWl”‚ð“ü—Í‚µ‚Ä‚­‚¾‚³‚¢',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -100,7 +110,7 @@ class Project extends AppModel {
 			),
 			'naturalNumber' => array(
 				'rule' => array('naturalNumber', false),
-				'message' => 'å‹Ÿé›†äººæ•°ã¯1ä»¥ä¸Šã®æ•´æ•°å€¤ã§å…¥åŠ›ã—ã¦ãã ã•ã„',
+				'message' => '•åWl”‚Í1ˆÈã‚Ì®”’l‚Å“ü—Í‚µ‚Ä‚­‚¾‚³‚¢',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
