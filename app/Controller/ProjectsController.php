@@ -164,7 +164,7 @@ class ProjectsController extends AppController {
 		$producer_id = $this->Producer->find('first', array('conditions' => array('Producer.user_id' => $userSession['id']), 'recursive' => -1));
 		$producer_id = $producer_id['Producer']['id'];
 //		print_r($producer_id);
-		$count = $this->ProducersProject->find('count', array('conditions' => array('ProducersProject.project_id' => $id, 'ProducersProject.producer_id' => $producer_id, 'ProducersProject.delete_flag' => -1), 'recursice' => -1));
+		$count = $this->ProducersProject->find('count', array('conditions' => array('ProducersProject.project_id' => $id, 'ProducersProject.producer_id' => $producer_id, 'ProducersProject.delete_flag' => 0), 'recursice' => -1));
 //		print_r($count);
 				
 		$this->set('count', $count);

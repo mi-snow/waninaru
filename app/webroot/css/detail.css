@@ -51,7 +51,40 @@ span#facebook {
   display: block;
 }
 
+@media screen and (max-width: 600px) {
+     /* 600px以下の場合 */
+     div#top_detail_container {
+  width: 100%;
+}
 
+ul#number_area {
+  width: 300px;
+  float: left;
+}
+
+ul#number_area li {
+  width: 150px;
+  float: left;
+}
+
+span.t_d_img {
+  width: 45px;
+  float: left;
+}
+
+span.t_d_number {
+  width: 100px;
+  padding: 15px 0 0 0;
+  float: right;
+}
+
+div#sns_area {
+  width: auto;
+  padding: 15px 0 0 0;
+  clear:both;
+  float: right;
+}
+} /* -- media screen -- */
 
 /* main_detail */
 
@@ -60,7 +93,13 @@ div#main_detail_container {
   padding: 40px 0 0 0;
 }
 
-
+@media screen and (max-width: 600px) {
+     /* 600px以下の場合 */
+     div#main_detail_container {
+  width: 100%;
+  padding: 40px 0 0 0;
+}
+} /* -- media screen -- */
 
 
 /* left_datail */
@@ -82,11 +121,64 @@ div#image_area img {
   display: block;
 }
 
+@media screen and (max-width: 600px) {
+     /* 600px以下の場合 */
+
+     div#left_container {
+      width: 100%;
+      clear:both;
+    }
+
+     div#image_area {
+      width: 100%;
+      height: auto;
+      overflow: hidden;
+    }
+    
+
+    div#image_area img {
+      width: 100%;
+      height: auto;
+      margin: 0 auto;
+      display: block;
+    }
+} /* -- media screen -- */
+
 div#join_container {
   width: 350px;
   padding: 15px 0 0 0;
   position: relative;
 }
+
+div#join_under_container {
+  width: 350px;
+  padding: 15px 0 0 0;
+  margin: 0 auto;
+  position: relative;
+}
+
+div#join_under_container img {
+  margin-bottom:3px;
+}
+
+div#join_container img {
+  margin-bottom:3px;
+}
+
+
+@media screen and (max-width: 600px) {
+     /* 600px以下の場合 */
+     div#join_container {
+      display: none;
+     }
+} /* -- media screen -- */
+
+@media screen and (min-width: 601px) {
+     /* 601px以上の場合 */
+     div#join_under_container {
+      display: none;
+     }
+} /* -- media screen -- */
 
 p#j_seat {
   width: 50px;
@@ -164,7 +256,53 @@ p#sub_fold {
   font-size: 10px;
 }
 
+@media screen and (max-width: 600px) {
+     /* 600px以下の場合 */
+     div#planning_container {
+  width: 100%;
+  padding: 10px 0 0 0;
+  text-align: right;
+}
 
+p#main_planning {
+  width: 100%;
+}
+
+p#sub_planning {
+  width: 100%;
+  font-size: 10px;
+}
+
+p#sub_fold {
+  width: 100%;
+  font-size: 10px;
+}
+	
+p#j_date {
+  width: 100%;
+  padding: 10px 0 0 0;
+  color: #63b051;
+  font-size: 13px;
+  font-weight: bold;
+  text-align: center;
+}
+	
+div#join_under_container {
+  width: 100%;
+  padding: 15px 0 0 0;
+  margin: 0 auto;
+  position: relative;
+}
+	
+div#join_under_container img {
+  width: 100%;
+}
+	
+p#j_seat {
+	top:25%;
+	left:5%;
+	}
+} /* -- media screen -- */
 
 /* right_datail */
 
@@ -202,6 +340,54 @@ div#about_area {
 }
 
 
+@media screen and (min-width: 601px) {
+     /* 601px以上の場合 */
+     div#about_under_area {
+      display: none;
+     }
+
+   }
+
+@media screen and (max-width: 600px) {
+     /* 600px以下の場合 */
+     div#right_container {
+  width: 100%;
+  clear: both;
+}
+
+div#ivent_name_area {
+  width: 100%;
+  font-size: 30px;
+}
+
+div#ivent_name_area p {
+  line-height: 1.3;
+}
+
+div#ivent_date_area {
+  width: 100%;
+  font-size: 20px;
+  padding: 25px 0 0 0;
+}
+
+div#ivent_place_area {
+  width: 100%;
+  font-size: 20px;
+  padding: 25px 0 0 0;
+}
+
+div#about_under_area {
+  width: 100%;
+  margin: 0 auto;
+  padding: 40px 0 0 0;
+  line-height: 1.5em;
+  font-size: 14px;
+}
+
+div#about_area {
+  display: none;
+}
+} /* -- media screen -- */
 
 
 
@@ -277,5 +463,81 @@ textarea.comment_width {
   border: 1px #94DD83 solid;
 }
 
+@media screen and (max-width: 600px) {
+     /* 600px以下の場合 */
+     div#comment_container {
+  width: 100%;
+  padding-top: 40px;
+  line-height: 1.5em;
+}
 
+div#comment_top_title {
+  width: 100%;
+  height: 75px;
+  background: transparent url(../img/common/icon_flower.png) no-repeat top left;
+}
 
+div#comment_top_title span {
+  width: 80%;
+  margin: 0 0 0 55px;
+  padding: 10px 0 0 0;
+  font-size: 20px;
+  display: block;
+}
+
+div.comment_view_area {
+  width: 100%;
+  border: 1px #aaaaaa solid;
+  border-radius: 10px;
+  margin: 0 0 30px 0;
+}
+
+div.comment_wrrap {
+  width: 100%;
+  padding: 30px 0 30px 0;
+  margin: 0;
+}
+
+div.comment_wrrap p {
+	width:100%;
+	box-sizing: border-box;
+	padding:0 30px;
+}
+
+div.comment_wrrap dl {
+  width: 90%;
+  padding: 20px 0 0 0;
+}
+
+div.comment_wrrap dl dt {
+  width: 30px;
+  float: left;
+  overflow: hidden;
+}
+
+div.comment_wrrap dl dd {
+  float: right;
+  font-size: 11px;
+}
+
+div#comment_contribute_container {
+  width: 100%;
+}
+
+span#submit_btn {
+  width: 100%;
+  text-align: right;
+  padding: 10px 0 0 0;
+  display: block;
+}
+
+textarea.comment_width {
+  width: 100%;
+  height: 100px;
+  padding: 30px;
+  box-sizing: border-box;
+  margin: 0 auto;
+  border-radius: 10px;
+  border: 1px #94DD83 solid;
+}
+} /* -- media screen -- */

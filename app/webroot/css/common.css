@@ -66,10 +66,12 @@ div#main_container h2 span {
    /* 600px以下の場合 */
    html,body {
     width:100%;
+    background: none;
    }
 
    div#main_wrapp {
-    width: 100%;
+    width: auto;
+    margin: 0 20px;
    }
 
    div#main_inner {
@@ -78,6 +80,10 @@ div#main_container h2 span {
   text-align: left;
   position: relative;
 }
+   div#main_inner .main_container .about_container p img{
+   width: 100%;
+   margin: 0 0 20px 0;
+   }
 
 div#main_container {
   width: 100%;
@@ -85,19 +91,21 @@ div#main_container {
 
 div#main_container h2 {
   width: 100%;
-  height: 42px;
-  padding: 0 0 20px 0;
-  font-size: 25px;
+  height: 22px;
+  padding: 0 0 10px 0;
+  font-size: 21px;
   background: transparent url(../img/common/icon_flower.png) no-repeat top left;
+  background-size: contain;
 }
 
 div#main_container h2 span {
-  width: 80%;
-  padding: 13px 0 0 0;
-  margin: 0 0 0 55px;
-  display: block;
+  width: auto;
+  padding: 8px 0 0 0;
+  margin: 0 0 0 50px;
+  display: inline-block;
 }
 
+}
 
 } /* -- media scrren -- */
 
@@ -224,29 +232,6 @@ div#header_container div#header_right {
   float: right;
 }
 
-
-@media screen and (max-width: 600px) {
-   /* 600px以下の場合 */
-   div#header_container {
-  width: 100%;
-  padding: 50px 0 200px 0;
-}
-
-div#header_container div#header_left {
-  width: 100%;
-}
-
-div#header_container div#header_left h1 {
-  width: 100%;
-}
-
-div#header_container div#header_right {
-  width: 100%;
-  /*padding: 10px 0 0 0;*/
-}
-
-} /*-- media screen --*/
-
 div#header_container div#header_right ul#right_menu {
   width: auto;
   overflow: hidden;
@@ -280,6 +265,136 @@ div#header_container div#header_right ul#right_menu li:hover a{
 /*div#header_container div#header_right ul#right_menu li.user {
   width: 130px!important;
 }*/
+
+
+@media screen and (max-width: 600px) { /* 600px以下の場合 */
+   /* =======================
+      smartphone menu style
+   ======================= */
+
+  div#header_container {
+    display: none;
+  }
+
+  div#header {
+    line-height: 40px;
+    height: 40px;
+    width: 100%;
+    background-color: #5CDDFC;
+    position: fixed;
+    z-index: 100;
+  }
+
+  div#sp_header {
+    line-height: 40px;
+    height: 40px;
+  }
+
+  div#sp_menu ul li a {
+    position: relative;
+    padding-left: 50px;
+    box-sizing: border-box;
+  }
+
+  div#sp_space, div#sp_logo, div#sp_hum {
+    float: left;
+    width: calc(100%/3);
+  }
+
+  div#sp_logo {
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  div#sp_hum {
+    margin-top: 6px;
+    text-align: right;
+  }
+
+  div#content {
+    padding-top: 60px;
+  }
+
+  div#sp_menu ul li a:after {
+    content: "";
+    display: block;
+    width: 0px;
+    height: 0px;
+    border-left: solid 5px #555;
+    border-top: solid 5px transparent;
+    border-bottom: solid 5px transparent;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    margin-top: -6px;
+  }
+
+  div#sp_menu ul li a.act {
+    background: url('../img/common/header_alert_off.png') no-repeat 10px 5px;
+    background-size: 27px;
+  }
+  div#sp_menu ul li a.act_exist {
+    background: url('../img/common/header_exist_off.png') no-repeat 9px 4px;
+    background-size: 30px;
+  }
+  div#sp_menu ul li a.add {
+    background: url('../img/common/header_post_off.png') no-repeat 10px 5px;
+    background-size: 30px;
+  }
+  div#sp_menu ul li a.search {
+    background: url('../img/common/header_search_off.png') no-repeat 10px 5px;
+    background-size: 30px;
+  }
+  div#sp_menu ul li a.user {
+    background: url('../img/common/header_user_off.png') no-repeat 16px 2px;
+  }
+  div#sp_menu ul li a.logout {
+    background: url('../img/common/logout_off.png') no-repeat 10px 2px;
+  }
+  div#sp_menu ul li a.login {
+    background: url('../img/common/login_off.png') no-repeat 10px 5px;
+  }
+
+  div#sp_menu {
+    background: #5CDDFC;
+    -webkit-box-shadow: none;
+    -mos-box-shadow: none;
+    box-shadow: none;
+  }
+
+  .sidr ul {
+    border-top: none;
+    border-bottom: 1px solid rgba(255,255,255,0.6);
+  }
+
+  .sidr ul li {
+    border-top: 1px solid rgba(255,255,255,0.6);
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    line-height: 40px;
+  }
+
+  .sidr ul li a {
+    color: #fff;
+  }
+
+  .sidr ul li:hover>a, .sidr ul li:hover>span, .sidr ul li.active>a, .sidr ul li.active>span, .sidr ul li.sidr-class-active>a, .sidr ul li.sidr-class-active>span {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+  }
+
+  .sidr ul li:hover, .sidr ul li.active, .sidr ul li.sidr-class-active {
+    border-top: 1px solid rgba(255,255,255,0.6);
+    line-height: 40px;
+  }
+
+} /*-- /media screen --*/
+
+@media screen and (min-width: 600px) { /* 600px以上の場合 */
+  div#sp_header {
+    display: none;
+  }
+}
 
 /* ------------------------------
   project_container layout
@@ -384,98 +499,100 @@ ul#project_container li dl dd span.detail_btn a:hover {
 
 @media screen and (max-width: 600px) {
    /* 600px以下の場合 */
-ul#project_container {
-  width: 100%;
-}
+  ul#project_container {
+    width: 100%;
+  }
 
-ul#project_container li {
-  width: 100%;
-  padding: 30px 0;
-  border-bottom: 1px #afafaf dotted;
-}
+  ul#project_container li {
+    width: 100%;
+    padding: 10px 0;
+    border-bottom: 1px #afafaf dotted;
+  }
 
-ul#project_container li dl {
-  width: 80%;
-  margin: 0 0 0 30px;
-}
+  ul#project_container li dl {
+    width: 100%;
+    margin: 0;
+  }
 
-ul#project_container li dl dt {
-  width: 158px;
-  height: 158px;
-  float: left;
-  border: 1px #acacac solid;
-}
+  ul#project_container li dl dt {
+    width: 71px;
+    height: 71px;
+    float: left;
+    border: 1px #acacac solid;
+  }
 
-ul#project_container li dl dt span {
-  width: 150px;
-  height: 150px;
-  padding: 4px 0;
-  margin: 0 4px;
-  position: relative;
-  overflow: hidden;
-  display: block;
-}
+  ul#project_container li dl dt span {
+    width: 71px;
+    height: 71px;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    overflow: hidden;
+    display: block;
+  }
 
-ul#project_container li dl dt span img {
-  height: 150px;
-  margin: 0 auto;
-  display: block;
-}
+  ul#project_container li dl dt span img {
+    height: 71px;
+    margin: 0 auto;
+    display: block;
+  }
 
-ul#project_container li dl dd {
-  width: 200px;
-  float: right;
-}
+  ul#project_container li dl dd {
+    width: -webkit-calc(100% - 83px);
+    width : calc(100% - 83px) ;
+    float: left;
+    margin-left: 10px;
+  }
 
-ul#project_container li dl dd p.p_title {
-  width: 150px;
-  padding: 10px 0;
-  border-left: 20px #86C979 solid;
-}
+  ul#project_container li dl dd p.p_title {
+    width: auto;
+    padding: 5px 0;
+    border-left: 10px #86C979 solid;
+  }
 
-ul#project_container li dl dd p.p_title span {
-  width: 135px;
-  margin: 0 0 0 15px;
-  font-size: 22px;
-  line-height: 1.5em;
-  display: block;
-  font-weight: bold;
-}
+  ul#project_container li dl dd p.p_title span {
+    width: 100%;
+    margin: 0 0 0 10px;
+    font-size: 18px;
+    line-height: 1.7;
+    display: block;
+    font-weight: bold;
+  }
 
-ul#project_container li dl dd p.p_date {
-  width: 150px;
-  padding: 15px 0 35px 0;
-  font-size: 16px;
-  color: #6a6a6a;
-}
+  ul#project_container li dl dd p.p_date {
+    width: auto;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #6a6a6a;
+  }
 
-ul#project_container li dl dd span.detail_btn {
-  width: 170px;
-  font-size: 15px;
-  display: block;
-  text-align: center;
-  float: right;
-}
+  ul#project_container li dl dd span.detail_btn {
+    width: 100px;
+    font-size: 14px;
+    display: block;
+    text-align: center;
+    float: right;
+  }
 
-ul#project_container li dl dd span.detail_btn a:link, ul#project_container li dl dd span.detail_btn a:visited {
-  width: 170px;
-  padding: 15px 0;
-  border-radius: 5px;
-  color: #ffffff;
-  text-decoration: none;
-  display: block;
-  background: #86C979 url() no-repeat top left;
-}
+  ul#project_container li dl dd span.detail_btn a:link, ul#project_container li dl dd span.detail_btn a:visited {
+    width: 100px;
+    padding: 10px 0;
+    border-radius: 5px;
+    color: #ffffff;
+    text-decoration: none;
+    display: block;
+    background: #86C979 url() no-repeat top left;
+  }
 
-ul#project_container li dl dd span.detail_btn a:hover {
-  width: 170px;
-  padding: 15px 0;
-  border-radius: 5px;
-  color: #ffffff;
-  text-decoration: none;
-  display: block;
-  background: #a8eb9b url() no-repeat top left;
-}
+  ul#project_container li dl dd span.detail_btn a:hover {
+    width: 100px;
+    padding: 10px 0;
+    border-radius: 5px;
+    color: #ffffff;
+    text-decoration: none;
+    display: block;
+    background: #a8eb9b url() no-repeat top left;
+  }
 
 } /* -- media scrren -- */
 
@@ -596,119 +713,7 @@ input.login {
 }
 
 
-@media screen and (max-width: 600px) {
-   /* 600px以下の場合 */
-   div#login_container {
-  width: 100%;
-  margin: 0;
-  padding: 50px 0px;
-  background-color: #ffffff;
-}
 
-div#login_container_wrapp {
-  width: 500px;
-  margin: 0 auto;
-  padding: 20px 5px;
-}
-
-div#login_container_wrapp h2 {
-  width:100%;
-  padding: 20px 0 50px 0;
-  font-size: 30px;
-  text-align: center;
-}
-
-div#login_inner{
-  width: 400px;
-  margin: 0 0 0 50px;
-}
-
-.sub_title {
-  width: auto;
-  font-weight: bold;
-}
-
-.padding_layout {
-  padding: 20px 0 5px 0;
-}
-
-ul.login_form {
-  width: 400px;
-  padding: 20px 0 0 0;
-}
-
-ul.login_form li {
-  width: 400px;
-  padding: 0 0 10px 0;
-}
-
-input.user {
-  width: 280px;
-  height: 35px;
-  font-size: 14px;
-  border: #adadad 1px solid;
-}
-
-input.password {
-  width: 300px;
-  height: 35px;
-  font-size: 14px;
-  border: #adadad 1px solid;
-}
-
-span.login_left {
-  width: 300px;
-  float: left;
-  display: block;
-}
-
-span.login_right {
-  width: 90px;
-  float: right;
-  display: block;
-}
-
-span.text {
-  width: 90px;
-  height: 35px;
-  line-height: 35px;
-}
-
-span.login_user_left {
-  width: 15px;
-  height: 35px;
-  line-height: 35px;
-  float: left;
-  display: block;
-}
-
-span.login_user_right {
-  width: 280px;
-  height: 35px;
-  float: right;
-  display: block;
-}
-
-div#login_inner p.detail_text {
-  width: auto;
-  padding: 25px 0;
-}
-
-div#login_inner div#new_account {
-  text-align:center;
-}
-
-input.login {
-  width: 90px;
-  height: 37px;
-  line-height: 37px;
-  color: #ffffff;
-  border-radius: 5px;
-  border: none;
-  cursor: pointer;
-  background: #86C979 url() no-repeat top left;
-}
- }
 
 
 
@@ -739,18 +744,18 @@ div#footer_top_inner p {
 }
 
 @media screen and (max-width: 600px) {
-   /* 600px以下の場合 */
-   div#footer_top_inner {
-  width: 100%;
-  margin: 0 auto;
-  text-align: left;
-}
+     /* 600px以下の場合 */
+     div#footer_top_inner {
+    width: 100%;
+    margin: 0 auto;
+    text-align: left;
+  }
 
-div#footer_top_inner p {
-  width: 350px;
-  margin: 0 auto;
-  /*　わにはみでるんで真ん中にした　*/
-}
+  div#footer_top_inner p {
+    width: 350px;
+    margin: 0 auto;
+    /*　わにはみでるんで真ん中にした　*/
+  }
 
 } /* -- media screen -- */
 
@@ -821,40 +826,44 @@ div#footer_container span.cont_wrapp {
 @media screen and (max-width: 600px) {
    /* 600px以下の場合 */
 
-   div#footer_container_wrapp {
+  div#footer_container_wrapp {
     width: 100%;
-   }
+  }
 
 
-   div#footer_container {
-  width: 100%;
-  margin: 0 auto;
-  text-align: left;
-}
+  div#footer_container {
+    width: 100%;
+    margin: 0 auto;
+    text-align: left;
+  }
 
-div#footer_container p {
-  width: 100%;
-  padding: 60px 0 20px 0;
-}
+  div#footer_container p {
+    width: 100%;
+    padding: 60px 0 20px 0;
+  }
 
-div#footer_container ul {
-  width: 100%;
-  padding: 10px 0 0 0;
-  font-size: 14px;
-}
+  div#footer_container ul {
+    width: 100%;
+    padding: 10px 0 0 0;
+    font-size: 14px;
+  }
 
-div#copy_wrrap address {
-  width: 100%;
-  margin: 0 auto;
-  color: #ffffff;
-  font-size: 10px;
-}
+  div#copy_wrrap address {
+    width: 100%;
+    margin: 0 auto;
+    color: #ffffff;
+    font-size: 10px;
+  }
 
-div#footer_container span.cont_wrapp {
-  width: 100%;
-  display: block;
-  color: #ffffff;
-}
+  div#footer_container span.cont_wrapp {
+    width: 100%;
+    display: block;
+    color: #ffffff;
+  }
+
+  div#footer_top_inner img {
+    display: none;
+  }
 
 } /*-- media screen --*/
 
@@ -948,4 +957,135 @@ div#footer_container span.cont_wrapp {
 	background: #f7fff2;
 	color: #60c64b;
 	font-weight: bold;
+}
+
+
+/* ========================
+  sp login style
+======================== */
+
+@media screen and (max-width: 600px) {
+
+  div#login_container {
+    width: 100%;
+    margin: 0;
+    padding: 50px 10px;
+    border: 1px #94dd83 solid;
+    background-color: #ffffff;
+    box-sizing: border-box;
+  }
+
+  div#login_container_wrapp {
+    width: 100%;
+    padding: 45px 0 0 0;
+  }
+
+  div#login_container_wrapp h2 {
+    width: 100%;
+    padding: 20px 0 50px 0;
+    font-size: 30px;
+    text-align: center;
+  }
+
+  div#login_inner{
+    width: 100%;
+    margin: 0;
+  }
+
+  .sub_title {
+    width: auto;
+    font-weight: bold;
+  }
+
+  .padding_layout {
+    padding: 20px 0 5px 0;
+  }
+
+  ul.login_form {
+    width: 100%;
+    padding: 20px 0 0 0;
+  }
+
+  ul.login_form li {
+    width: 100%;
+    padding: 0 0 10px 0;
+  }
+
+  input.user {
+    width: 100%;
+    height: 35px;
+    padding: 0 10px;
+    font-size: 14px;
+    box-sizing: border-box;
+    letter-spacing: 1px;
+  }
+
+  input.password {
+    width: 100%;
+    height: 35px;
+    padding: 0 10px;
+    font-size: 14px;
+    box-sizing: border-box;
+    letter-spacing: 1px;
+  }
+
+  span.login_left {
+    width: auto;
+    float: left;
+    display: block;
+    margin-right: 1em;
+  }
+
+  span.login_right {
+    width: 90px;
+    float: left;
+    display: block;
+  }
+
+  span.text {
+    width: 90px;
+    height: 35px;
+    line-height: 35px;
+  }
+
+  span.login_user_left {
+    width: 15px;
+    height: 35px;
+    line-height: 35px;
+    margin-right: 1em;
+    float: left;
+    display: block;
+  }
+
+  span.login_user_right {
+    width: 10em;
+    height: 35px;
+    float: left;
+    display: block;
+  }
+
+  div#login_inner p.detail_text {
+    width: auto;
+    padding: 25px 0;
+  }
+
+  div#login_inner div#new_account {
+    text-align:center;
+  }
+
+  div#login_inner div#new_account img {
+  	width:95%;
+  }
+
+  input.login {
+    width: 90px;
+    height: 37px;
+    line-height: 37px;
+    color: #ffffff;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    background: #86C979 url() no-repeat top left;
+  }
+
 }

@@ -75,10 +75,10 @@ echo $this->assign('title', 'Waninaru - '.$project['Project']['project_name']);
 						echo h($rest);
 					?>
 				</p>
-			<?php
+			<?php //企画者申請用
 				if($count == 0){
 					$msg = __('参加申請を送りますか', true);
-					echo $this->Html->image('',array('url'=>array('controller'=>'producers','action'=>'application',$project['Project']['id'], $project['ProducersProject']['0']['producer_id']),'alt'=>'企画者になる','width'=>'350','onClick'=>"return confirm('$msg')"));
+					echo $this->Html->image('common/project/producer_btn.png',array('url'=>array('controller'=>'producers','action'=>'application',$project['Project']['id'], $project['ProducersProject']['0']['producer_id']),'alt'=>'企画者になる','width'=>'350','onClick'=>"return confirm('$msg')"));
 				}
 			}else{
 				echo h("この企画の参加登録は締め切りました");
@@ -128,9 +128,57 @@ echo $this->assign('title', 'Waninaru - '.$project['Project']['project_name']);
 </div><!-- end main_detail_container -->
 
 
+<!-- about_under_area -->
+<div id="about_under_area">
+			<p>
+			<?php
+				$detailtext = nl2br($project['Project']['detail_text']);
+				echo $detailtext; ?>
+		</p>
+		</div><!-- end about_under_area -->
 
+<!-- join_under_container -->
+<div id="join_under_container">
+						<?php
+			$check = 0; //ボタン表示・非表示チェック
+			$today = date("Y-m-d H:i:00"); //現在時刻
 
-
+			if($project['Project']['recrouit_date'] >= $today){
+				if($project['JoinersProject']!=null){
+					foreach($project['JoinersProject'] as $joiner){
+						if($joiner['Joiner']['User']['id']==$userSession['id']){
+							if($check == 0){
+								$check = 1;
+								$msg = __('参加をやめますか？', true);
+								echo $this->Html->image('common/project/join_out_btn.jpg',array('url'=>array('controller'=>'joiners_projects','action'=>'delete',$project['Project']['id']),'alt'=>'参加をやめる','width'=>'350','onClick'=>"return confirm('$msg')"));
+							}
+						}
+					}
+				}
+				if($project['Project']['people_maxnum']>count($project['JoinersProject'])){
+					if($check == 0){
+							$check = 1;
+							$msg = __('参加しますか？', true);
+							echo $this->Html->image('common/project/join_btn.jpg',array('url'=>array('controller'=>'joiners_projects','action'=>'add',$project['Project']['id']),'alt'=>'参加する','width'=>'350','onClick'=>"return confirm('$msg')"));
+					}
+				}?>
+				<p id="j_seat">
+					<?php
+						$rest = $project['Project']['people_maxnum']-$joinernum;
+						echo h($rest);
+					?>
+				</p>
+			<?php
+				if($count == 0){
+					$msg = __('参加申請を送りますか', true);
+					echo $this->Html->image('common/project/producer_btn.png',array('url'=>array('controller'=>'producers','action'=>'application',$project['Project']['id'], $project['ProducersProject']['0']['producer_id']),'alt'=>'企画者になる','width'=>'350','onClick'=>"return confirm('$msg')"));
+				}
+			}else{
+				echo h("この企画の参加登録は締め切りました");
+			}
+			?>
+			<p id="j_date"><?php echo h($project['Project']['recrouit_date']); ?>まで<br />全<?php echo h($project['Project']['people_maxnum']); ?>席<p>
+		</div><!-- end join_under_container -->
 
 <div id="comment_container">
 	<div id="comment_top_title">
@@ -185,5 +233,8 @@ echo $this->assign('title', 'Waninaru - '.$project['Project']['project_name']);
 
 
 </div><!-- end comment_container -->
+
+
+
 
 <!-- 編集ここまで  -->
