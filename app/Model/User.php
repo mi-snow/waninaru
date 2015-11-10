@@ -73,6 +73,34 @@ class User extends AppModel {
 			),
 			
 		),
+		'new_password'=> array(
+			'notempty' => array(
+				'rule' => array('notempty'),
+				//'message' => 'Your custom message here',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			),
+		/*	'between'=>array(
+				'rule'=>array('between',5,17),
+				'message'=>'６文字以上16文字以下で入力してください。',
+		*/	'minLength'=>array(
+				'rule'=>array('minLength',6),
+				'message'=>'６文字以上で入力してください。',	
+				'required'=>'false',
+			//	'on'=>'create'　//レコード作成時のみならcreate、更新時のみならupdate
+		/*	),'maxLength'=>array(
+				'rule'=>array('maxLength',17),
+				'message'=>'16文字以下で入力してください。',	
+				'required'=>'false',
+				'on'=>'create'*/
+			),		
+			'alphaNumeric'=>array(
+				'rule'=>array('alphaNumeric'),
+				'message' => 'パスワードは半角英数字で入力してください。',		
+			),
+		),
 	);
 
 	//The Associations below have been created with all possible keys, those that are not needed can be removed

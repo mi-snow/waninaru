@@ -64,13 +64,13 @@
           <li><dl class="clearfix">
             <dt><span>新しいパスワード</span></dt>
             <dd>
-              <?php echo $this->Form->input('new_password',array('label'=>false, 'class'=>'middle','type'=>'password')); ?>
+              <?php echo $this->Form->input('new_password',array('label'=>false,'id'=>'UserNewPassword','maxLength'=>16, 'class'=>'middle','type'=>'password')); ?>
             </dd>
           </dl></li>
           <li><dl class="clearfix">
             <dt><span>新しいパスワード<br />（再入力）</span></dt>
             <dd>
-              <?php echo $this->Form->input('new_password_second',array('label'=>false, 'class'=>'middle','type'=>'password')); ?>
+              <?php echo $this->Form->input('new_password_second',array('label'=>false,'maxLength'=>16, 'class'=>'middle','type'=>'password')); ?>
             </dd>
           </dl></li>
         </ul>
