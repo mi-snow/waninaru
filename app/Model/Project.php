@@ -32,7 +32,13 @@ class Project extends AppModel {
 				//'last' => false, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
+		/*	'isUnique'=>array(
+			'rule'=>array('isUnique'),
+			//'message'=>'その企画はすでに登録されています。',
+		   // 'on'=>'create'
+	     	),*/
 		),
+		
 		'active_date' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),
@@ -43,8 +49,8 @@ class Project extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 			'date' => array(
-					'rule' => array('comparisonDate', 'isgreater'),
-					'message' => '明日以降の日付を入力してください',
+					'rule' => array('comparisonDate', 'greaterorequal'),
+					'message' => '今以降の日付を入力してください',
 					//'allowEmpty' => false,
 					//'required' => false,
 					//'last' => false, // Stop validation after this rule
@@ -60,9 +66,13 @@ class Project extends AppModel {
 				//'last' => false, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
+		
+	
 			'date' => array(
 					'rule' => array('comparisonDate2', 'greaterorequal'),
-					'message' => '明日以降の日付を入力してください',
+			
+			                 
+					'message' => '今以降かつ開催日以前の日付を入力してください',
 					//'allowEmpty' => false,
 					//'required' => false,
 					//'last' => false, // Stop validation after this rule
