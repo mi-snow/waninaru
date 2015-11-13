@@ -60,10 +60,10 @@ class DirectMessagesController extends AppController {
 			foreach($joiner_id as $joiner){
 				$user_id = $this->Joiner->find('first', array('fields' => array('user_id'), 'conditions' => array('Joiner.id' => $joiner['DirectMessage']['joiner_id']), 'recursive' => -1));
 				$student_number = $this->User->find('first', array('fields' => array('student_number'), 'conditions'=>array('User.id'=>$user_id['Joiner']['user_id']), 'recursive' => -1));
-				//Šw¶‚Ì–¼‘O‚ğo—Í
+				//
 				$student_name = $this->User->find('first', array('fields' => array('real_name'), 'conditions'=>array('User.id'=>$user_id['Joiner']['user_id']), 'recursive' => -1));
 				if($joinerAll == null){
-					$joinerAll = $student_number['User']['student_number']."@".$student_name['User']['real_name']."‚³‚ñ";
+					$joinerAll = $student_number['User']['student_number']."  ".$student_name['User']['real_name']."ã•ã‚“";
 				}else{
 					$joinerAll = $joinerAll.",  ".$student_number['User']['student_number']." ".$student_name['User']['real_name'];
 				}
@@ -88,10 +88,10 @@ class DirectMessagesController extends AppController {
 	  }
 	}
 	
-	public function joiner_add($id=null,$id2=null) {//joiner(Q‰ÁÒ)‚ªproducer(Šé‰æÒ)‚É‘—‚é
+	public function joiner_add($id=null,$id2=null) {//joiner(ï¿½Qï¿½ï¿½ï¿½ï¿½)ï¿½ï¿½producer(ï¿½ï¿½ï¿½ï¿½)ï¿½É‘ï¿½ï¿½ï¿½
 		$userSession = $this->Auth->user();
 		$number=0;
-	    $this->set('num', $num);//‚È‚­‚Ä‚à‚æ‚¢‚©‚à
+	    $this->set('num', $num);//ï¿½È‚ï¿½ï¿½Ä‚ï¿½ï¿½æ‚¢ï¿½ï¿½ï¿½ï¿½
 		$this->JoinersProject->recursive = 2;
 		$producer = $this->Producer->find('first',array('conditions' => array('Producer.user_id' => $userSession['id'])));
 		$project = $this->Project->find('first',array('conditions' => array('Project.id' => $id)));
@@ -102,12 +102,12 @@ class DirectMessagesController extends AppController {
         $project_name =$project_name[Project][project_name] ;
         $producer_name = $this->Project->find('first',array('conditions' => array('Project.id' => $id)));
 		$producer_id = $this->ProducersProject->find('first',array('conditions' => array('ProducersProject.id' => $id)));
-	    $producer_id=$producer_id  [ProducersProject]  [producer_id];//producer_id‚ğæ“¾
+	    $producer_id=$producer_id  [ProducersProject]  [producer_id];//producer_idï¿½ï¿½ï¿½æ“¾
 	    $my_num=$this->Auth->user();
-	    $my_num=$my_num[id];//©•ª‚ÌŠwĞ”Ô†‚ğæ“¾
+	    $my_num=$my_num[id];//ï¿½ï¿½ï¿½ï¿½ï¿½ÌŠwï¿½Ğ”Ôï¿½ï¿½ï¿½ï¿½æ“¾
 	    $this->set('producer_id', $producer_id);  
 	    $this->set('project_name', $project_name);
-	    $this->set('num',$id2 );//‚È‚­‚Ä‚à‚æ‚¢‚©‚à
+	    $this->set('num',$id2 );//ï¿½È‚ï¿½ï¿½Ä‚ï¿½ï¿½æ‚¢ï¿½ï¿½ï¿½ï¿½
 		$options = array('conditions' => array('JoinersProject.project_id' => $id));
 		$joiner_project = $this->JoinersProject->find('all', $options);
 		$this->set('joiner_project', $this->JoinersProject->find('all', $options));
@@ -120,15 +120,15 @@ class DirectMessagesController extends AppController {
         'conditions' => array( 'JoinersProject.joiner_id' => $joiner_id['Joiner']['id'],
         'JoinersProject.project_id' => $project[Project][id]
  )
-    ));//Q‰ÁÒ‚ª©•ª‚©AƒvƒƒWƒFƒNƒg‚ª©•ª‚ÌQ‰Á‚·‚é‚à‚Ì‚©‚Ì”»’è
+    ));//ï¿½Qï¿½ï¿½ï¿½Ò‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Aï¿½vï¿½ï¿½ï¿½Wï¿½Fï¿½Nï¿½gï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÌQï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì‚ï¿½ï¿½Ì”ï¿½ï¿½ï¿½
     
-	 if($safety_check!=1|| $delete_flag[Project][delete_flag] == 1){//©•ª‚ÌŠé‰æ‚ª1‚Â‚©B‚Ü‚½AÁ‚³‚ê‚Ä‚È‚¢‚©
+	 if($safety_check!=1|| $delete_flag[Project][delete_flag] == 1){//ï¿½ï¿½ï¿½ï¿½ï¿½ÌŠï¿½æ‚ª1ï¿½Â‚ï¿½ï¿½Bï¿½Ü‚ï¿½ï¿½Aï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä‚È‚ï¿½ï¿½ï¿½
 	 	return $this->redirect(array('controller'=>'Users','action' =>'view'));
 	  }
 	   if ($this->request->is('post')) {
                 $select = $this->request->select;
         }
-        $category=array(0 => '‚¿•¨', 1 =>'’xE‘‘Ş', 2 =>'Q‰Á”ï—p', 3 =>'‚»‚Ì‘¼');
+        $category=array(0 => 'æŒã¡ç‰©', 1 =>'é…åˆ»ãƒ»æ—©é€€', 2 =>'å‚åŠ è²»ç”¨', 3 =>'ãã®ä»–');
 		if ($this->request->is('post')) {
 			$data = $this->request->data['DirectMessage'];
 			$data['category'] = $category[$data['category']];
@@ -141,53 +141,53 @@ class DirectMessagesController extends AppController {
 			$joiner_id = $this->Joiner->find('first', array("fields" => 'Joiner.id', "conditions" => array("Joiner.user_id" => $userSession['id'])));
 			$data['joiner_id'] = $joiner_id['Joiner']['id'];	
 			if ($this->DirectMessage->save($data)) {	
-			/*		//ƒ[ƒ‹‘—M@ˆ¶æ:Šé‰æÒ
+			/*		//ï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½Mï¿½@ï¿½ï¿½ï¿½ï¿½:ï¿½ï¿½ï¿½ï¿½
 				$student_number=$data['producer_id'];
-				$message_text="Šé‰æ‚ÌQ‰ÁÒ‚©‚çƒƒbƒZ[ƒW‚ª“Í‚¢‚Ä‚¢‚Ü‚·B";
+				$message_text="ä¼ç”»ã®å‚åŠ è€…ã‹ã‚‰ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ãŒå±Šã„ã¦ã„ã¾ã™";
 				//	print_r( "to:".'ne'.$student_number.'@senshu-u.jp'."  "."to:".$student_number."  ".$message_text);
-				if((260600<= $this->request->data['DirectMessage']['producer_id']) && ($this->request->data['DirectMessage']['producer_id'] <= 260999)){ //ƒeƒXƒg—p
+				if((260600<= $this->request->data['DirectMessage']['producer_id']) && ($this->request->data['DirectMessage']['producer_id'] <= 260999)){ //ï¿½eï¿½Xï¿½gï¿½p
 					//print_r("true");}else{print_r("false");}
 					$cakeemail=new CakeEmail('default');
 					$cakeemail->to('waninaru.2015@gmail.com');
-					$cakeemail->subject('yƒeƒXƒg—pzƒƒbƒZ[ƒWóM');
+					$cakeemail->subject('[ãƒ†ã‚¹ãƒˆç”¨]ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸å—ä¿¡');
 					$cakeemail->send($message_text);
 				}else{
 					$student_number=$this->request->data['DirectMessage']['producer_id'];
 					$cakeemail=new CakeEmail('default');
 					$cakeemail->to('ne'.$student_number.'@senshu-u.jp');
-					$cakeemail->subject('ƒƒbƒZ[ƒWóM');
+					$cakeemail->subject('ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸å—ä¿¡');
 					$cakeemail->send($message_text);
 				}
 				*/
-			//	echo $JoinerAll;//ƒŠƒ_ƒCƒŒƒNƒg‚Ì‘O‚Éo—Í‚³‚¹‚é‚Æ^‚Á”’‚Ì‰æ–Ê‚É‘JˆÚ
+			//	echo $JoinerAll;//ï¿½ï¿½ï¿½_ï¿½Cï¿½ï¿½ï¿½Nï¿½gï¿½Ì‘Oï¿½Éoï¿½Í‚ï¿½ï¿½ï¿½ï¿½ï¿½Æ^ï¿½ï¿½ï¿½ï¿½ï¿½Ì‰ï¿½Ê‚É‘Jï¿½ï¿½
 				return $this->redirect(array('controller'=>'DirectMessages','action' =>'view',$this->DirectMessage->id));
 			} else {
-				$this->Session->setFlash(__('ƒƒbƒZ[ƒW‚ğ‘—M‚Å‚«‚Ü‚¹‚ñ‚Å‚µ‚½B‚à‚¤ˆê“x‚¨‚µ‚­‚¾‚³‚¢B'));
+				$this->Session->setFlash(__('ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚’é€ä¿¡ã§ãã¾ã›ã‚“ã§ã—ãŸã€‚ã‚‚ã†ä¸€åº¦ãŠè©¦ã—ãã ã•ã„ã€‚'));
 			}
 		}
 	}
 	
 	
-	public function producer_add($id=null,$id2=null) {//producer(Šé‰æÒ)‚ªjoiner(Q‰ÁÒ)‚É‘—‚é
+	public function producer_add($id=null,$id2=null) {//producer(ï¿½ï¿½ï¿½ï¿½)ï¿½ï¿½joiner(ï¿½Qï¿½ï¿½ï¿½ï¿½)ï¿½É‘ï¿½ï¿½ï¿½
 		$userSession = $this->Auth->user();
 		$number=0;
-	    $this->set('num', $num);//‚È‚­‚Ä‚à‚æ‚¢‚©‚à
+	    $this->set('num', $num);//ï¿½È‚ï¿½ï¿½Ä‚ï¿½ï¿½æ‚¢ï¿½ï¿½ï¿½ï¿½
 		$this->JoinersProject->recursive = 2;
 		$producer = $this->Producer->find('first',array('conditions' => array('Producer.user_id' => $userSession['id'])));
 		$project = $this->Project->find('first',array('conditions' => array('Project.id' => $id)));
 		$this->set('project', $project);
 		$producerList = $this->ProducersProject->find('all',array('conditions'=>array('ProducersProject.project_id'=>$id,'ProducersProject.producer_id'=>$producer['Producer']['id'])));
 		$produser = $this->Project->find('all');
-	    $this->set('num',$id2 );//‚È‚­‚Ä‚à‚æ‚¢‚©‚à
+	    $this->set('num',$id2 );//ï¿½È‚ï¿½ï¿½Ä‚ï¿½ï¿½æ‚¢ï¿½ï¿½ï¿½ï¿½
 		$options = array('conditions' => array('JoinersProject.project_id' => $id));
 		$joiner_project = $this->JoinersProject->find('all', $options);
-		$this->set('joiner_project', $this->JoinersProject->find('all', $options));//Q‰ÁÒ‚ÌƒvƒƒWƒFƒNƒg
+		$this->set('joiner_project', $this->JoinersProject->find('all', $options));//ï¿½Qï¿½ï¿½ï¿½Ò‚Ìƒvï¿½ï¿½ï¿½Wï¿½Fï¿½Nï¿½g
         $this->set('number', $number);
 		$this->set('results', $message);
 	    if ($this->request->is('post')) {
           $select = $this->request->select;
         }
-		$category=array(0 => '•â‘«', 1 =>'“ú‚Ì•ÏX', 2 =>'’†~', 3 =>'‚»‚Ì‘¼');
+		$category=array(0 => 'è£œè¶³', 1 =>'æ—¥æ™‚ã®å¤‰æ›´', 2 =>'ä¸­æ­¢', 3 =>'ãã®ä»–');
         $my_num=$this->Auth->user();
         $producer=$this->Auth->user();
 	    $producer_id=$this->Producer->find('first', array('fields'=>'id', 'conditions'=>array('Producer.user_id'=>$producer[id])));
@@ -202,11 +202,11 @@ class DirectMessagesController extends AppController {
       
        
          )
-      ));//Šé‰æÒ‚ª©•ª‚©AƒvƒƒWƒFƒNƒg‚ª©•ª‚ÌQ‰Á‚·‚é‚à‚Ì‚©‚Ì”»’è
+      ));//ï¿½ï¿½ï¿½Ò‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Aï¿½vï¿½ï¿½ï¿½Wï¿½Fï¿½Nï¿½gï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÌQï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì‚ï¿½ï¿½Ì”ï¿½ï¿½ï¿½
       
       
     	 
-	  if($safety_check!=1|| $delete_flag[Project][delete_flag] == 1){//©•ª‚ÌŠé‰æ‚ª1‚Â‚©B‚Ü‚½AÁ‚³‚ê‚Ä‚È‚¢‚©
+	  if($safety_check!=1|| $delete_flag[Project][delete_flag] == 1){//ï¿½ï¿½ï¿½ï¿½ï¿½ÌŠï¿½æ‚ª1ï¿½Â‚ï¿½ï¿½Bï¿½Ü‚ï¿½ï¿½Aï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä‚È‚ï¿½ï¿½ï¿½
 	   	return $this->redirect(array('controller'=>'Users','action' =>'view'));
 	  }
 		if ($this->request->is('post')) {		
@@ -227,20 +227,20 @@ class DirectMessagesController extends AppController {
 			$data['send_mode'] = $id2;
 			if ($this->DirectMessage->save($data)) {
 			$message_id = $this->DirectMessage->find('first', array("fields" => 'DirectMessage.id', "order" => array("id" => "desc")));
-			//ƒ[ƒ‹‘—M@ˆ¶æ:Q‰ÁÒ
+			//ï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½Mï¿½@ï¿½ï¿½ï¿½ï¿½:ï¿½Qï¿½ï¿½ï¿½ï¿½
 			$student_number=$data['joiner_id'];
-			$message_text="Q‰Á’†‚ÌŠé‰æ‚ÌŠé‰æÒ‚©‚çƒƒbƒZ[ƒW‚ª“Í‚¢‚Ä‚¢‚Ü‚·B";
+			$message_text="å‚åŠ ä¸­ã®ä¼ç”»ã®ä¼ç”»è€…ã‹ã‚‰ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ãŒå±Šã„ã¦ã„ã¾ã™";
 			//print_r( "to:".'ne'.$student_number.'@senshu-u.jp'."  ".$message_text);
-			if((260600<= $this->request->data['DirectMessage']['joiner_id']) && ($this->request->data['DirectMessage']['joiner_id'] <= 260999)){ //ƒeƒXƒg—p
+			if((260600<= $this->request->data['DirectMessage']['joiner_id']) && ($this->request->data['DirectMessage']['joiner_id'] <= 260999)){ //ï¿½eï¿½Xï¿½gï¿½p
 				$cakeemail=new CakeEmail('default');
 				$cakeemail->to('waninaru.2015@gmail.com');
-				$cakeemail->subject('yƒeƒXƒg—pzƒƒbƒZ[ƒWóM');
+				$cakeemail->subject('[ãƒ†ã‚¹ãƒˆç”¨]ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸å—ä¿¡');
 				$cakeemail->send($message_text);
 			}else{
 				$student_number=$this->request->data['DirectMessage']['joiner_id'];
 		//		$cakeemail=new CakeEmail('default');
 		//		$cakeemail->to('ne'.$student_number.'@senshu-u.jp');
-		//		$cakeemail->subject('ƒƒbƒZ[ƒWóM');
+		//		$cakeemail->subject('ï¿½ï¿½ï¿½bï¿½Zï¿½[ï¿½Wï¿½ï¿½M');
 		//		$cakeemail->send($message_text);
 			}
 		     for ($i = 1; $i < count($_POST["select"]); $i++){ 
@@ -250,27 +250,27 @@ class DirectMessagesController extends AppController {
 			 $joiner = $this->Joiner->find('first', array('fields'=>'id', 'conditions'=>array('Joiner.user_id'=>$joiner[User][id])));	 
 			 $data['joiner_id'] = $joiner['Joiner']['id'];
 			 $this->DirectMessage->save($data);
-			 //ƒ[ƒ‹‘—M@ˆ¶æ:Q‰ÁÒ
+			 //ï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½Mï¿½@ï¿½ï¿½ï¿½ï¿½:ï¿½Qï¿½ï¿½ï¿½ï¿½
 			 $student_number=$data['joiner_id'];
-			 $message_text="Q‰Á’†‚ÌŠé‰æ‚ÌŠé‰æÒ‚©‚çƒƒbƒZ[ƒW‚ª“Í‚¢‚Ä‚¢‚Ü‚·B";
+			 $message_text="å‚åŠ ä¸­ã®ä¼ç”»ã®ä¼ç”»è€…ã‹ã‚‰ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ãŒå±Šã„ã¦ã„ã¾ã™ã€‚";
 			 //print_r( "to:".'ne'.$student_number.'@senshu-u.jp'."  ".$message_text);
-		//	 if((260600<= $this->request->data['DirectMessage']['joiner_id']) && ($this->request->data['DirectMessage']['joiner_id'] <= 260999)){ //ƒeƒXƒg—p
+		//	 if((260600<= $this->request->data['DirectMessage']['joiner_id']) && ($this->request->data['DirectMessage']['joiner_id'] <= 260999)){ //ï¿½eï¿½Xï¿½gï¿½p
 		//	 	$cakeemail=new CakeEmail('default');
 		//	 	$cakeemail->to('waninaru.2015@gmail.com');
-		//	 	$cakeemail->subject('yƒeƒXƒg—pzƒƒbƒZ[ƒWóM');
+		//	 	$cakeemail->subject('[ãƒ†ã‚¹ãƒˆç”¨]ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸å—ä¿¡');
 		//	 	$cakeemail->send($message_text);
 		//	 }else{
 		//	 	$student_number=$this->request->data['DirectMessage']['joiner_id'];
 		//	 	$cakeemail=new CakeEmail('default');
 		//	 	$cakeemail->to('ne'.$student_number.'@senshu-u.jp');
-		//	 	$cakeemail->subject('ƒƒbƒZ[ƒWóM');
+		//	 	$cakeemail->subject('ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸å—ä¿¡');
 		//	 	$cakeemail->send($message_text);
 		//	 }
                 }
-			//	echo $JoinerAll;//ƒŠƒ_ƒCƒŒƒNƒg‚Ì‘O‚Éo—Í‚³‚¹‚é‚Æ^‚Á”’‚Ì‰æ–Ê‚É‘JˆÚ
+			//	echo $JoinerAll;//ï¿½ï¿½ï¿½_ï¿½Cï¿½ï¿½ï¿½Nï¿½gï¿½Ì‘Oï¿½Éoï¿½Í‚ï¿½ï¿½ï¿½ï¿½ï¿½Æ^ï¿½ï¿½ï¿½ï¿½ï¿½Ì‰ï¿½Ê‚É‘Jï¿½ï¿½
 				return $this->redirect(array('controller'=>'DirectMessages','action' =>'view',$message_id['DirectMessage']['id']));
 			} else {
-				$this->Session->setFlash(__('ƒƒbƒZ[ƒW‚ğ‘—M‚Å‚«‚Ü‚¹‚ñ‚Å‚µ‚½B‚à‚¤ˆê“x‚¨‚µ‚­‚¾‚³‚¢B'));
+				$this->Session->setFlash(__('ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚’é€ä¿¡ã§ãã¾ã›ã‚“ã§ã—ãŸã€‚ã‚‚ã†ä¸€åº¦ãŠè©¦ã—ãã ã•ã„ã€‚'));
 			}
 		}	
 	}
