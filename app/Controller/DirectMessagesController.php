@@ -220,6 +220,7 @@ class DirectMessagesController extends AppController {
 			unset($data['student_number']);
 			$this->DirectMessage->create();
 			$joiner_id =$_POST["select"][0];
+			//print_r( $_POST["select"][0]);
 			$JoinerAll =$joiner_id;
 			$joiner = $this->User->find('first', array('fields'=>'id', 'conditions'=>array('User.student_number'=>$joiner_id)));
 			$joiner = $this->Joiner->find('first', array('fields'=>'id', 'conditions'=>array('Joiner.user_id'=>$joiner[User][id])));
