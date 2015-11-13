@@ -434,13 +434,13 @@ Waninaruは企画を立てたり、企画に参加することを支援するた
 	
 	
 	public function config(){}
-	//パスワード初期化機能
+	
 	public function passwordiniti(){
 		if($this->request->is('post')){
 			$user_id=$this->User->set($this->data);
 			$user=$this->User->find('first',array('conditions'=>array('User.student_number'=>$this->request->data['User']['student_number'])));
 			//print_r($user);
-			$ipassword="123456";//初期化後のパスワード
+			$ipassword="123456";
 			if ($user!=null) {
 				$user['User']['user_password']=AuthComponent::password($ipassword);
 				$this->User->save($user,array('validate'=>true,'fieldList'=>array('user_password')));

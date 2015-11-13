@@ -35,20 +35,20 @@ App::uses('Model', 'Model');
 class AppModel extends Model {
 	
 	/**
-	 * “ú•t‚ğ”äŠr‚·‚éƒoƒŠƒf[ƒVƒ‡ƒ“ƒ‹[ƒ‹.
-	 * ƒfƒtƒHƒ‹ƒg‚Å‚ÍAŒ»İ‚Ì“ú•t‚Æ‘ÎÛ‚Ì“ú•t‚ğ”äŠr‰‰Zq‚Ì’Ê‚è‚É”äŠr‚·‚é.
-	 * Œ»İ‚Ì“ú•t‚Æ‚Ì·•ª‚ª‚ ‚éê‡A‚»‚Ì•ª‚¾‚¯‚¸‚ç‚µ‚½“ú•t‚Æ‘ÎÛ‚Ì“ú•t‚ğ”äŠr‚·‚é.
-	 * ”äŠr‰‰Zq‚ÍAValidation::comparison‚Æ“¯‚¶‚à‚Ì‚ªg‚¦‚é.
-	 * Œ»İ‚Ì“ú•t‚Æ‚Ì·•ª‚ÍAstrtotime()‚Åtimestamp‚Å•ÏŠ·‰Â”\‚È•¶š—ñ.
-	 * @param string $check1 ”äŠr‘ÎÛ‚Ì“ú•t
-	 * @param string $operator ”äŠr‰‰Zq
-	 * @param string $timestamp Œ»İ‚Ì“ú•t‚Æ‚Ì·•ª
+	 * æ—¥ä»˜ã‚’æ¯”è¼ƒã™ã‚‹ãƒãƒªãƒ‡ãƒ¼ã‚·ãƒ§ãƒ³ãƒ«ãƒ¼ãƒ«.
+	 * ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã§ã¯ã€ç¾åœ¨ã®æ—¥ä»˜ã¨å¯¾è±¡ã®æ—¥ä»˜ã‚’æ¯”è¼ƒæ¼”ç®—å­ã®é€šã‚Šã«æ¯”è¼ƒã™ã‚‹.
+	 * ç¾åœ¨ã®æ—¥ä»˜ã¨ã®å·®åˆ†ãŒã‚ã‚‹å ´åˆã€ãã®åˆ†ã ã‘ãšã‚‰ã—ãŸæ—¥ä»˜ã¨å¯¾è±¡ã®æ—¥ä»˜ã‚’æ¯”è¼ƒã™ã‚‹.
+	 * æ¯”è¼ƒæ¼”ç®—å­ã¯ã€Validation::comparisonã¨åŒã˜ã‚‚ã®ãŒä½¿ãˆã‚‹.
+	 * ç¾åœ¨ã®æ—¥ä»˜ã¨ã®å·®åˆ†ã¯ã€strtotime()ã§timestampã§å¤‰æ›å¯èƒ½ãªæ–‡å­—åˆ—.
+	 * @param string $check1 æ¯”è¼ƒå¯¾è±¡ã®æ—¥ä»˜
+	 * @param string $operator æ¯”è¼ƒæ¼”ç®—å­
+	 * @param string $timestamp ç¾åœ¨ã®æ—¥ä»˜ã¨ã®å·®åˆ†
 	 */
 	
 
 	
 	
-	function comparisonDate($active_time, $operator, $timestamp = null) {//ŠJÃ“ú‚ªŒ»İ“ú‚ğ’´‚¦‚Ä‚¢‚é‚©
+	function comparisonDate($active_time, $operator, $timestamp = null) {//é–‹å‚¬æ—¥ãŒç¾åœ¨æ—¥ã‚’è¶…ãˆã¦ã„ã‚‹ã‹
 		$active_time = is_array($active_time) ? array_shift($active_time) : $active_time;
 		$active_time = date("Y/m/d H:i:s", strtotime($active_time));
 		$now_time = !empty($timestamp) ? date("Y/m/d H:i:s") : $date("Y/m/d H:i:s", strtotime($timestamp));
@@ -100,11 +100,11 @@ class AppModel extends Model {
 		return false;
 	}
 	
-function comparisonDate2($recruit_time, $operator, $timestamp = null) {//ŠJÃ“ú‚ğ’÷Ø“ú‚ğ’´‚¦‚¿‚á‚¢‚¯‚È‚¢
+function comparisonDate2($recruit_time, $operator, $timestamp = null) {//é–‹å‚¬æ—¥ã‚’ç· åˆ‡æ—¥ã‚’è¶…ãˆã¡ã‚ƒã„ã‘ãªã„
 		$recruit_time = is_array($recruit_time) ? array_shift($recruit_time) : $recruit_time;
 		$recruit_time = date("Y/m/d H:i:s", strtotime($recruit_time));
 		global $mark;
-		$active_time =  $mark;//mark‚ÍŠJÃ“ú‚Ì“ú•t
+		$active_time =  $mark;//markã¯é–‹å‚¬æ—¥ã®æ—¥ä»˜
 		$now_time = !empty($timestamp) ? date("Y/m/d H:i:s") : $date("Y/m/d H:i:s", strtotime($timestamp));
 		//print_r($recruit_time.$active_time);
 		$operator = str_replace(array(' ', "\t", "\n", "\r", "\0", "\x0B"), '', strtolower($operator));
