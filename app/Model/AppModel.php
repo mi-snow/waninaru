@@ -105,7 +105,7 @@ function comparisonDate2($recruit_time, $operator, $timestamp = null) {//開催�
 		$recruit_time = date("Y/m/d H:i:s", strtotime($recruit_time));
 		global $mark;
 		$active_time =  $mark;//markは開催日の日付
-		$now_time = !empty($timestamp) ? date("Y/m/d H:i:s") : $date("Y/m/d H:i:s", strtotime($timestamp));
+		$now_time = !empty($timestamp) ? date("Y/m/d H:i:s") : $date("Y/m/d H:i:s", strtotime($timestamp));//$now_timeは現在時間
 		//print_r($recruit_time.$active_time);
 		$operator = str_replace(array(' ', "\t", "\n", "\r", "\0", "\x0B"), '', strtolower($operator));
 		switch ($operator) {
