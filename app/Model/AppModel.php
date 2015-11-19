@@ -153,4 +153,3 @@ function comparisonDate2($recruit_time, $operator, $timestamp = null) {//開催�
 		return false;
 	}
 }
-
