@@ -18,7 +18,7 @@ class Project extends AppModel {
 		'project_name' => array(
 			'maxlength' => array(
 				'rule' => array('maxlength',64),
-				'message' => '•¶Žš”‚ªƒI[ƒo[‚µ‚Ä‚¢‚Ü‚·B64•¶ŽšˆÈ“à‚Å“ü—Í‚µ‚Ä‚­‚¾‚³‚¢B',
+				'message' => 'æ–‡å­—æ•°ãŒã‚ªãƒ¼ãƒãƒ¼ã—ã¦ã„ã¾ã™ã€‚64æ–‡å­—ä»¥å†…ã§å…¥åŠ›ã—ã¦ãã ã•ã„ã€‚',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -26,7 +26,7 @@ class Project extends AppModel {
 			),
 			'notempty' => array(
 				'rule' => array('notempty'),
-				'message' => '•K{€–Ú‚Å‚·B64•¶ŽšˆÈ“à‚Å“ü—Í‚µ‚Ä‚­‚¾‚³‚¢B',
+				'message' => 'å¿…é ˆé …ç›®ã§ã™ã€‚64å­—ä»¥å†…ã§å…¥åŠ›ã—ã¦ãã ã•ã„ã€‚',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -34,7 +34,7 @@ class Project extends AppModel {
 			),
 		/*	'isUnique'=>array(
 			'rule'=>array('isUnique'),
-			//'message'=>'‚»‚ÌŠé‰æ‚Í‚·‚Å‚É“o˜^‚³‚ê‚Ä‚¢‚Ü‚·B',
+			//'message'=>'ãã®ä¼ç”»ã¯æ—¢ã«ç™»éŒ²ã•ã‚Œã¦ã„ã¾ã™',
 		   // 'on'=>'create'
 	     	),*/
 		),
@@ -42,7 +42,7 @@ class Project extends AppModel {
 		'active_date' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),
-				'message' => 'ŠJÃ“ú‚ð‘I‘ð‚µ‚Ä‚­‚¾‚³‚¢',
+				'message' => 'é–‹å‚¬æ—¥ã‚’é¸æŠžã—ã¦ãã ã•ã„ã€‚',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -50,7 +50,7 @@ class Project extends AppModel {
 			),
 			'date' => array(
 					'rule' => array('comparisonDate', 'greaterorequal'),
-					'message' => '¡ˆÈ~‚Ì“ú•t‚ð“ü—Í‚µ‚Ä‚­‚¾‚³‚¢',
+					'message' => 'ä»Šä»¥é™ã®æ—¥ä»˜ã‚’é¸æŠžã—ã¦ãã ã•ã„ã€‚',
 					//'allowEmpty' => false,
 					//'required' => false,
 					//'last' => false, // Stop validation after this rule
@@ -60,7 +60,7 @@ class Project extends AppModel {
 		'recrouit_date' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),
-				'message' => '’÷‚ßØ‚è“ú‚ð‘I‘ð‚µ‚Ä‚­‚¾‚³‚¢',
+				'message' => 'ç· ã‚åˆ‡ã‚Šæ—¥ã‚’é¸æŠžã—ã¦ãã ã•ã„ã€‚',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -72,7 +72,7 @@ class Project extends AppModel {
 					'rule' => array('comparisonDate2', 'greaterorequal'),
 			
 			                 
-					'message' => '¡ˆÈ~‚©‚ÂŠJÃ“úˆÈ‘O‚Ì“ú•t‚ð“ü—Í‚µ‚Ä‚­‚¾‚³‚¢',
+					'message' => 'ä»Šä»¥é™ã‹ã¤é–‹å‚¬æ—¥ä»¥å‰ã®æ—¥ä»˜ã‚’é¸æŠžã—ã¦ãã ã•ã„ã€‚',
 					//'allowEmpty' => false,
 					//'required' => false,
 					//'last' => false, // Stop validation after this rule
@@ -82,7 +82,7 @@ class Project extends AppModel {
 		'active_place' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),
-				'message' => 'êŠ‚ð“ü—Í‚µ‚Ä‚­‚¾‚³‚¢',
+				'message' => 'å ´æ‰€ã‚’å…¥åŠ›ã—ã¦ãã ã•ã„ã€‚',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -92,7 +92,7 @@ class Project extends AppModel {
 		'detail_text' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),
-				'message' => 'Šé‰æ“à—e‚ð‘I‘ð‚µ‚Ä‚­‚¾‚³‚¢',
+				'message' => 'ä¼ç”»å†…å®¹ã‚’å…¥åŠ›ã—ã¦ãã ã•ã„ã€‚',
 				'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -102,7 +102,7 @@ class Project extends AppModel {
 		'people_maxnum' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),
-				'message' => '•åWl”‚ð“ü—Í‚µ‚Ä‚­‚¾‚³‚¢',
+				'message' => 'å‹Ÿé›†äººæ•°ã‚’å…¥åŠ›ã—ã¦ãã ã•ã„ã€‚',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -110,7 +110,7 @@ class Project extends AppModel {
 			),
 			'naturalNumber' => array(
 				'rule' => array('naturalNumber', false),
-				'message' => '•åWl”‚Í1ˆÈã‚Ì®”’l‚Å“ü—Í‚µ‚Ä‚­‚¾‚³‚¢',
+				'message' => 'å‹Ÿé›†äººæ•°ã¯1ä»¥ä¸Šã®æ•´æ•°å€¤ã§å…¥åŠ›ã—ã¦ãã ã•ã„ã€‚',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
