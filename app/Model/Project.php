@@ -2,6 +2,10 @@
 App::uses('AppModel', 'Model');
 /**
  * Project Model
+ <?php
+App::uses('AppModel', 'Model');
+/**
+ * Project Model
  *
  * @property Comment $Comment
  * @property JoinersProject $JoinersProject
