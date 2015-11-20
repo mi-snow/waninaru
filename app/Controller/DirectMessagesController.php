@@ -60,10 +60,17 @@ class DirectMessagesController extends AppController {
 			foreach($joiner_id as $joiner){
 				$user_id = $this->Joiner->find('first', array('fields' => array('user_id'), 'conditions' => array('Joiner.id' => $joiner['DirectMessage']['joiner_id']), 'recursive' => -1));
 				$student_number = $this->User->find('first', array('fields' => array('student_number'), 'conditions'=>array('User.id'=>$user_id['Joiner']['user_id']), 'recursive' => -1));
-				//
+<<<<<<< Updated upstream
+				//学生の名前を出力
 				$student_name = $this->User->find('first', array('fields' => array('real_name'), 'conditions'=>array('User.id'=>$user_id['Joiner']['user_id']), 'recursive' => -1));
 				if($joinerAll == null){
-					$joinerAll = $student_number['User']['student_number']."  ".$student_name['User']['real_name']."さん";
+					$joinerAll = $student_number['User']['student_number']."　".$student_name['User']['real_name']."さん";
+=======
+				//�w���̖��O���o��
+				$student_name = $this->User->find('first', array('fields' => array('real_name'), 'conditions'=>array('User.id'=>$user_id['Joiner']['user_id']), 'recursive' => -1));
+				if($joinerAll == null){
+					$joinerAll = $student_number['User']['student_number']."�@".$student_name['User']['real_name']."����";
+>>>>>>> Stashed changes
 				}else{
 					$joinerAll = $joinerAll.",  ".$student_number['User']['student_number']." ".$student_name['User']['real_name'];
 				}
@@ -88,10 +95,10 @@ class DirectMessagesController extends AppController {
 	  }
 	}
 	
-	public function joiner_add($id=null,$id2=null) {//joiner(�Q����)��producer(����)�ɑ���
+	public function joiner_add($id=null,$id2=null) {//joiner(参加者)がproducer(企画者)に送る
 		$userSession = $this->Auth->user();
 		$number=0;
-	    $this->set('num', $num);//�Ȃ��Ă��悢����
+	    $this->set('num', $num);//なくてもよいかも
 		$this->JoinersProject->recursive = 2;
 		$producer = $this->Producer->find('first',array('conditions' => array('Producer.user_id' => $userSession['id'])));
 		$project = $this->Project->find('first',array('conditions' => array('Project.id' => $id)));
@@ -102,12 +109,12 @@ class DirectMessagesController extends AppController {
         $project_name =$project_name[Project][project_name] ;
         $producer_name = $this->Project->find('first',array('conditions' => array('Project.id' => $id)));
 		$producer_id = $this->ProducersProject->find('first',array('conditions' => array('ProducersProject.id' => $id)));
-	    $producer_id=$producer_id  [ProducersProject]  [producer_id];//producer_id���擾
+	    $producer_id=$producer_id  [ProducersProject]  [producer_id];//producer_idを取得
 	    $my_num=$this->Auth->user();
-	    $my_num=$my_num[id];//�����̊w�Дԍ����擾
+	    $my_num=$my_num[id];//自分の学籍番号を取得
 	    $this->set('producer_id', $producer_id);  
 	    $this->set('project_name', $project_name);
-	    $this->set('num',$id2 );//�Ȃ��Ă��悢����
+	    $this->set('num',$id2 );//なくてもよいかも
 		$options = array('conditions' => array('JoinersProject.project_id' => $id));
 		$joiner_project = $this->JoinersProject->find('all', $options);
 		$this->set('joiner_project', $this->JoinersProject->find('all', $options));
@@ -120,16 +127,24 @@ class DirectMessagesController extends AppController {
         'conditions' => array( 'JoinersProject.joiner_id' => $joiner_id['Joiner']['id'],
         'JoinersProject.project_id' => $project[Project][id]
  )
-    ));//�Q���҂��������A�v���W�F�N�g�������̎Q��������̂��̔���
+    ));//参加者が自分か、プロジェクトが自分の参加するものかの判定
     
+<<<<<<< Updated upstream
+	 if($safety_check!=1|| $delete_flag[Project][delete_flag] == 1){//自分の企画が1つか。また、消されてないか
+=======
 	 if($safety_check!=1|| $delete_flag[Project][delete_flag] == 1){//�����̊�悪1���B�܂��A������ĂȂ���
+>>>>>>> Stashed changes
 	 	return $this->redirect(array('controller'=>'Users','action' =>'view'));
 	  }
 	   if ($this->request->is('post')) {
                 $select = $this->request->select;
         }
         $category=array(0 => '持ち物', 1 =>'遅刻・早退', 2 =>'参加費用', 3 =>'その他');
+<<<<<<< Updated upstream
 		if ($this->request->is('post')) {
+=======
+       		if ($this->request->is('post')) {
+>>>>>>> Stashed changes
 			$data = $this->request->data['DirectMessage'];
 			$data['category'] = $category[$data['category']];
 			$data['project_id'] = $id;
@@ -141,15 +156,19 @@ class DirectMessagesController extends AppController {
 			$joiner_id = $this->Joiner->find('first', array("fields" => 'Joiner.id', "conditions" => array("Joiner.user_id" => $userSession['id'])));
 			$data['joiner_id'] = $joiner_id['Joiner']['id'];	
 			if ($this->DirectMessage->save($data)) {	
-			/*		//���[�����M�@����:����
+<<<<<<< Updated upstream
+			/*		//メール送信　宛先:企画者
+=======
+				//メール送信　宛先:企画者
+>>>>>>> Stashed changes
 				$student_number=$data['producer_id'];
-				$message_text="企画の参加者からメッセージが届いています";
+				$message_text="企画の参加者からメッセージが届いています。";
 				//	print_r( "to:".'ne'.$student_number.'@senshu-u.jp'."  "."to:".$student_number."  ".$message_text);
-				if((260600<= $this->request->data['DirectMessage']['producer_id']) && ($this->request->data['DirectMessage']['producer_id'] <= 260999)){ //�e�X�g�p
+				if((260600<= $this->request->data['DirectMessage']['producer_id']) && ($this->request->data['DirectMessage']['producer_id'] <= 260999)){ //テスト用
 					//print_r("true");}else{print_r("false");}
 					$cakeemail=new CakeEmail('default');
 					$cakeemail->to('waninaru.2015@gmail.com');
-					$cakeemail->subject('[テスト用]メッセージ受信');
+					$cakeemail->subject('【テスト用】メッセージ受信');
 					$cakeemail->send($message_text);
 				}else{
 					$student_number=$this->request->data['DirectMessage']['producer_id'];
@@ -158,30 +177,36 @@ class DirectMessagesController extends AppController {
 					$cakeemail->subject('メッセージ受信');
 					$cakeemail->send($message_text);
 				}
+<<<<<<< Updated upstream
 				*/
-			//	echo $JoinerAll;//���_�C���N�g�̑O�ɏo�͂�����Ɛ^�����̉�ʂɑJ��
+			//	echo $JoinerAll;//リダイレクトの前に出力させると真っ白の画面に遷移
 				return $this->redirect(array('controller'=>'DirectMessages','action' =>'view',$this->DirectMessage->id));
 			} else {
 				$this->Session->setFlash(__('メッセージを送信できませんでした。もう一度お試しください。'));
+=======
+				return $this->redirect(array('controller'=>'DirectMessages','action' =>'view',$this->DirectMessage->id));
+			} else {
+				$this->Session->setFlash(__('���b�Z�[�W�𑗐M�ł��܂���ł����B������x���������������B'));
+>>>>>>> Stashed changes
 			}
 		}
 	}
 	
 	
-	public function producer_add($id=null,$id2=null) {//producer(����)��joiner(�Q����)�ɑ���
+	public function producer_add($id=null,$id2=null) {//producer(企画者)がjoiner(参加者)に送る
 		$userSession = $this->Auth->user();
 		$number=0;
-	    $this->set('num', $num);//�Ȃ��Ă��悢����
+	    $this->set('num', $num);//なくてもよいかも
 		$this->JoinersProject->recursive = 2;
 		$producer = $this->Producer->find('first',array('conditions' => array('Producer.user_id' => $userSession['id'])));
 		$project = $this->Project->find('first',array('conditions' => array('Project.id' => $id)));
 		$this->set('project', $project);
 		$producerList = $this->ProducersProject->find('all',array('conditions'=>array('ProducersProject.project_id'=>$id,'ProducersProject.producer_id'=>$producer['Producer']['id'])));
 		$produser = $this->Project->find('all');
-	    $this->set('num',$id2 );//�Ȃ��Ă��悢����
+	    $this->set('num',$id2 );//なくてもよいかも
 		$options = array('conditions' => array('JoinersProject.project_id' => $id));
 		$joiner_project = $this->JoinersProject->find('all', $options);
-		$this->set('joiner_project', $this->JoinersProject->find('all', $options));//�Q���҂̃v���W�F�N�g
+		$this->set('joiner_project', $this->JoinersProject->find('all', $options));//参加者のプロジェクト
         $this->set('number', $number);
 		$this->set('results', $message);
 	    if ($this->request->is('post')) {
@@ -202,11 +227,15 @@ class DirectMessagesController extends AppController {
       
        
          )
-      ));//���҂��������A�v���W�F�N�g�������̎Q��������̂��̔���
+<<<<<<< Updated upstream
+      ));//企画者が自分か、プロジェクトが自分の参加するものかの判定
       
+=======
+      ));//企画者が自分か、プロジェクトが自分の参加するものかの判定      
+>>>>>>> Stashed changes
       
     	 
-	  if($safety_check!=1|| $delete_flag[Project][delete_flag] == 1){//�����̊�悪1���B�܂��A������ĂȂ���
+	  if($safety_check!=1|| $delete_flag[Project][delete_flag] == 1){//自分の企画が1つか。また、消されてないか
 	   	return $this->redirect(array('controller'=>'Users','action' =>'view'));
 	  }
 		if ($this->request->is('post')) {		
@@ -220,6 +249,7 @@ class DirectMessagesController extends AppController {
 			unset($data['student_number']);
 			$this->DirectMessage->create();
 			$joiner_id =$_POST["select"][0];
+			//print_r( $_POST["select"][0]);
 			$JoinerAll =$joiner_id;
 			$joiner = $this->User->find('first', array('fields'=>'id', 'conditions'=>array('User.student_number'=>$joiner_id)));
 			$joiner = $this->Joiner->find('first', array('fields'=>'id', 'conditions'=>array('Joiner.user_id'=>$joiner[User][id])));
@@ -227,21 +257,32 @@ class DirectMessagesController extends AppController {
 			$data['send_mode'] = $id2;
 			if ($this->DirectMessage->save($data)) {
 			$message_id = $this->DirectMessage->find('first', array("fields" => 'DirectMessage.id', "order" => array("id" => "desc")));
-			//���[�����M�@����:�Q����
+			//メール送信　宛先:参加者
 			$student_number=$data['joiner_id'];
-			$message_text="参加中の企画の企画者からメッセージが届いています";
+			$message_text="参加中の企画の企画者からメッセージが届いています。";
 			//print_r( "to:".'ne'.$student_number.'@senshu-u.jp'."  ".$message_text);
+<<<<<<< Updated upstream
+			if((260600<= $this->request->data['DirectMessage']['joiner_id']) && ($this->request->data['DirectMessage']['joiner_id'] <= 260999)){ //テスト用
+=======
 			if((260600<= $this->request->data['DirectMessage']['joiner_id']) && ($this->request->data['DirectMessage']['joiner_id'] <= 260999)){ //�e�X�g�p
+>>>>>>> Stashed changes
 				$cakeemail=new CakeEmail('default');
 				$cakeemail->to('waninaru.2015@gmail.com');
-				$cakeemail->subject('[テスト用]メッセージ受信');
+				$cakeemail->subject('【テスト用】メッセージ受信');
 				$cakeemail->send($message_text);
 			}else{
 				$student_number=$this->request->data['DirectMessage']['joiner_id'];
+<<<<<<< Updated upstream
 		//		$cakeemail=new CakeEmail('default');
 		//		$cakeemail->to('ne'.$student_number.'@senshu-u.jp');
-		//		$cakeemail->subject('���b�Z�[�W��M');
+		//		$cakeemail->subject('メッセージ受信');
 		//		$cakeemail->send($message_text);
+=======
+				$cakeemail=new CakeEmail('default');
+				$cakeemail->to('ne'.$student_number.'@senshu-u.jp');
+				$cakeemail->subject('メッセージ受信');
+				$cakeemail->send($message_text);
+>>>>>>> Stashed changes
 			}
 		     for ($i = 1; $i < count($_POST["select"]); $i++){ 
 			 $this->DirectMessage->create();
@@ -250,14 +291,15 @@ class DirectMessagesController extends AppController {
 			 $joiner = $this->Joiner->find('first', array('fields'=>'id', 'conditions'=>array('Joiner.user_id'=>$joiner[User][id])));	 
 			 $data['joiner_id'] = $joiner['Joiner']['id'];
 			 $this->DirectMessage->save($data);
-			 //���[�����M�@����:�Q����
+			 //メール送信　宛先:参加者
 			 $student_number=$data['joiner_id'];
+<<<<<<< Updated upstream
 			 $message_text="参加中の企画の企画者からメッセージが届いています。";
 			 //print_r( "to:".'ne'.$student_number.'@senshu-u.jp'."  ".$message_text);
-		//	 if((260600<= $this->request->data['DirectMessage']['joiner_id']) && ($this->request->data['DirectMessage']['joiner_id'] <= 260999)){ //�e�X�g�p
+		//	 if((260600<= $this->request->data['DirectMessage']['joiner_id']) && ($this->request->data['DirectMessage']['joiner_id'] <= 260999)){ //テスト用
 		//	 	$cakeemail=new CakeEmail('default');
 		//	 	$cakeemail->to('waninaru.2015@gmail.com');
-		//	 	$cakeemail->subject('[テスト用]メッセージ受信');
+		//	 	$cakeemail->subject('【テスト用】メッセージ受信');
 		//	 	$cakeemail->send($message_text);
 		//	 }else{
 		//	 	$student_number=$this->request->data['DirectMessage']['joiner_id'];
@@ -267,11 +309,31 @@ class DirectMessagesController extends AppController {
 		//	 	$cakeemail->send($message_text);
 		//	 }
                 }
-			//	echo $JoinerAll;//���_�C���N�g�̑O�ɏo�͂�����Ɛ^�����̉�ʂɑJ��
+			//	echo $JoinerAll;//リダイレクトの前に出力させると真っ白の画面に遷移
 				return $this->redirect(array('controller'=>'DirectMessages','action' =>'view',$message_id['DirectMessage']['id']));
 			} else {
 				$this->Session->setFlash(__('メッセージを送信できませんでした。もう一度お試しください。'));
 			}
+=======
+		     			 $message_text="参加中の企画の企画者からメッセージが届いています。";
+			 //print_r( "to:".'ne'.$student_number.'@senshu-u.jp'."  ".$message_text);
+			 if((260600<= $this->request->data['DirectMessage']['joiner_id']) && ($this->request->data['DirectMessage']['joiner_id'] <= 260999)){ //テスト用
+			 	$cakeemail=new CakeEmail('default');
+			 	$cakeemail->to('waninaru.2015@gmail.com');
+			 	$cakeemail->subject('【テスト用】メッセージ受信');
+			 	$cakeemail->send($message_text);
+			 }else{
+			 	$student_number=$this->request->data['DirectMessage']['joiner_id'];
+			 	$cakeemail=new CakeEmail('default');
+			 	$cakeemail->to('ne'.$student_number.'@senshu-u.jp');
+			 	$cakeemail->subject('メッセージ受信');
+			 	$cakeemail->send($message_text);
+			 }
+		     }
+				return $this->redirect(array('controller'=>'DirectMessages','action' =>'view',$message_id['DirectMessage']['id']));
+			} else {
+				$this->Session->setFlash(__('メッセージを送信できませんでした。もう一度お試しください。'));			}
+>>>>>>> Stashed changes
 		}	
 	}
 }
