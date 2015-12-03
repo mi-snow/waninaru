@@ -63,18 +63,22 @@ ul#number_area {
 }
 
 ul#number_area li {
-  width: 150px;
+  width: 133px;
   float: left;
 }
 
-span.t_d_img {
-  width: 45px;
+span.t_d_img{
+  width: 30px;
   float: left;
 }
 
+span.t_d_img img {
+	width:30px;
+}
+	
 span.t_d_number {
-  width: 100px;
-  padding: 15px 0 0 0;
+  width: 90px;
+  padding: 6px 10px 0 3px;
   float: right;
 }
 
