@@ -137,17 +137,62 @@ div#submit_btn_container {
 
 /*mediascreen↓*/
 @media(max-width: 600px){
+
+div#main_container h2.form_style {
+  width: 100%;
+  padding: 0px 0px 20px;
+//  font-size: 30px;
+//  color: #63B051;
+}
+
+	
 	div#form_container_wrapp{
+	width: 100%;
 	padding: 0;
 	}
+
+ul.form {
+  width: 100%;
+  padding: 20px 0 0 0;
+}
+
+
+ul.form li {
+  width: 100%;
+  padding: 0 0 10px 0;
+}
 	
     div#form_container{
+    width: 100%;
     margin: 0;
 	border: none;
 	}
 	
 	div#form_inner{
+	width: 100%;
 	margin: 0;
 	}
+	
+div.input.number.required{
+	width: 130px;
+}
+
+span.form_user_right{
+	width: 130px;
+}
+
+span.form_left.clearfix{
+	width:150px;
+}
+
+p.detail_text_form {
+  width: 100%;
+  padding: 20px 0 20px 0;
+}
+
+form#UserTempAddForm{
+	width: 100%;
+}
+
 }
 /*mediascreen↑*/
