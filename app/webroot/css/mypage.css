@@ -1,6 +1,5 @@
 @charset "UTF-8";
 /* CSS Document */
-
 /* ========================
 	mypage style
 ======================== */
@@ -350,13 +349,13 @@ div.myprof_container ul li dl dt {
 }
 
 div.myprof_container ul li dl dt span {
-  width: 100%;
+  width: 200px;
   margin: 0 0 0 15px;
   display: block;
 }
 
 div.myprof_container ul li dl dd {
-  width: 100%;
+  width: 250px;
   float: left;
   clear:both;
   padding-left:30px;
