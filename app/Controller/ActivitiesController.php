@@ -19,13 +19,12 @@ class ActivitiesController extends AppController{
 		$userSession = $this->Auth->user();
 		$today = Date("Y-m-d");
 		
-		$date = $this->Activity->find('first', array('fields'=>array('Activity.id', 'Activity.user_id'), 'conditions'=>array('Activity.user_id'=>$userSession['id']), 'recursive' => -1));
+		$date = $this->Activity->find('first', array('fields'=>array('Activity.id', 'Activity.user_id'), 'conditions'=>array('Activity.user_id'=>$userSession['id'],'Activity.modified >' => $userSession['created']), 'recursive' => -1));
 //		print_r($date);
-
 		//管理者メッセージ
 		
 		//個人
-		$message = $this->Message->find('all', array('conditions'=>array('Message.user_id'=>$date['Activity']['user_id']), 'recursive' => -1));
+		$message = $this->Message->find('all', array('conditions'=>array('Message.user_id'=>$date['Activity']['user_id'],'Message.modified >' => $userSession['created']), 'recursive' => -1));
 //		print_r($message);
 		foreach($message as $activity){
 			$detail = '管理者からメッセージがあります。
@@ -48,11 +47,10 @@ class ActivitiesController extends AppController{
 		}
 		
 		//一斉送信
-		$message = $this->Message->find('all', array('conditions'=>array('Message.user_id'=>-1), 'recursive' => -1));
+		$message = $this->Message->find('all', array('conditions'=>array('Message.user_id'=>-1,'Message.modified > '=> $userSession['created']), 'recursive' => -1));
 		foreach($message as $activity){
 			$detail = '管理者からメッセージがあります。
 このメッセージはユーザ全員に送信しています。
-
 〈'.$activity['Message']['category'].'〉
 '.$activity['Message']['text'];
 			$ditail = nl2br($detail);
@@ -74,7 +72,6 @@ class ActivitiesController extends AppController{
 //		print_r($producer);
 		$producers_project = $this->ProducersProject->find('list', array('fields'=>array('ProducersProject.id', 'ProducersProject.project_id'), 'conditions'=>array('ProducersProject.producer_id'=>$producer['Producer']['id']), 'recursive' => -1));
 //		print_r($producers_project);
-
 		//自分の企画にダイレクトメッセージが届いた
 		$direct = $this->DirectMessage->find('all', array('conditions'=>array('DirectMessage.producer_id'=>$producer['Producer']['id'], 'DirectMessage.send_mode'=>'1'), 'recursive' => '1'));
 //		print_r($direct);
@@ -137,7 +134,6 @@ class ActivitiesController extends AppController{
 			);
 //			print_r($temps);
 			array_push($actives, $temps);
-
 			$this->DirectMessage->id = $activity['DirectMessage']['id'];
 			$this->DirectMessage->saveField('unread_flag', '0');
 		}
@@ -181,7 +177,6 @@ class ActivitiesController extends AppController{
 				'created'=>$activity['JoinersProject']['created']
 			);
 			array_push($actives, $temps);
-
 			$this->JoinersProject->id = $activity['JoinersProject']['id'];
 			$this->JoinersProject->saveField('unread_flag', '0');
 		}		
@@ -193,7 +188,6 @@ class ActivitiesController extends AppController{
 		foreach($producers_project as $activity){
 			$orderDate = strtotime($activity['Project']['active_date']);
 			$orderDate = date('Y-m-d', $orderDate);
-
 			if(strtotime($today) >= strtotime($orderDate)){
 				$temps = array(
 					'url'=>'/projects/view/',
@@ -206,7 +200,6 @@ class ActivitiesController extends AppController{
 					'created'=>date("Y-m-d H:i:s", strtotime($orderDate))
 				);
 				array_push($actives,$temps);
-
 				$this->ProducersProject->id = $activity['ProducersProject']['id'];
 				$this->ProducersProject->saveField('appointed_day_flag', '0');
 			}
@@ -215,7 +208,6 @@ class ActivitiesController extends AppController{
 		
 		//自分が企画した企画が3日後に開催される
 //		print_r($project);
-
 		foreach($producers_project as $activity){
 			$orderDate = strtotime($activity['Project']['active_date']);
 			$orderDate = strtotime("-3days", $orderDate);
@@ -318,7 +310,6 @@ class ActivitiesController extends AppController{
 					'created'=>date("Y-m-d H:i:s", strtotime($orderDate))
 				);
 				array_push($actives,$temps);
-
 				$this->JoinersProject->id = $activity['JoinersProject']['id'];
 				$this->JoinersProject->saveField('before_three_day_flag', '0');
 			}
