@@ -29,7 +29,7 @@ class ProjectsController extends AppController {
 	public $paginate = array(
 		'Project' => array(
 				'limit' => 20,
-				'order' => array('Project.modified' => 'desc'),
+				'order' => array('Project.active_date' => 'asc'),
 				'conditions'=>array('Project.delete_flag' => 0)
 		)
 	);
@@ -91,7 +91,8 @@ class ProjectsController extends AppController {
 		)));
 	}
 	
- 	public function keyword($keyword=null){
+ 	public function keyword($keyword=null,$timestamp = null){
+ 	     $timestamp = time() ;
  		$this->Paginator->settings = $this->paginate;
  		$this->Project->recursive = 1;
  		$projectlist=$this->Project->find('list', array(
@@ -106,7 +107,8 @@ class ProjectsController extends AppController {
  		$this->set('projects',
  				$this->Paginator->paginate($this->Project,array(
  						'Project.id'=>$projectlist,
- 						'Project.delete_flag'=>0
+ 						'Project.delete_flag'=>0,
+ 				        'Project.active_date >=' => date( "Y/m/d" , $timestamp )
  				)));
 	}
 	
@@ -147,6 +149,7 @@ class ProjectsController extends AppController {
  * @return void
  */
 	public function view($id = null) {
+		
 		$this->Project->recursive = 3;
 		$userSession = $this->Auth->user();
 		
@@ -370,3 +373,4 @@ public function edit($id = null) {
 		}
 	}
 }
+
