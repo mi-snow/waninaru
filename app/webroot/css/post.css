@@ -277,6 +277,10 @@ div#submit_btn_container {
   width: 100%;
   height: 400px;
 }
+	
+.submit input {
+	height:70px;
+}
    } /*-- media screen --*/
 
 #submit_left {
