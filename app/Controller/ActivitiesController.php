@@ -19,12 +19,12 @@ class ActivitiesController extends AppController{
 		$userSession = $this->Auth->user();
 		$today = Date("Y-m-d");
 		
-		$date = $this->Activity->find('first', array('fields'=>array('Activity.id', 'Activity.user_id'), 'conditions'=>array('Activity.user_id'=>$userSession['id'],'Activity.modified >' => $userSession['created']), 'recursive' => -1));
+		$date = $this->Activity->find('first', array('fields'=>array('Activity.id', 'Activity.user_id'), 'conditions'=>array('Activity.user_id'=>$userSession['id'],'Activity.modified >=' => $userSession['created']), 'recursive' => -1));
 //		print_r($date);
 		//管理者メッセージ
 		
 		//個人
-		$message = $this->Message->find('all', array('conditions'=>array('Message.user_id'=>$date['Activity']['user_id'],'Message.modified >' => $userSession['created']), 'recursive' => -1));
+		$message = $this->Message->find('all', array('conditions'=>array('Message.user_id'=>$date['Activity']['user_id'],'Message.modified >=' => $userSession['created']), 'recursive' => -1));
 //		print_r($message);
 		foreach($message as $activity){
 			$detail = '管理者からメッセージがあります。
