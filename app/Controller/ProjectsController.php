@@ -50,19 +50,62 @@ class ProjectsController extends AppController {
 		$this->set('producer',$top);
 	}
 	
-	public function projectlist(){
+	public function projectlist($keyword=null){
 		$userSession = $this->Auth->user();
 		if($userSession['mode'] == 1){
-			$this->Paginator->settings = array(
+			//ページネイト
+  			$this->Paginator->settings = array(
 				'Project' => array(
 						'limit' => 20,
-						'order' => array('Project.id' => 'desc')
-				)
+						'order' => array('Project.id' => 'desc')),
+  				'ProducersProject' => array(
+						'limit' => 20,
+						'order' => array('ProducersProject.producer_id' => 'desc'))
 			);
 			$this->Project->recursive = 1;
-			$this->set('projects', $this->Paginator->paginate());
+			if(!empty($this->request->data)){
+				$keyword=$this->request->data[projectlist][search];
+				$projectlist=$this->Project->find('list', array(
+ 					'fields' => array('Project.id'),
+ 					'conditions' => array(
+ 							'OR' => array(
+ 									array('Project.project_name LIKE' => '%'.$keyword.'%'),
+ 									array('Project.detail_text LIKE' => '%'.$keyword.'%'),
+ 									array('Project.active_place LIKE' => '%'.$keyword.'%'),
+ 							)
+ 					)));
+				// パラメータをセッション変数に保存
+    			$this->Session->write('projectlist', $projectlist);
+    			$this->Session->write('keyword', $keyword);
+ 				//print_r($keyword);
+			}else{
+				// セッション変数の展開
+    			if($this->Session->check('projectlist')) {
+    				$projectlist = $this->Session->read('projectlist');
+    				$keyword= $this->Session->read('keyword');
+    			//	print_r($projectlist);
+    				$this->paginate=array('conditions'=>$projectlist);
+    				$this->set('projects', $this->Paginator->paginate());
+    				$this->set('keyword',$keyword);
+  				}else{
+  					$projectlist = $this->Project->find('list', array(
+ 					'fields' => array('Project.id')));
+  				}
+			} 
+			//企画者名 
+			$p=$this->ProducersProject->find('list',array('fields'=>array('Producer.user_id'),recursive=>'1'));//,'conditions'=>array('ProducersProject.project_id'=>'Project.id')
+			$p2=$this->Producer->find('list',array('fields'=>array('User.id','User.nick_name'),'conditions'=>array('User_id'=>$p),recursive=>'0'));
+			
+			//値をviewへ
+			$this->set('projects', $this->Paginator->paginate($this->Project,array(
+ 					'Project.id'=>$projectlist)));
+    		$this->set('P',$p); //$this->Paginator->paginate($this->Pro,array( 	'Producer.user_id'=>
+    		$this->set('P2',$p2);//,$this->Paginator->paginate($this->Producer,array($p2))); 
+    		
 			$top = $this->Project->find('all');
 			$this->set('producer',$top);
+			//print_r();
+
 		}else{
 			return $this->redirect(array('controller'=>'projects','action' => 'index'));
 		}
