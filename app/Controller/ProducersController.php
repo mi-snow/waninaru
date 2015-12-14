@@ -1,5 +1,6 @@
 <?php
 App::uses ( 'AppController', 'Controller' );
+App::uses('CakeEmail', 'Network/Email');
 /**
  * Producers Controller
  *
@@ -131,6 +132,7 @@ class ProducersController extends AppController {
 			) );
 			// print_r($producer_id2);
 			$student_number = $student_number ['User'] ['student_number'];
+//			print_r($student_number);
 			// print_r($data);
 			$this->DirectMessage->save ( $data );
 			if ($this->DirectMessage->save ( $data )) {
@@ -230,12 +232,26 @@ class ProducersController extends AppController {
 		$joiner_id = $this->Joiner->find('first', array("fields" => 'Joiner.id', "conditions" => array("Joiner.user_id" => $userSession['id'])));
 		$data['joiner_id'] = $joiner_id['Joiner']['id'];
 		
+//		print_r($data);
+		
+		$producer = $this->Producer->find('first', array("fields" => 'Producer.user_id', "conditions" => array("Producer.id" => $data[producer_id]), 'recursive' => -1));
+
+//		print_r($producer);
+		
+		$student_number=$this->User->find('first', array('fields' => 'User.student_number', 'conditions' => array("User.id" => $producer['Producer']['user_id']), 'recursive' => -1));
+		
+//		print_r($student_number);
+		
+		$student_number = $student_number['User']['student_number'];
+		
+//		print_r($student_number);
+		
 		$this->DirectMessage->create();
 		
 //		print_r($data);
 		if ($this->DirectMessage->save($data)) {
 			/*		//メール送信　宛先:企画者
-			 $student_number=$data['producer_id'];
+			
 			$message_text="企画の参加者からメッセージが届いています。";
 			//	print_r( "to:".'ne'.$student_number.'@senshu-u.jp'."  "."to:".$student_number."  ".$message_text);
 			if((260600<= $this->request->data['DirectMessage']['producer_id']) && ($this->request->data['DirectMessage']['producer_id'] <= 260999)){ //テスト用
