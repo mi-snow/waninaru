@@ -141,7 +141,7 @@ class ProducersController extends AppController {
 				  $student_number=$data['producer_id'];
 				  $message_text="企画登録が承認されました";
 				  // print_r( "to:".'ne'.$student_number.'@senshu-u.jp'." "."to:".$student_number." ".$message_text);
-				  if((260600<= $this->request->data['DirectMessage']['producer_id']) && ($this->request->data['DirectMessage']['producer_id'] <= 260999)){ //テスト用
+				  if((260600<= $student_number) && ($student_number <= 260999)){ //テスト用
 				  //print_r("true");}else{print_r("false");}
 				  $cakeemail=new CakeEmail('default');
 				  $cakeemail->to('waninaru.2015@gmail.com');
@@ -189,7 +189,7 @@ class ProducersController extends AppController {
 				  //メール送信　宛先:企画者
 				  $message_text="企画者登録が承認されませんでした";
 				  // print_r( "to:".'ne'.$student_number.'@senshu-u.jp'." "."to:".$student_number." ".$message_text);
-				  if((260600<= $this->request->data['DirectMessage']['producer_id']) && ($this->request->data['DirectMessage']['producer_id'] <= 260999)){ //テスト用
+				  if((260600<= $student_number) && ($student_number <= 260999)){ //テスト用
 				  //print_r("true");}else{print_r("false");}
 				  $cakeemail=new CakeEmail('default');
 				  $cakeemail->to('waninaru.2015@gmail.com');
@@ -254,7 +254,7 @@ class ProducersController extends AppController {
 			
 			$message_text="企画の参加者からメッセージが届いています。";
 			//	print_r( "to:".'ne'.$student_number.'@senshu-u.jp'."  "."to:".$student_number."  ".$message_text);
-			if((260600<= $this->request->data['DirectMessage']['producer_id']) && ($this->request->data['DirectMessage']['producer_id'] <= 260999)){ //テスト用
+			if((260600<= $student_number) && ($student_number <= 260999)){ //テスト用
 			//print_r("true");}else{print_r("false");}
 			$cakeemail=new CakeEmail('default');
 			$cakeemail->to('waninaru.2015@gmail.com');
