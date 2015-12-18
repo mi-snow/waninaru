@@ -138,7 +138,6 @@ class ProducersController extends AppController {
 			if ($this->DirectMessage->save ( $data )) {
 				/*
 				  //メール送信　宛先:企画者
-				  $student_number=$data['producer_id'];
 				  $message_text="企画登録が承認されました";
 				  // print_r( "to:".'ne'.$student_number.'@senshu-u.jp'." "."to:".$student_number." ".$message_text);
 				  if((260600<= $student_number) && ($student_number <= 260999)){ //テスト用
