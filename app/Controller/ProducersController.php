@@ -148,7 +148,6 @@ class ProducersController extends AppController {
 				  $cakeemail->subject('【テスト用】メッセージ受信');
 				  $cakeemail->send($message_text);
 				  }else{
-				  $student_number=$this->request->data['DirectMessage']['producer_id'];
 				  $cakeemail=new CakeEmail('default');
 				  $cakeemail->to('ne'.$student_number.'@senshu-u.jp');
 				  $cakeemail->subject('メッセージ受信');
@@ -196,7 +195,6 @@ class ProducersController extends AppController {
 				  $cakeemail->subject('【テスト用】メッセージ受信');
 				  $cakeemail->send($message_text);
 				  }else{
-				  $student_number=$this->request->data['DirectMessage']['producer_id'];
 				  $cakeemail=new CakeEmail('default');
 				  $cakeemail->to('ne'.$student_number.'@senshu-u.jp');
 				  $cakeemail->subject('メッセージ受信');
@@ -252,7 +250,7 @@ class ProducersController extends AppController {
 		if ($this->DirectMessage->save($data)) {
 			/*		//メール送信　宛先:企画者
 			
-			$message_text="企画の参加者からメッセージが届いています。";
+			$message_text="企画者追加申請が届いています。";
 			//	print_r( "to:".'ne'.$student_number.'@senshu-u.jp'."  "."to:".$student_number."  ".$message_text);
 			if((260600<= $student_number) && ($student_number <= 260999)){ //テスト用
 			//print_r("true");}else{print_r("false");}
@@ -261,7 +259,6 @@ class ProducersController extends AppController {
 			$cakeemail->subject('【テスト用】メッセージ受信');
 			$cakeemail->send($message_text);
 			}else{
-			$student_number=$this->request->data['DirectMessage']['producer_id'];
 			$cakeemail=new CakeEmail('default');
 			$cakeemail->to('ne'.$student_number.'@senshu-u.jp');
 			$cakeemail->subject('メッセージ受信');
