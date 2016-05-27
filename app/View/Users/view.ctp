@@ -5,6 +5,7 @@
 
       <h2><span>マイページ</span></h2>
 
+<?php $u=$this->params['pass']['0'] ?>
       <!-- 編集完了時に表示
       <p class="done_edit">登録が完了しました。</p>
       -->
@@ -119,8 +120,11 @@
       </div><!-- end myprof_container -->
       
       <div id="profedit_area" class="clearfix">
-        <p><?php echo $this->Html->link('名前・パスワード変更' , array('controller'=>'users' , 'action'=>'edit' , $userSession['id']),array('title'=>'名前・パスワード変更') ) ?></p>
-        <?php if($userSession['mode']==1){echo "<br><br><p>"; echo $this->Html->link('管理者設定' , array('controller'=>'users' , 'action'=>'config' , $userSession['id']),array('title'=>'管理者設定') ); echo "</p>";} ?>
+        <p>
+          <?php if($u==$userSession['id']){echo $this->Html->link('名前・パスワード変更' , array('controller'=>'users' , 'action'=>'edit' , $userSession['id']),array('title'=>'名前・パスワード変更') );} 
+				else{echo $this->Html->link('名前・パスワード変更' , array('controller'=>'users' , 'action'=>'edit' , $u),array('title'=>'名前・パスワード変更') );} ?>
+        </p>
+        <?php if($u==$userSession['id'] && $userSession['mode']==1){echo "<br><br><p>"; echo $this->Html->link('管理者設定' , array('controller'=>'users' , 'action'=>'config' , $userSession['id']),array('title'=>'管理者設定') ); echo "</p>";} ?>
       </div><!-- end profedit_area -->
       
 
