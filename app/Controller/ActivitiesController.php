@@ -74,9 +74,10 @@ class ActivitiesController extends AppController{
 //		print_r($producers_project);
 		//自分の企画にダイレクトメッセージが届いた
 		$direct = $this->DirectMessage->find('all', array('conditions'=>array('DirectMessage.producer_id'=>$producer['Producer']['id'], 'DirectMessage.send_mode'=>'1'), 'recursive' => '1'));
-//		print_r($direct);
+//  		print_r($direct);
 		
 		foreach($direct as $activity){
+// 			print_r($activity);
 			$from = $activity['Joiner']['user_id'];
 			$from = $this->User->find('first', array('fields'=>array('real_name'), 'conditions' => array('User.id' => $from), 'recursive' => '-1'));
 //			print_r($from['User']['real_name']);
