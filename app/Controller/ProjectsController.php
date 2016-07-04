@@ -264,6 +264,7 @@ class ProjectsController extends AppController {
 			}
 		}
 		
+// 		print_r($producer[0]['Producer']['id']);
 		$this->set('producerid',$producer[0]['Producer']['id']);
 		if ($this->request->is('post')) {
 			$tmpName = $this->request->data['Project']['image_file_name']['tmp_name'];//画像
