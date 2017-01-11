@@ -1,0 +1,52 @@
+@charset 'utf-8';
+
+/* ===========
+	Maintenance style
+=========== */
+
+div#maintenance {
+/*	border: 1px #86c979 solid;
+	padding: 20px 0;*/
+	line-height: 1.7;
+	background: url('../img/maintenance/maintenance.png') no-repeat top center;
+	padding-top: 200px;
+	width: 600px;
+	margin: 0 auto;
+}
+
+div#maintenance h2 {
+	color: #86c979;
+	font-size: 25px;
+}
+
+div#maintenance p {
+	font-size: 16px;
+	margin-top: 20px;
+	letter-spacing: 1px;
+}
+
+
+/* ===========
+	Maintenance sp style
+=========== */
+
+@media screen and (max-width: 600px){
+	div#maintenance {
+	/*	border: 1px #86c979 solid;
+		padding: 20px 0;*/
+		line-height: 1.7;
+		background: url('../img/maintenance/maintenance.png') no-repeat top center;
+		background-size: contain;
+		padding-top: 150px;
+		width: 100%;
+		margin: 0 auto;
+	}
+
+	div#maintenance p {
+		text-align: justify;
+	}
+
+	div#maintenance p br.sp {
+		display: none;
+	}
+}
